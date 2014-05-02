@@ -17,3 +17,14 @@ categs.each {|categ| Category.create(:name => categ)}
     phone_number: Faker::PhoneNumber.phone_number
     )
 end
+
+50.times do 
+	Job.create(
+	agency_id: rand(1..7),
+	category_id: rand(1..6),
+	heading: Faker::Company.catch_phrase,
+  description: Faker::Lorem.paragraph,
+  location: Faker::Address.street_address,
+  date: Faker::Lorem.word
+  )
+end
