@@ -9,3 +9,11 @@
 categs = %w(parks_rec hospitality aerospace health office misc)
 
 categs.each {|categ| Category.create(:name => categ)}
+
+7.times do
+  Agency.create(
+    name: Faker::Company.name,
+    address: Faker::Address.street_address,
+    phone_number: Faker::PhoneNumber.phone_number
+    )
+end
