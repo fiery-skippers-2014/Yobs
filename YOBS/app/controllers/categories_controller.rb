@@ -4,9 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-  	puts "*"*30
-  	p params
-	puts "*"*30
   	@category = Category.find(params[:id])
   end
 end
+
