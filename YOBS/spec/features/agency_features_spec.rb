@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Agency users' do
   context "can sign on to account" do
-    let!(:agencyuser) { FactoryGirl.attributes_for :agencyuser }
+    let!(:user) { FactoryGirl.attributes_for :user }
     it "can go to home page and sign in to account and access agency index route" do
       visit root_path
       click_on "Log In"
