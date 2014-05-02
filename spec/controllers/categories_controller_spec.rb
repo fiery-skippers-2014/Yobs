@@ -9,7 +9,7 @@ describe CategoriesController do
 
     it "should assign @categories to Categories.all" do
       get :index
-      expect(assigns(:categories)).to eq Categories.all?
+      expect(assigns(:categories)).to eq Category.all
     end
   end
 

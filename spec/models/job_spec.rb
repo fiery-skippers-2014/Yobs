@@ -1,5 +1,5 @@
 require 'spec_helper'
- 
+
  describe Job do
    context "validations" do
      it { should validate_presence_of(:agency) }
@@ -13,11 +13,10 @@ require 'spec_helper'
      it { should ensure_length_of(:date).is_at_most(65) }
      it { should ensure_length_of(:description).is_at_most(600) }
    end
- 
-   # UNCOMMENT WHEN ASSOCIATIONS EXIST
-   # context "associations" do
-   #   it { should belong_to(:agency) }
-   #   it { should belong_to(:category) }
-   # end
- 
+
+  context "associations" do
+    it { should belong_to(:agency) }
+    it { should belong_to(:category) }
+  end
+
  end

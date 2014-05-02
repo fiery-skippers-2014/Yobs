@@ -1,4 +1,4 @@
-# require 'spec_helper'
+require 'spec_helper'
 
 #  feature 'Agency users' do
 #    context "can sign on to account" do
