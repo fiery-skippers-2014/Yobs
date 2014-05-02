@@ -1,7 +1,0 @@
-<h1><%= @category.name %></h1>
-
-<div id="container">
-	<%@category.jobs.each do |job|%>
-		<div class=""><a href="/job/<%=job.id%>"><%=job.heading%></a></div>
-	<%end%>
-</div>
