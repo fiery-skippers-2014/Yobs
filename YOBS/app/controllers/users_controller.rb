@@ -13,7 +13,10 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by_email(params[:email])
+    puts "________USER OBJECT"
+    puts @user
     if @user.password == params[:password]
+      puts "*|&^"*30
       give_token
       session[:session_user] = @user.user_name
     else

@@ -11,7 +11,7 @@ var SignInFormDropDown = function(){
 $(document).ready(function(){
 
   $('#new-user-link').on('click', RegisterFormDropDown)
-  $('#login-link').on('click', signInFormDropDown)
+  $('#login-link').on('click', SignInFormDropDown)
 
 
 
