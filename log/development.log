@@ -1,0 +1,229 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 11:34:46 -0700
+Connecting to database specified by database.yml
+Processing by CategoriesController#index as HTML
+PG::UndefinedTable: ERROR:  relation "categories" does not exist
+LINE 5:              WHERE a.attrelid = '"categories"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"categories"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+
+Completed 500 Internal Server Error in 101ms
+
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "categories" does not exist
+LINE 5:              WHERE a.attrelid = '"categories"'::regclass
+                                        ^
+:             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+              FROM pg_attribute a LEFT JOIN pg_attrdef d
+                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+             WHERE a.attrelid = '"categories"'::regclass
+               AND a.attnum > 0 AND NOT a.attisdropped
+             ORDER BY a.attnum
+):
+  app/controllers/categories_controller.rb:3:in `index'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.8ms)
+Connecting to database specified by database.yml
+  [1m[36m (22.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCategories (20140502040536)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (256.3ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (27.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140502040536')
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateJobs (20140502041225)
+Migrating to CreateAgencies (20140502180757)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (52.4ms)[0m  [1mCREATE TABLE "agencies" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "phone_number" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140502180757')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (148.0ms)[0m  DROP DATABASE IF EXISTS "yobs_test"
+  [1m[36m (586.0ms)[0m  [1mCREATE DATABASE "yobs_test" ENCODING = 'utf8'[0m
+  [1m[35m (14.5ms)[0m  CREATE TABLE "agencies" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "phone_number" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (4.0ms)[0m  CREATE TABLE "jobs" ("id" serial primary key, "agency_id" integer, "category_id" integer, "heading" character varying(255), "description" text, "location" character varying(255), "date" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.4ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "user_name" character varying(255), "first_name" character varying(255), "last_name" character varying(255), "email" character varying(255), "password" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140502180757')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140502040536')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140502041225')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 11:36:30 -0700
+Connecting to database specified by database.yml
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered categories/index.html.erb within layouts/application (3.4ms)
+Warning. Error encountered while saving cache /Users/apprentice/Desktop/yobs/Yobs/tmp/cache/sass/943626f46d715993ac8a167a482fb321aca79825/agencies.css.scssc: can't dump anonymous class #<Class:0x007ffa4e4f3bc0>
+Compiled agencies.css  (24ms)  (pid 12952)
+Warning. Error encountered while saving cache /Users/apprentice/Desktop/yobs/Yobs/tmp/cache/sass/943626f46d715993ac8a167a482fb321aca79825/categories.css.scssc: can't dump anonymous class #<Class:0x007ffa4e4f3bc0>
+Compiled categories.css  (4ms)  (pid 12952)
+Compiled application.css  (45ms)  (pid 12952)
+Compiled jquery.js  (2ms)  (pid 12952)
+Compiled jquery_ujs.js  (0ms)  (pid 12952)
+Compiled agencies.js  (406ms)  (pid 12952)
+Compiled application.js  (470ms)  (pid 12952)
+Completed 200 OK in 660ms (Views: 603.9ms | ActiveRecord: 32.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 11:36:31 -0700
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 11:36:31 -0700
+Served asset /agencies.css - 200 OK (4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 11:36:31 -0700
+Served asset /categories.css - 200 OK (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 11:36:31 -0700
+Served asset /application.js - 200 OK (10ms)
+
+
+Started GET "/assets/agencies.js?body=1" for 127.0.0.1 at 2014-05-02 11:36:31 -0700
+Served asset /agencies.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 11:36:31 -0700
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 11:36:31 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 11:36:31 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/categories/" for 127.0.0.1 at 2014-05-02 11:36:43 -0700
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered categories/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 11:36:43 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 11:36:43 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 11:37:18 -0700
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 11:37:18 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 11:37:18 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (64.3ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 02 May 2014 18:38:00 UTC +00:00], ["name", "parks_rec"], ["updated_at", Fri, 02 May 2014 18:38:00 UTC +00:00]]
+  [1m[35m (16.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 02 May 2014 18:38:00 UTC +00:00], ["name", "hospitality"], ["updated_at", Fri, 02 May 2014 18:38:00 UTC +00:00]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 02 May 2014 18:38:00 UTC +00:00], ["name", "aerospace"], ["updated_at", Fri, 02 May 2014 18:38:00 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 02 May 2014 18:38:00 UTC +00:00], ["name", "health"], ["updated_at", Fri, 02 May 2014 18:38:00 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Fri, 02 May 2014 18:38:00 UTC +00:00], ["name", "office"], ["updated_at", Fri, 02 May 2014 18:38:00 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Fri, 02 May 2014 18:38:00 UTC +00:00], ["name", "misc"], ["updated_at", Fri, 02 May 2014 18:38:00 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "6356 Kieran Walk"], ["created_at", Fri, 02 May 2014 18:38:01 UTC +00:00], ["name", "Legros Group"], ["phone_number", "195-807-6525"], ["updated_at", Fri, 02 May 2014 18:38:01 UTC +00:00]]
+  [1m[35m (9.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["address", "6599 Vivien Mills"], ["created_at", Fri, 02 May 2014 18:38:01 UTC +00:00], ["name", "Williamson Inc"], ["phone_number", "(288)235-7815 x46811"], ["updated_at", Fri, 02 May 2014 18:38:01 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "3137 Coby Harbors"], ["created_at", Fri, 02 May 2014 18:38:01 UTC +00:00], ["name", "Reynolds, West and Lehner"], ["phone_number", "322-960-1516 x78275"], ["updated_at", Fri, 02 May 2014 18:38:01 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["address", "95456 Winston Fork"], ["created_at", Fri, 02 May 2014 18:38:01 UTC +00:00], ["name", "Barton Inc"], ["phone_number", "1-334-883-6029 x681"], ["updated_at", Fri, 02 May 2014 18:38:01 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "333 Cassin Cliff"], ["created_at", Fri, 02 May 2014 18:38:01 UTC +00:00], ["name", "Collier, Streich and McClure"], ["phone_number", "370.314.4117 x090"], ["updated_at", Fri, 02 May 2014 18:38:01 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["address", "3539 Mack Square"], ["created_at", Fri, 02 May 2014 18:38:01 UTC +00:00], ["name", "Nolan-Kreiger"], ["phone_number", "(781)813-9572"], ["updated_at", Fri, 02 May 2014 18:38:01 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "2277 Stroman Ranch"], ["created_at", Fri, 02 May 2014 18:38:01 UTC +00:00], ["name", "Kemmer-Schinner"], ["phone_number", "(598)042-7145 x4798"], ["updated_at", Fri, 02 May 2014 18:38:01 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 11:38:45 -0700
+Connecting to database specified by database.yml
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered categories/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 125ms (Views: 52.6ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 11:38:46 -0700
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 11:38:46 -0700
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 11:38:46 -0700
+Served asset /agencies.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 11:38:46 -0700
+Served asset /categories.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 11:38:46 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 11:38:46 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/agencies.js?body=1" for 127.0.0.1 at 2014-05-02 11:38:46 -0700
+Served asset /agencies.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 11:38:46 -0700
+Served asset /application.js - 304 Not Modified (6ms)
