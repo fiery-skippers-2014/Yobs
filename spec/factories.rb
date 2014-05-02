@@ -24,4 +24,11 @@ FactoryGirl.define do
     name {Faker::Name.first_name}
   end
 
+  factory :job do 
+    heading {Faker::Company.catch_phrase}
+    description {Faker::Lorem.paragraph}
+    location {Faker::Address.street_address}
+    date {Faker::Lorem.word}
+  end
+
  end
