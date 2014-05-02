@@ -12,6 +12,6 @@ test:
 
 production:
   adapter: postgresql
-  database: Yobs
+  database: yobs
   pool: 5
   timeout: 5000
