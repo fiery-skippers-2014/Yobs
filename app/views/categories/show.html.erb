@@ -2,6 +2,22 @@
 
 <div id="container">
 	<%@category.jobs.each do |job|%>
-		<div class=""><a href="/job/<%=job.id%>"><%=job.heading%></a></div>
+		<div class="job-box" id="job-#{job.id}">
+			<div class="job-heading">
+				<%=job.heading%>
+			</div>
+			<div class="job-desc">
+				short description
+			</div>
+			<div class="job-footer">
+				<div class="more-btn">
+				<button type="button">Read more...</button>
+				</div>
+				<div class="request-btn">
+				<button type="button">Request Information</button>
+				</div>
+			</div>
+		</div>
+		<br><br>
 	<%end%>
 </div>

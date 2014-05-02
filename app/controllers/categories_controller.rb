@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
 
   def show
   	@category = Category.find(params[:id])
+  	@jobs = Job.where("category_id = ?", @category.id)
   end
 end
 
