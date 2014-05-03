@@ -1,16 +1,18 @@
 var Job = {
 	init: function() {
-		$('.more-button').on('ajax:success', this.expandDescription);
-		$('.more-button').on('ajax:error', this.appendError);
+		$('.more-btn').on('ajax:success', this.expandDescription);
+		$('.more-btn').on('ajax:error', this.appendError);
 	},
 
-	expandDescription: function(e, data) {
+	expandDescription: function(event, data) {
+		event.preventDefault();
 		console.log("success");
 		console.log(data);
 	},
 
-	appendError: function(e, data) {
-		console.log(responseText);
+	appendError: function(event, data) {
+		event.preventDefault();
+		console.log(data);
 	}
 }
 
