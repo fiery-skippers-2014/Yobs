@@ -1,0 +1,24 @@
+
+<% #if session[:session_user].nil? %>
+<a href="#" id="login-link">Login</a>
+ <a href="#" id="new-user-link">Register</a>
+<%else%>
+  <a href="/logout" id="logout-link">Log Out</a>
+<%#end%>
+
+<%= form_for User.new, :html => { :class => 'new-user' } do |f| %>
+  <p><%= f.text_field :user_name, :placeholder => "User Name" %></p>
+  <p><%= f.text_field :first_name, :placeholder => "First Name"  %></p>
+  <p><%= f.text_field :last_name, :placeholder => "Last Name"  %></p>
+  <p><%= f.text_field :email, :placeholder => "Email"  %></p>
+  <p><%= f.text_field :password, :placeholder => "Password"  %></p>
+  <p><%= f.submit %></p>
+
+  <%end%>
+
+<%= form_tag '/sessions', :remote => true, :html => { :id => 'login-user' } %>
+    <li><%= label_tag :email %></li>
+    <li><%= email_field_tag :email %></li>
+    <li><%= label_tag :password %></li>
+    <li><%= password_field_tag :password %></li>
+    <li><%= submit_tag "Log in", class: 'btn btn-success' %></li>
