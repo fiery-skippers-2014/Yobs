@@ -1,10 +1,10 @@
 
-.new-user {
+.new-user-form {
   display: none;
   position: absolute;
 }
 
-.login-user {
+.login-form {
   display: none;
   position: absolute;
 }

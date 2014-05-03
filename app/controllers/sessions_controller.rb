@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       puts "I'm In"
       session[:user_id] = user.id
+
       render json: user.first_name.to_json
     else
       # flash.alert = "Invalid email or password"
