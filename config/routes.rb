@@ -3,6 +3,7 @@ YOBS::Application.routes.draw do
   resources :categories, :only => [:index, :show]
   resources :jobs
   resources :users
+  resources :agencies
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
