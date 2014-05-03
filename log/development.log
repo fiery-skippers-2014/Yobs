@@ -10676,3 +10676,596 @@ Processing by JobsController#show as JS
   [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", "4"]]
   Rendered jobs/_extended_display.html.erb (0.0ms)
 Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-03 08:51:51 -0700
+Connecting to database specified by database.yml
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (9.6ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered categories/index.html.erb within layouts/application (2.9ms)
+Compiled categories.css  (0ms)  (pid 4752)
+Compiled categories.js  (0ms)  (pid 4752)
+Compiled application.js  (12ms)  (pid 4752)
+Completed 200 OK in 596ms (Views: 122.4ms | ActiveRecord: 418.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-03 08:51:52 -0700
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-03 08:51:52 -0700
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-03 08:51:52 -0700
+Served asset /application.js - 200 OK (11ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-03 08:51:52 -0700
+Served asset /agencies.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-03 08:51:52 -0700
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-03 08:51:53 -0700
+Served asset /categories.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-03 08:51:53 -0700
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-03 08:51:53 -0700
+Served asset /categories.css - 200 OK (1ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-03 08:51:55 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (20.9ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJob Load (32.7ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1
+  Rendered categories/show.html.erb within layouts/application (61.8ms)
+Completed 200 OK in 133ms (Views: 32.5ms | ActiveRecord: 55.2ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-03 08:51:55 -0700
+Served asset /agencies.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-03 08:51:55 -0700
+Served asset /categories.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateCategories (20140502040536)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (22.8ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140502040536')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateJobs (20140502041225)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "jobs" ("id" serial primary key, "agency_id" integer, "category_id" integer, "heading" character varying(255), "description" text, "location" character varying(255), "date" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140502041225')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAgencies (20140502180757)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "agencies" ("id" serial primary key, "name" character varying(255), "address" character varying(255), "phone_number" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140502180757')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (85.7ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 03 May 2014 15:52:40 UTC +00:00], ["name", "parks_rec"], ["updated_at", Sat, 03 May 2014 15:52:40 UTC +00:00]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 03 May 2014 15:52:40 UTC +00:00], ["name", "hospitality"], ["updated_at", Sat, 03 May 2014 15:52:40 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 03 May 2014 15:52:40 UTC +00:00], ["name", "aerospace"], ["updated_at", Sat, 03 May 2014 15:52:40 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 03 May 2014 15:52:40 UTC +00:00], ["name", "health"], ["updated_at", Sat, 03 May 2014 15:52:40 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 03 May 2014 15:52:40 UTC +00:00], ["name", "office"], ["updated_at", Sat, 03 May 2014 15:52:40 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("created_at", "name", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 03 May 2014 15:52:40 UTC +00:00], ["name", "misc"], ["updated_at", Sat, 03 May 2014 15:52:40 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (16.1ms)[0m  [1mINSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "31075 Cortez Prairie"], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["name", "Monahan, Von and Harris"], ["phone_number", "1-668-541-7569"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["address", "998 Vincenza Estate"], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["name", "McKenzie, O'Hara and Muller"], ["phone_number", "493.277.6323 x75137"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "902 O'Reilly Island"], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["name", "Reynolds LLC"], ["phone_number", "309-554-8924"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["address", "64544 Roscoe Mountain"], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["name", "Reinger Inc"], ["phone_number", "154.259.9948"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "473 Crona Well"], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["name", "Wyman Group"], ["phone_number", "(801)267-6100"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["address", "5649 Weber Forks"], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["name", "Deckow, McKenzie and Heathcote"], ["phone_number", "1-522-268-8994"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "agencies" ("address", "created_at", "name", "phone_number", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["address", "3547 Minerva Place"], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["name", "Connelly-Ratke"], ["phone_number", "268-598-0844 x778"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.5ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 7 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (38.9ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 7], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "corrupti"], ["description", ["Sit dolorum voluptas quod molestias ea cumque.", "Dolores voluptas facilis numquam.", "Commodi voluptatem qui.", "Sed odit sint error eius dolores iure.", "Harum expedita et dignissimos odio sit doloribus et.", "Nisi qui sunt suscipit et.", "Sed ipsam sunt enim.", "Nihil eius quo.", "Ipsum nam sit dolor ut.", "Eos placeat unde totam."]], ["heading", "Right-sized intangible standardization"], ["location", "653 Marcelino Groves"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (15.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mAgency Load (0.4ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 2 LIMIT 1[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 2], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "repudiandae"], ["description", ["Id consequatur consequatur accusamus sed quis.", "In assumenda aut.", "Ullam adipisci sint reprehenderit sapiente tempore dolore.", "Molestiae accusamus possimus quo deleniti sequi.", "Voluptatum voluptas at qui vero fugit.", "Qui voluptatem provident reiciendis assumenda quisquam.", "Quod quia itaque et hic.", "Sed odio ut molestiae voluptas dolore debitis quasi.", "Et ullam vero minus et temporibus.", "Illum sit fugit."]], ["heading", "Team-oriented reciprocal standardization"], ["location", "584 Homenick Vista"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 2 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 2], ["category_id", 6], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "soluta"], ["description", ["Aut in dolorem ut.", "Natus id quo distinctio sed quas in.", "Aut dicta quidem nesciunt.", "Delectus dolor aut voluptatem non.", "Pariatur quia distinctio aut.", "Consequuntur dolores ut ratione vel.", "Quis aperiam sit.", "Sint eos amet necessitatibus odit.", "Quas consequatur ut.", "Dicta ad quod."]], ["heading", "Operative bifurcated moderator"], ["location", "8194 Hintz Club"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 6], ["category_id", 6], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "quia"], ["description", ["Quia numquam et corporis facilis perferendis.", "Tempora sequi fuga perferendis sunt.", "Eius sint libero ipsa nisi itaque fuga.", "Et et non aspernatur accusamus quaerat similique rem.", "Quibusdam at totam et corporis dolorum sint.", "Non ad libero sit quas.", "Expedita dolorem totam officia.", "Enim voluptatem molestias iste ipsa quia ex eveniet.", "Vel quidem impedit.", "Ex repellendus distinctio voluptatem enim nihil possimus est."]], ["heading", "Business-focused 24/7 adapter"], ["location", "386 Adolph Radial"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 2 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 2], ["category_id", 5], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "expedita"], ["description", ["Eveniet sint non qui reiciendis ex est.", "Mollitia illum nemo odit natus perspiciatis ullam.", "Est eveniet enim.", "Quas voluptatem nulla numquam ipsum.", "Qui doloremque ut explicabo adipisci veritatis omnis fugit.", "Inventore eum et.", "Fugit esse aut est quam.", "Debitis laudantium architecto maxime quis.", "Nihil veritatis perferendis dolor nisi eos.", "Sapiente excepturi sequi."]], ["heading", "Realigned incremental success"], ["location", "50163 Elisa Ferry"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 2 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 2], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "consequatur"], ["description", ["Similique ab corporis itaque sit.", "Voluptas voluptatem deleniti cum.", "Vitae velit atque.", "Nisi consectetur itaque voluptas voluptatem soluta repellat possimus.", "Non velit et et ducimus et ea voluptatem.", "Ea modi provident doloribus aliquid.", "Aperiam ut aut rerum odio corporis dolorem.", "A molestias veritatis dolor eaque.", "Iure dolorem asperiores.", "Et voluptatem voluptatem dolorum."]], ["heading", "Progressive mobile time-frame"], ["location", "18065 Renee Trail"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 1], ["category_id", 1], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "fuga"], ["description", ["Sunt accusantium sequi voluptatem corporis.", "Commodi accusamus dolor ducimus incidunt.", "Accusantium nihil ipsam repellendus aut laboriosam.", "Aliquam harum animi repellendus sit sint et necessitatibus.", "Itaque vero nesciunt.", "Delectus enim perferendis rem sint.", "Tempore sed corrupti facere.", "Nisi ut ullam.", "Non velit dolorem ut.", "Nam est ducimus."]], ["heading", "Ameliorated transitional complexity"], ["location", "255 Gaston Springs"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.2ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 1], ["category_id", 6], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "rerum"], ["description", ["Non et consequuntur.", "Sit iste sed atque et quia iusto.", "Eos accusamus sit magnam.", "Repellendus et eligendi.", "Dolorum dolore similique voluptas facilis placeat quae.", "Explicabo tempora vel corrupti recusandae.", "Quidem cum enim et mollitia quasi.", "Provident ut et ullam fugiat rerum voluptatem.", "Optio qui perspiciatis.", "Distinctio molestias qui quia enim et."]], ["heading", "Upgradable directional internet solution"], ["location", "243 Warren Unions"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.5ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 5], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "necessitatibus"], ["description", ["Dignissimos distinctio vitae dolorum et temporibus placeat.", "Et voluptas quidem ut dolores quos.", "Delectus quos veniam sit maxime omnis.", "Sed deleniti ipsum dolorum rerum accusamus numquam quia.", "Voluptatem sit ratione.", "Dignissimos qui ipsum.", "Autem quaerat omnis culpa non nihil.", "Eaque laudantium eveniet.", "Et numquam aut ut ut provident doloribus aut.", "Ab deserunt enim nostrum mollitia dignissimos qui."]], ["heading", "Devolved national knowledge user"], ["location", "37521 Harrison Brook"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 7 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 7], ["category_id", 6], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "repellat"], ["description", ["Rerum repellat sunt sit quia voluptas consequatur.", "Quas odit modi qui a nesciunt voluptates mollitia.", "Qui illo quod nostrum eius illum et.", "Debitis temporibus alias eum error reiciendis aut.", "Quas fuga molestiae ullam inventore a asperiores in.", "Necessitatibus dolores culpa aut optio veritatis eum.", "Esse minus reprehenderit voluptas.", "Ipsa at alias ad.", "Velit aut ut commodi.", "Autem reiciendis perferendis ut."]], ["heading", "Innovative modular implementation"], ["location", "4644 Stracke Fords"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 5], ["category_id", 5], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "corporis"], ["description", ["Veritatis aut ea.", "Eius nam repellat dolor dicta suscipit.", "Velit qui praesentium sapiente.", "Laboriosam fugiat qui est.", "Architecto quia vel alias eos vero et.", "Tempora rerum dolores nulla minus a.", "Odit officiis voluptas voluptatem hic sint et.", "Aut est aliquid quia et.", "Dolorum iusto consequatur deleniti dolorem quos.", "Commodi eum ipsum."]], ["heading", "Reduced web-enabled Graphic Interface"], ["location", "73667 Anibal Port"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 5], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "architecto"], ["description", ["Provident ex quo aut voluptate laudantium est.", "Numquam culpa consequuntur.", "Aspernatur molestiae hic eum id harum.", "Aspernatur nihil accusantium officiis rerum ab veniam aliquid.", "Tempora nostrum quis qui eum et inventore.", "Dolorum ducimus quis maxime.", "Et nostrum architecto veritatis vel.", "Ipsa aliquam inventore id sit quam fugiat optio.", "Rem eum accusamus magnam maxime.", "Nobis facere qui perspiciatis sit et suscipit."]], ["heading", "Expanded bi-directional toolset"], ["location", "3676 O'Hara View"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 1], ["category_id", 6], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "ipsum"], ["description", ["Nihil ipsum aut quas ipsa.", "Placeat quae accusantium voluptatem dolore aut.", "In magni voluptatem aut nesciunt quos porro necessitatibus.", "Doloribus voluptas magni et.", "Quo ducimus pariatur commodi et quia voluptas provident.", "Et incidunt voluptate odit et animi eos.", "Odio eos consequatur eos occaecati magni.", "Quos sed velit.", "Assumenda odio aut.", "Unde dolorem inventore corrupti fugit odio et."]], ["heading", "Automated discrete forecast"], ["location", "2979 Hilll Flats"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 6], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "delectus"], ["description", ["Hic quo officia earum nulla velit sapiente.", "Esse repellat omnis nisi expedita alias et doloremque.", "Velit consequatur cumque ad ratione repellat et in.", "Quidem fuga ducimus omnis sed quia rerum dolorem.", "Impedit magnam velit odit et fugiat.", "Quibusdam velit earum accusantium optio omnis ea dolorem.", "Occaecati earum ut nulla suscipit.", "Et vel quod iure animi est.", "Voluptatem ab recusandae.", "Ipsam dolor placeat sed quam optio."]], ["heading", "Customizable bi-directional data-warehouse"], ["location", "2808 Mohr Prairie"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 4], ["category_id", 6], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "et"], ["description", ["Adipisci et quod doloribus.", "Minima non sit ut vel at eveniet fugit.", "Quidem sunt sint sed aut.", "Non provident culpa reiciendis animi.", "Soluta molestiae voluptate ab iure velit est.", "Doloribus explicabo illum laborum dolor ut dolor.", "A aut non vel distinctio ad enim.", "Culpa alias nihil repellendus deleniti dicta.", "Placeat saepe ea esse.", "Nihil beatae distinctio aliquid non dolores."]], ["heading", "Stand-alone bifurcated benchmark"], ["location", "89924 Beahan Bridge"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 7 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 7], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "est"], ["description", ["Qui placeat et enim omnis tempore.", "Sunt et harum.", "Molestiae exercitationem fugit.", "Architecto hic eligendi ex rerum velit.", "Libero fugit reiciendis culpa accusamus incidunt ex quo.", "Placeat totam sit deserunt quia.", "Quo nam odio dolores corporis nihil suscipit quaerat.", "Aut ea numquam et cumque.", "Ducimus aut consequuntur adipisci aliquam minus quia.", "Cum maxime ea voluptas suscipit voluptates unde."]], ["heading", "Cloned even-keeled database"], ["location", "90525 Daija Island"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 6], ["category_id", 4], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "rerum"], ["description", ["Eius est nisi sed.", "Sunt ipsum tempora dolor magnam et nesciunt.", "Eveniet voluptatibus est quod.", "Cumque quo doloribus repellat.", "Nemo eius tempore.", "Sunt officiis earum et non voluptatum.", "Veniam sit exercitationem quis fugit sed.", "Dolorum sit assumenda omnis.", "Reprehenderit ut laborum harum hic et aut expedita.", "Ipsum libero modi necessitatibus et vel veritatis."]], ["heading", "Ameliorated 6th generation capability"], ["location", "567 Turner Lake"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 3], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "aut"], ["description", ["Minima quae incidunt.", "Architecto omnis rerum facere exercitationem aut.", "Ea voluptates officia tempore nemo amet maxime soluta.", "Et ut hic mollitia quis suscipit.", "Dolores sint tempora nam qui rerum quam.", "Odit vel consequuntur quas corrupti necessitatibus error expedita.", "Repudiandae ad itaque deleniti aut.", "Facilis quia et aspernatur possimus debitis non sed.", "Labore nemo accusamus repudiandae itaque neque veniam sunt.", "Fugit deserunt quaerat debitis necessitatibus."]], ["heading", "Object-based intangible interface"], ["location", "57145 Werner Curve"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 2 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 2], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "possimus"], ["description", ["Dolorem aut vel eius fugit.", "Minima saepe qui.", "Harum quaerat dolorem qui expedita quis est est.", "Sunt voluptatum neque et reprehenderit ut deleniti.", "Delectus consequatur eos et fuga.", "Architecto pariatur fugit.", "Tempore aut ut asperiores praesentium suscipit.", "Fugiat tenetur accusamus facilis.", "Qui aut et hic molestias error earum.", "Consequatur totam ipsa magnam magni tempore enim quas."]], ["heading", "Open-architected composite encryption"], ["location", "4979 Hodkiewicz Points"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 3], ["category_id", 4], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "doloribus"], ["description", ["Repellat laboriosam perferendis iusto itaque ut.", "Magni similique sit quia cumque.", "Molestiae modi nulla cupiditate adipisci enim.", "Dignissimos qui omnis quia ut.", "Cupiditate laudantium accusamus enim et architecto.", "Sit ipsum praesentium aut qui.", "Quo eius quia ut libero est.", "Numquam ut molestias.", "Sapiente maiores laborum corporis vel quo numquam.", "Eos voluptate necessitatibus consequatur est quo nulla rem."]], ["heading", "Seamless value-added customer loyalty"], ["location", "83337 Lebsack Green"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 6], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "molestiae"], ["description", ["Nobis accusantium reiciendis.", "Sint aut culpa enim expedita quaerat.", "Quo optio et eveniet.", "Alias architecto tenetur harum omnis.", "Omnis consequuntur dolore quam.", "Voluptate provident amet cumque.", "Aut ut dolorum ex.", "Culpa aut hic et eos atque consequatur.", "Qui in qui et dolorem non qui qui.", "Alias ut quo ex quae vel."]], ["heading", "Streamlined multi-tasking throughput"], ["location", "6956 Viviane Knolls"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.2ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 2 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 2], ["category_id", 1], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "molestias"], ["description", ["Aliquam et velit molestiae.", "Aperiam perspiciatis vel quo nobis.", "Non velit amet impedit dolores ipsum dolorem.", "Aut quos quisquam.", "Doloribus aperiam quia labore incidunt.", "Quia nemo dolor voluptatum recusandae eum ut.", "Consequatur aut et voluptas sunt.", "Ut ad autem voluptates corrupti.", "Sint veritatis harum magnam aperiam eveniet.", "Et sint alias quibusdam voluptas rerum exercitationem animi."]], ["heading", "Synchronised eco-centric database"], ["location", "78550 Hettinger Loaf"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 5], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "et"], ["description", ["Eum quis excepturi et et libero.", "Atque et quibusdam.", "Provident sit consequatur et.", "Non velit vero dolor et quisquam quia.", "Aut ipsa dignissimos libero eum perferendis enim sit.", "Quidem qui voluptas mollitia qui expedita est.", "Et rerum sapiente doloremque pariatur voluptatem est.", "Sit aut est quia dolorem.", "Quia enim quod ex voluptates repellendus.", "Vero magnam consequatur quod."]], ["heading", "Organized 4th generation contingency"], ["location", "6164 Connelly Spur"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.2ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 1], ["category_id", 4], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "aut"], ["description", ["Dolorem aliquam perferendis cupiditate in laborum.", "Esse dolore similique reiciendis consequatur facilis.", "Consequatur ut nihil nisi quo.", "Ut dolore labore.", "Dolores magnam sapiente distinctio cupiditate incidunt.", "Tempora quia nihil reprehenderit aut labore.", "Ipsam eligendi tenetur.", "Perspiciatis et vel repudiandae doloremque nihil assumenda.", "Vel saepe consequatur deleniti dolor molestiae quis est.", "Non quod repellendus at officia praesentium."]], ["heading", "Balanced exuding algorithm"], ["location", "759 Paucek Turnpike"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 7 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 7], ["category_id", 5], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "nobis"], ["description", ["Assumenda dolorum numquam modi ipsum voluptas architecto qui.", "Assumenda quis ipsum.", "Natus dolor aut ex quod.", "Qui sint sapiente aut occaecati quae aperiam possimus.", "Consequatur dicta perferendis sit deserunt consequatur ut.", "Necessitatibus id voluptatibus cupiditate eum aliquam explicabo eius.", "Aspernatur et dolore voluptas quas veniam.", "Accusamus aut esse corrupti eligendi aliquid suscipit.", "Culpa aliquam nihil ut veniam beatae vel id.", "Quaerat sed deleniti neque nesciunt optio quia error."]], ["heading", "Function-based intermediate middleware"], ["location", "9662 Mitchell Islands"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.2ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 1], ["category_id", 1], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "omnis"], ["description", ["Praesentium unde ut voluptatem aspernatur et.", "Inventore fugit ut sit aut ut placeat.", "Cum expedita eius.", "Officia eum aliquid architecto tenetur consequatur non.", "Reprehenderit qui aliquid quo quis in modi.", "Molestiae deleniti animi ut qui ut est sunt.", "Dolore dignissimos ex deleniti blanditiis.", "Amet officiis in non incidunt rem expedita.", "Dolores officia recusandae dolorum modi.", "Veritatis molestiae voluptatem voluptate nulla voluptates."]], ["heading", "Progressive solution-oriented time-frame"], ["location", "28829 Champlin Groves"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 6], ["category_id", 6], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "labore"], ["description", ["Velit at explicabo maxime dignissimos libero.", "Aspernatur omnis asperiores nostrum veritatis.", "Dolores non et pariatur laudantium doloribus quasi repellat.", "Numquam voluptatibus ducimus minus enim.", "Itaque delectus dolore.", "Vel a est doloribus voluptas.", "Earum dolores sapiente deleniti doloremque eveniet ut corrupti.", "Laboriosam nesciunt eius necessitatibus.", "Tenetur cupiditate architecto.", "Id totam deleniti est."]], ["heading", "Public-key 24 hour process improvement"], ["location", "148 Clement Village"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.2ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 1 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 1], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "animi"], ["description", ["Est ipsum reprehenderit sed doloribus aut.", "Velit aut quia voluptas molestiae ullam tempora in.", "Porro voluptas necessitatibus maiores ab voluptas dolorem.", "Sit dolorum quisquam.", "Atque blanditiis accusamus quos.", "Velit vero adipisci vel.", "Distinctio reiciendis non placeat illum neque nam sint.", "Necessitatibus in laborum illum dolorum officia saepe.", "Accusantium delectus aut.", "Vero perspiciatis quod iste saepe ex id."]], ["heading", "Front-line discrete alliance"], ["location", "652 Ted Wall"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 6], ["category_id", 5], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "qui"], ["description", ["Laudantium voluptatem recusandae ab.", "Similique occaecati velit quae consequatur.", "Aut nisi non qui.", "Deserunt veniam adipisci voluptas a consequuntur dolorem.", "Tenetur doloribus qui magnam praesentium veniam.", "Non sint illo officia itaque.", "Nihil ut sint ducimus enim.", "Laudantium cupiditate amet ea.", "Minima doloremque ut autem aperiam suscipit ducimus velit.", "Est temporibus ipsa pariatur saepe exercitationem dolor."]], ["heading", "Synchronised attitude-oriented capacity"], ["location", "14995 Brock Trafficway"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 5], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "aut"], ["description", ["Corrupti inventore ut nulla quas.", "Voluptas labore consequatur et explicabo asperiores aut vitae.", "Tenetur ratione sunt sit architecto ea soluta.", "Consectetur pariatur velit animi.", "Enim enim laudantium voluptatem rem.", "Ex ratione sed nisi debitis inventore sapiente.", "Qui quo soluta quia sint.", "Alias corporis quasi ut voluptatibus.", "Et quibusdam perspiciatis odio.", "Perspiciatis vel tenetur quia commodi."]], ["heading", "Streamlined zero administration open architecture"], ["location", "61424 Cassandre Green"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 2 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 2], ["category_id", 5], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "ut"], ["description", ["A occaecati quis molestias repellat et.", "Vero officia accusantium et.", "Nemo aut cumque sed et in voluptas consequuntur.", "Nobis eum quia dolorem at.", "Et ducimus et voluptates beatae iste.", "Veniam beatae praesentium repellat sed impedit.", "Veniam et aut quia inventore enim iusto magnam.", "Est sunt nostrum est pariatur.", "Consequatur libero ea eum eos.", "Dolor minus molestiae impedit."]], ["heading", "Triple-buffered didactic array"], ["location", "816 Wintheiser Shores"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 3], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "laudantium"], ["description", ["Voluptatem omnis et rem.", "Molestias in qui.", "Aspernatur esse autem sapiente vero facere.", "Quia voluptates nostrum amet optio.", "Provident perspiciatis molestias facilis.", "Deleniti aspernatur et voluptatem et est neque hic.", "Consequatur quas deserunt repellat perspiciatis.", "Corrupti non vel tenetur sit in doloremque.", "Labore quia blanditiis expedita.", "Sint dicta beatae fugiat voluptatem illum nostrum autem."]], ["heading", "Self-enabling next generation time-frame"], ["location", "7129 Swaniawski Valleys"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 7 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 7], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "perspiciatis"], ["description", ["Aut illum possimus rerum.", "Quaerat aut quia et est.", "Sint est repellat repudiandae officia odit.", "Et non neque consequatur cum quae reprehenderit.", "Alias ut ut vel sapiente id.", "Tenetur ipsa voluptatum accusantium nesciunt.", "Sint ullam facere debitis recusandae dolorem.", "Mollitia labore sit tempore.", "Est ea ut dicta beatae dolores est.", "Ea et magnam optio ut tempora voluptatem."]], ["heading", "Multi-lateral value-added adapter"], ["location", "7746 Elmira Meadow"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 7 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 7], ["category_id", 1], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "odio"], ["description", ["Qui inventore architecto sit.", "Suscipit animi accusantium ratione delectus qui neque et.", "Omnis ex repellendus placeat.", "Officiis delectus est maiores.", "Qui quis aliquid minima voluptates.", "Saepe enim eum pariatur est dolor quasi exercitationem.", "Natus qui eos doloribus ut.", "Repellendus ratione necessitatibus et ab.", "Accusantium et fugit voluptas labore omnis.", "Nemo doloremque labore rem ducimus soluta aliquam."]], ["heading", "Assimilated upward-trending frame"], ["location", "7354 Elinor Mission"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 2 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 2], ["category_id", 5], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "dolorum"], ["description", ["Consequatur nostrum corporis.", "Ea quia quod et.", "Voluptatem temporibus excepturi est quaerat.", "Occaecati nihil enim pariatur velit.", "Rerum pariatur quod deserunt et temporibus exercitationem.", "Non deserunt fugiat ipsum.", "Aliquam aspernatur molestiae quia facere non.", "Ut rerum similique necessitatibus.", "Libero nulla aut aut voluptatum sit voluptatem commodi.", "Magnam voluptatem libero dolores temporibus et eius."]], ["heading", "Profit-focused well-modulated application"], ["location", "4123 Vincenzo Pines"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.2ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 3], ["category_id", 1], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "quia"], ["description", ["Exercitationem sit nobis quasi et nesciunt.", "Id rerum modi dolorem in reiciendis.", "Praesentium repellat qui voluptas.", "Quo fugiat aperiam facilis.", "Velit consequatur aut id.", "Incidunt quibusdam ea.", "Non iusto dolores dolorem mollitia.", "Aut quibusdam mollitia dolorum dolor unde.", "Modi eligendi aut ut similique tempora ut voluptas.", "Tempore non aut iste."]], ["heading", "Profound logistical moderator"], ["location", "5862 Orland Plaza"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 5], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "tempore"], ["description", ["Repudiandae et velit aspernatur ut quisquam eos in.", "Aliquid error recusandae sint.", "Et debitis voluptatem.", "Ipsum laboriosam dolorum repellendus quisquam tempore.", "Autem pariatur repudiandae at inventore ut cum.", "Tempora accusantium sunt quia laudantium nisi praesentium.", "Expedita odit impedit id autem est vitae.", "Aut repellendus vero rerum consequatur.", "Doloribus illum enim.", "Rem aut quaerat temporibus."]], ["heading", "Visionary holistic strategy"], ["location", "7285 Pacocha Wells"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.2ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 5 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 6], ["category_id", 5], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "nulla"], ["description", ["Odio modi unde est officiis sed.", "Voluptatem quia impedit aut eum.", "Tempore commodi quaerat temporibus quos.", "Quisquam adipisci culpa modi odit sit.", "Ut explicabo molestias error.", "Dolorem blanditiis est perferendis qui asperiores eos.", "Quia et ipsam vero quis laudantium ut est.", "Incidunt corporis iste qui recusandae culpa quas.", "Laborum sed et omnis.", "Atque id rerum hic beatae."]], ["heading", "Down-sized regional matrix"], ["location", "3583 Jones Highway"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 4 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 4], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "quos"], ["description", ["Neque eum corporis harum nam assumenda consectetur amet.", "Facilis et quis minus ratione.", "Dolores hic nesciunt dolor.", "Rerum ea voluptatem.", "Incidunt quam asperiores facilis.", "Voluptas illum quasi et laboriosam.", "Tenetur repellat omnis possimus aut.", "Minus magnam alias nostrum harum ea quo.", "Eos esse similique optio odio numquam quam incidunt.", "Est facere rerum."]], ["heading", "Expanded cohesive local area network"], ["location", "8911 Kim Spurs"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.2ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 6], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "exercitationem"], ["description", ["Aut corporis necessitatibus labore.", "Vel nobis doloribus sequi sunt ipsa quisquam.", "Amet ea aut sit praesentium quo.", "Voluptatibus impedit et aperiam qui beatae odio ut.", "Quis delectus non odio facere alias dignissimos.", "Cum vero et distinctio voluptate blanditiis autem.", "Est fuga qui et earum.", "Esse rem aut officia iste a corporis eos.", "Fugit ducimus aliquam est omnis consectetur.", "Sit natus eos."]], ["heading", "Implemented methodical artificial intelligence"], ["location", "4105 Nikolaus Orchard"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 2 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 2], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "exercitationem"], ["description", ["Consequatur consequatur repellendus ipsum et tempore.", "Tenetur modi ab ullam sint aspernatur aut.", "Velit non sunt commodi incidunt consequatur ipsam rerum.", "Voluptate quam culpa error voluptatem odio quo exercitationem.", "Et perferendis est.", "Consequatur nihil et hic.", "Saepe magni nihil laborum.", "Ea omnis vitae possimus tempore est.", "Natus ut qui asperiores deserunt.", "Facere saepe et."]], ["heading", "Upgradable interactive encryption"], ["location", "7626 Murray Rest"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.2ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 6], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "eum"], ["description", ["Consequatur dolor earum sit esse.", "Suscipit commodi numquam.", "Quia dicta debitis.", "Iusto quo officiis quas eius eaque dolor autem.", "Illo dolore voluptas et nisi.", "Laborum dolor perferendis quae pariatur iusto tenetur qui.", "Qui perferendis ut enim ut officiis.", "Et accusantium natus earum dolore autem sapiente.", "In optio suscipit accusantium libero non qui.", "Earum ut voluptatem."]], ["heading", "Persistent 24 hour forecast"], ["location", "486 Avis Centers"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 5 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 5], ["category_id", 6], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "incidunt"], ["description", ["Eveniet consequatur aut ut.", "Impedit tempore modi commodi necessitatibus dolores ipsam reiciendis.", "Ea qui dolores id veniam.", "Doloribus eaque officia laborum iusto et ea.", "Pariatur ut aut.", "Ut libero sunt nam nobis.", "Et sit ullam molestias quos est.", "Vel blanditiis non perferendis consequatur molestiae non voluptas.", "Eligendi qui consequatur aut maiores voluptatem reprehenderit.", "Ipsam fuga omnis consequatur tenetur odit."]], ["heading", "Digitized interactive solution"], ["location", "32326 Nicolas Lakes"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 6], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "hic"], ["description", ["Quae in provident eos ipsam qui.", "Aut vitae ut expedita omnis quo.", "Hic pariatur dolorum.", "Quasi et illum et pariatur occaecati.", "Distinctio totam quam.", "Optio corporis sed vitae.", "Delectus molestiae illo tempore quisquam voluptas.", "Omnis magnam est.", "Modi saepe numquam.", "Odit at nisi fugit."]], ["heading", "Realigned context-sensitive time-frame"], ["location", "94331 Litzy Grove"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.2ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 6 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 6], ["category_id", 4], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "consequuntur"], ["description", ["Unde ut sunt.", "Eaque alias nam ratione sunt in.", "Doloremque itaque vitae laboriosam corporis minima et.", "Nostrum soluta omnis a harum laboriosam placeat.", "Fugiat voluptate qui in officia explicabo.", "Sed corrupti similique et.", "Eaque exercitationem explicabo sit dolores quas.", "Rerum in consectetur.", "Est sed quibusdam.", "Molestiae id aut molestiae animi est."]], ["heading", "Triple-buffered static portal"], ["location", "53237 Kihn Plains"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 3 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 3], ["category_id", 2], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "cumque"], ["description", ["Non ea maiores facilis laboriosam rerum quaerat et.", "Voluptas qui fuga exercitationem eum esse.", "Laboriosam aspernatur optio.", "Voluptates voluptatibus sequi dolores error sint rerum eos.", "Perspiciatis porro eos libero molestiae deleniti ut ad.", "Ut et omnis iure reprehenderit sed porro.", "Rerum quos numquam officiis et.", "Itaque ab sed pariatur.", "Aspernatur harum aliquid.", "Molestias voluptatem sit quia aut at."]], ["heading", "Digitized solution-oriented success"], ["location", "61268 Stracke Green"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 3], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "voluptate"], ["description", ["Ipsum est delectus hic.", "Error voluptatum ea nihil.", "Animi quia cupiditate quisquam.", "Ut ea laborum itaque dolores corrupti officiis vel.", "Non ullam error ut.", "Aut sint exercitationem aspernatur id officia.", "Et rem distinctio quae cum.", "Omnis perferendis vitae quae.", "Quaerat blanditiis voluptatem rerum.", "Dolor laborum officiis aperiam neque et ducimus."]], ["heading", "Total homogeneous collaboration"], ["location", "73922 Heathcote Prairie"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 5 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 5], ["category_id", 4], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "eum"], ["description", ["Ipsam ea sed aspernatur et voluptas corporis.", "Ut distinctio est omnis reprehenderit sequi.", "Aspernatur autem repellat.", "Ut voluptates quas ea quia.", "At fugit ad.", "Iste deserunt occaecati asperiores iure.", "Natus eius sit.", "Rerum ratione voluptatem ea deleniti.", "Consequatur molestiae est magnam.", "Vitae iste ut et."]], ["heading", "Synchronised optimal open system"], ["location", "511 Abbott Orchard"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAgency Load (0.3ms)[0m  SELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 3 LIMIT 1
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["agency_id", 3], ["category_id", 3], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "et"], ["description", ["Tenetur fugiat itaque rerum et voluptas optio.", "Animi exercitationem sit perspiciatis vel iure qui provident.", "Animi amet reprehenderit perferendis rem veritatis praesentium fuga.", "A at nihil.", "Pariatur veniam sint sed et aut.", "Et occaecati debitis quos eos.", "Veniam cum error voluptatem unde et.", "Ea eum ut et atque saepe dolore est.", "Dolore ad sint et dolor possimus doloremque soluta.", "Incidunt provident voluptatibus."]], ["heading", "Cross-platform foreground installation"], ["location", "2418 Kaleigh Village"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mAgency Load (0.3ms)[0m  [1mSELECT "agencies".* FROM "agencies" WHERE "agencies"."id" = 4 LIMIT 1[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 6 LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "jobs" ("agency_id", "category_id", "created_at", "date", "description", "heading", "location", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["agency_id", 4], ["category_id", 6], ["created_at", Sat, 03 May 2014 15:52:41 UTC +00:00], ["date", "exercitationem"], ["description", ["Est voluptates accusamus voluptatibus aut reiciendis velit ratione.", "Culpa corrupti quam.", "Est ut omnis aut exercitationem expedita.", "Aut totam in.", "Dignissimos in et doloremque sunt non eos voluptatibus.", "Non laboriosam non ex est vero sed.", "Et earum velit et ea minus.", "Porro nesciunt vel voluptates nam tenetur est aspernatur.", "Possimus repellendus laboriosam sed nemo quo dicta.", "Ad voluptas vitae earum voluptatem et magni hic."]], ["heading", "Inverse optimal neural-net"], ["location", "71289 Orval Point"], ["updated_at", Sat, 03 May 2014 15:52:41 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-03 08:52:52 -0700
+Connecting to database specified by database.yml
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered categories/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 73ms (Views: 25.9ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-03 08:52:53 -0700
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-03 08:52:53 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-03 08:52:53 -0700
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-03 08:52:53 -0700
+Served asset /categories.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-03 08:52:53 -0700
+Served asset /agencies.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-03 08:52:53 -0700
+Served asset /categories.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-03 08:52:53 -0700
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-03 08:52:54 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.4ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 66ms (Views: 32.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-03 08:52:54 -0700
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-03 08:52:54 -0700
+Served asset /agencies.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-03 08:52:54 -0700
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-03 08:52:54 -0700
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-03 08:52:54 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-03 08:52:54 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-03 08:52:54 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-03 08:53:26 -0700
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-03 08:53:26 -0700
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-03 08:53:26 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-03 08:53:26 -0700
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-03 08:53:26 -0700
+Served asset /agencies.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-03 08:53:26 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-03 08:53:26 -0700
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-03 08:53:26 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-03 08:54:15 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1
+  Rendered categories/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-03 08:54:15 -0700
+Served asset /agencies.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-03 08:54:15 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-03 08:54:15 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-03 08:54:15 -0700
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-03 08:54:15 -0700
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-03 08:54:15 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-03 08:54:15 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-03 08:54:47 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1
+  Rendered categories/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 30ms (Views: 14.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-03 08:54:47 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-03 08:54:47 -0700
+Served asset /agencies.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-03 08:54:47 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-03 08:54:47 -0700
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-03 08:54:47 -0700
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-03 08:54:47 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-03 08:54:47 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-03 08:55:30 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJob Load (0.4ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1
+  Rendered categories/show.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 29ms (Views: 15.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-03 08:55:30 -0700
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-03 08:55:30 -0700
+Served asset /agencies.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-03 08:55:30 -0700
+Served asset /categories.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-03 08:55:30 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-03 08:55:30 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-03 08:55:30 -0700
+Served asset /categories.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-03 08:55:30 -0700
+Served asset /application.js - 304 Not Modified (0ms)
