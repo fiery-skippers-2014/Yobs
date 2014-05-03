@@ -7,14 +7,11 @@ class UsersController < ApplicationController
 # New Method handled by Javascript
 
   def create
-    user = User.new (params[:user])
-    puts "THIS IS THE USER"
-    puts user
-    user.password = params[:password]
-    puts user
-    if user.save
-      session[:session_user] = user.user_name #logs new user in
-      redirect_to :root
+      user = User.new params[:user]
+      user.password = params[:password]
+      if user.save
+        session[:user_id] = user.id
+        redirect_to root_path
     else
       flash.alert = user.errors.full_messages.join(' : ')
     end

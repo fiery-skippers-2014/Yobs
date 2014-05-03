@@ -6,4 +6,5 @@
 
 .login-user {
   display: none;
+  position: absolute;
 }

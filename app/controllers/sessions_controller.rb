@@ -1,17 +1,20 @@
 class SessionsController < ApplicationController
 
-  def new
 
-  end
 
   def create
-    user = User.authenticate(params[:email], params[:password])
-    if user
+    puts " -----------EMAIL-"
+    puts params[:email]
+    user = User.find_by_email(params[:email])
+    puts " ----------NAME"
+    puts user
+    if user && user.authenticate(params[:password])
+      puts "I'm In"
       session[:user_id] = user.id
-      redirect_to root_url
+      render json: user.first_name.to_json
     else
-      flash.now.alert = "Invalid email or password"
-      render "new"
+      # flash.alert = "Invalid email or password"
+
     end
   end
 
@@ -21,3 +24,4 @@ class SessionsController < ApplicationController
   end
 
 end
+
