@@ -3,18 +3,14 @@ require 'spec_helper'
 
  describe 'Guest users' do
    context 'can create an account on the site' do
-     let!(:user) {FactoryGirl.attributes_for :user}
-     it "can go to the homepage and click a create account button that lets them sign up" do
-       visit root_path
-       click_on "Create User"
-       expect(page).to have_content "Create User"
-     end
+     let(:user) {FactoryGirl.create :user}
     it "can fill out the Create a User form and create an account" do
-        # visit root_path
-        fill_in 'user_user_name', :with => 'Shiv'
-        fill_in 'user_user_first_name', :with => 'test'
-        fill_in 'user_email', :with => 'killer@aol.com'
-        fill_in 'user_password', :with => 'Sinaloa666'
+        visit root_path
+        fill_in 'user_user_name', :with => user.user_name
+        fill_in 'user_user_first_name', :with => user.first_name
+        fill_in 'user_user_last_name', :with => user.last_name
+        fill_in 'user_email', :with => user.email
+        fill_in 'user_password', :with => user.password
         click_on "Create User"
         exp(page).eq 'Shiv'
       end
