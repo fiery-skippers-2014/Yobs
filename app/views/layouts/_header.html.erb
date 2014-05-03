@@ -4,7 +4,7 @@
     <a href="#" id="new-user-link">Register</a>
   <%else%>
     <%= current_user.user_name %>
-    <a href="/logout" id="logout-link">Log Out</a>
+    <%= link_to "Log Out", session_path, method: :delete %>
   <% end %>
 
   <div class="new-user-form">
