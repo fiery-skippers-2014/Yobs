@@ -8,6 +8,7 @@ var Job = {
 		event.preventDefault();
 		console.log("success");
 		console.log(data);
+		$($(this).parents('.job-box').children('.job-desc').children('.long-desc')).toggle();
 	},
 
 	appendError: function(event, data) {
@@ -18,4 +19,5 @@ var Job = {
 
 $(document).ready(function() {
 	Job.init();
+	$('.long-desc').hide();
 })
