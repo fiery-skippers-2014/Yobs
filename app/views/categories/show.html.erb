@@ -2,6 +2,25 @@
 
 <div id="container">
 	<%@category.jobs.each do |job|%>
-		<div class=""><a href="/job/<%=job.id%>"><%=job.heading%></a></div>
+		<div class="job-box" id="job-#{job.id}">
+			<div class="job-heading">
+				<%=job.heading%>
+			</div>
+			<div class="job-desc">
+				<%= get_short_desc(job) %>
+				<span class="long-desc">
+					<%= get_long_desc(job) %>
+				</span>
+			</div>
+			<div class="job-footer">
+				<div class="more-btn">
+					<%= link_to "Read more...", job_path(job), remote: true %>
+				</div>
+				<div class="request-btn">
+					Request Information
+				</div>
+			</div>
+		</div>
+		<br><br>
 	<%end%>
 </div>
