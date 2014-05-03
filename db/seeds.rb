@@ -23,7 +23,7 @@ end
 	agency_id: rand(1..7),
 	category_id: rand(1..6),
 	heading: Faker::Company.catch_phrase,
-  description: Faker::Lorem.paragraph,
+  description: Faker::Lorem.sentences(10),
   location: Faker::Address.street_address,
   date: Faker::Lorem.word
   )
