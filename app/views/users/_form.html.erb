@@ -1,6 +1,6 @@
 <% if session[:session_user].nil? %>
   <a href="#" id="login-link">Login</a>
-  &nbsp|&nbsp<a href="#" id="new-user-link">Register</a>
+ <a href="#" id="new-user-link">Register</a>
 <%else%>
   <a href="/logout" id="logout-link">Log Out</a>
 <%end%>
@@ -15,9 +15,3 @@
 
   <%end%>
 
-<%= form_for sessions_path, :html => { :class => 'login-user' } do |f| %>
-  <p><%= f.text_field :email, :placeholder => "Email"  %></p>
-  <p><%= f.text_field :password_hash, :placeholder => "Password"  %></p>
-  <p><%= f.submit %></p>
-
-<% end %>
