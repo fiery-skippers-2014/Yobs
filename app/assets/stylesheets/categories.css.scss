@@ -24,4 +24,24 @@
 
 #new-job-form {
 	display: none;
+	position: absolute;
 }
+
+.job-box {
+	border: 2px solid black;
+	width: 700px;
+}
+
+.job-desc {
+	border-bottom: 1px solid blue;
+	border-top: 1px solid blue;
+}
+
+.more-btn {
+	display: inline;
+}
+
+.request-btn {
+	display: inline;
+}
+

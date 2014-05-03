@@ -31,8 +31,27 @@ end
 	agency_id: rand(1..7),
 	category_id: rand(1..6),
 	heading: Faker::Company.catch_phrase,
-  description: Faker::Lorem.paragraph,
+  description: Faker::Lorem.paragraph(6),
   location: Faker::Address.street_address,
   date: rand_time(rand_time(2.days.ago))#Faker::Lorem.word
   )
+end
+
+50.times do 
+  User.create(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  user_name: Faker::Lorem.word,
+  email: Faker::Internet.email,
+  password: "password1",
+  phone: Faker::PhoneNumber.phone_number,
+  role: 'youth'
+  )
+end
+
+30.times do
+  UsersJob.create(
+    user_id: rand(50),
+    job_id: rand(50)
+    )  
 end

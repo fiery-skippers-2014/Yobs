@@ -1,7 +1,9 @@
 class Job < ActiveRecord::Base
-   belongs_to :agency
-   belongs_to :category
- 
+   	belongs_to :agency
+   	belongs_to :category
+   	has_many :users_jobs
+ 	has_many :users, :through => :users_jobs
+
    attr_accessible :agency_id, :category_id, :heading, :description, :location, :date
  
    validates :agency, :category, :heading, :description, :location, :date, :presence => true

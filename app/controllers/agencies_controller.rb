@@ -4,7 +4,7 @@ class AgenciesController < ApplicationController
 	end
 
 	def show
-		 
+		 @agency_jobs = Agency.find(params[:id]).jobs
 	end
 
 end

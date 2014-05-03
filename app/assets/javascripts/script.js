@@ -1,11 +1,11 @@
 var RegisterFormDropDown = function () {
-  $('.new-user').slideDown()};
+  $('.new-user').slideToggle()};
 
 var SignInFormDropDown = function () {
-  $('.login-user').slideDown()};
+  $('.login-user').slideToggle()};
 
 var NewJobFormDropDown = function () {
-  $('#new-job-form').slideDown()};
+  $('#new-job-form').slideToggle()};
 
 
 $(document).ready(function (){
