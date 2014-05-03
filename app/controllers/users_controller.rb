@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 
   end
 
+  def new
+    @user = User.new
+  end
+
 # New Method handled by Javascript
 
   def create

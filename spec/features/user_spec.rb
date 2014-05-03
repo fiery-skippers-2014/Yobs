@@ -12,6 +12,7 @@ require 'spec_helper'
     it "can fill out the Create a User form and create an account" do
         # visit root_path
         fill_in 'user_user_name', :with => 'Shiv'
+        fill_in 'user_user_first_name', :with => 'test'
         fill_in 'user_email', :with => 'killer@aol.com'
         fill_in 'user_password', :with => 'Sinaloa666'
         click_on "Create User"
