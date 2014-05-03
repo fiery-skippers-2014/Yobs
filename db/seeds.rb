@@ -31,7 +31,11 @@ end
 	agency_id: rand(1..7),
 	category_id: rand(1..6),
 	heading: Faker::Company.catch_phrase,
+<<<<<<< HEAD
   description: Faker::Lorem.paragraph(6),
+=======
+  description: Faker::Lorem.sentences(10),
+>>>>>>> 570bdfff03cae4d4b9214d03d2ca4f154bf673b4
   location: Faker::Address.street_address,
   date: rand_time(rand_time(2.days.ago))#Faker::Lorem.word
   )

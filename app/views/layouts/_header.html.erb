@@ -1,5 +1,38 @@
 <div class="header">
+<<<<<<< HEAD
 
   <%#= render partial: 'users/userform' %>
 
 </div>
+=======
+   TEST THIS
+  <% if !current_user %>
+    <a href="#" id="login-link">Login</a>
+    <a href="#" id="new-user-link">Register</a>
+  <%else%>
+    <%= current_user.user_name %>
+    <%= link_to "Log Out", session_path, method: :delete %>
+  <% end %>
+
+  <div class="new-user-form">
+    <%= form_for User.new do |f| %>
+      <p><%= f.text_field :user_name, :placeholder => "Username" %></p>
+      <p><%= f.text_field :first_name, :placeholder => "First Name"  %></p>
+      <p><%= f.text_field :last_name, :placeholder => "Last Name"  %></p>
+      <p><%= f.text_field :email, :placeholder => "Email"  %></p>
+      <p><%= f.text_field :password, :placeholder => "Password"  %></p>
+      <p><%= f.submit %></p>
+    <% end %>
+  </div>
+
+  <div class="login-form">
+    <%= form_tag '/sessions' %>
+      <p> <%= email_field_tag :email, nil, :placeholder => "Email" %> </p>
+      <p> <%= password_field_tag :password, nil, :placeholder => "Password" %> </p>
+      <p> <%= submit_tag "Log in", id: 'login-submit-btn' %> </p>
+  </div>
+
+</div>
+
+
+>>>>>>> 570bdfff03cae4d4b9214d03d2ca4f154bf673b4
