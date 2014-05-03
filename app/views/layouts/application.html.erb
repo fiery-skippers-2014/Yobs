@@ -4,13 +4,22 @@
   <title>YOBS</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
+	<%= render partial: 'layouts/header' %>
+	<nav>
+	  <p><%= session[:session_user] %></p>
+	</nav>
+=======
 <%= render partial: 'layouts/header' %>
 <nav>
   <p><%= session[:session_user] %></p>
 </nav>
+>>>>>>> 570bdfff03cae4d4b9214d03d2ca4f154bf673b4
 
 <%= yield %>
 
