@@ -4285,3 +4285,1288 @@ ActionController::RoutingError (No route matches [POST] "/jobs/8"):
 
 
   Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:19:52 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1
+  Rendered categories/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 23ms (Views: 12.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:19:53 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:19:53 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:19:53 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:19:53 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:19:53 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:19:53 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:19:53 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started POST "/jobs/8" for 127.0.0.1 at 2014-05-02 17:20:07 -0700
+
+ActionController::RoutingError (No route matches [POST] "/jobs/8"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:22:22 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+ERROR: compiling _app_views_categories_show_html_erb__3598306022643354617_70109173349120 RAISED /Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/views/categories/show.html.erb:14: syntax error, unexpected ')', expecting tASSOC
+... remote: true, method = "GET" );@output_buffer.safe_concat('
+...                               ^
+/Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/views/categories/show.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+/Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/views/categories/show.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/views/categories/show.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_categories_show_html_erb__3598306022643354617_70109173349120(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "categories/show";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>');@output_buffer.append= ( @category.name );@output_buffer.safe_concat('</h1>
+
+<div id="container">
+');	@category.jobs.each do |job|
+@output_buffer.safe_concat('		<div class="job-box" id="job-#{job.id}">
+			<div class="job-heading">
+				');@output_buffer.append= (job.heading);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('			</div>
+			<div class="job-desc">
+				short description
+			</div>
+			<div class="job-footer">
+				<div class="more-btn">
+					');@output_buffer.append= ( button_to "Read more...", job, remote: true, method = "GET" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('				</div>
+				<div class="request-btn">
+					Request Information
+				</div>
+			</div>
+		</div>
+		<br><br>
+');	end
+@output_buffer.safe_concat('</div>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `module_eval'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `compile'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `compile!'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/template.rb:144:in `block in render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/notifications.rb:125:in `instrument'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/template.rb:143:in `render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:19:in `render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:414:in `_run__101531000911930393__process_action__3237598698619603103__callbacks'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:121:in `process'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_controller/metal.rb:246:in `block in action'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activerecord-3.2.14/lib/active_record/query_cache.rb:64:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activerecord-3.2.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `_run__1624367633205256466__call__3990320199624227551__callbacks'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/railties-3.2.14/lib/rails/rack/logger.rb:32:in `call_app'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `block in call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/tagged_logging.rb:22:in `tagged'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/activesupport-3.2.14/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/static.rb:63:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/railties-3.2.14/lib/rails/engine.rb:484:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/railties-3.2.14/lib/rails/application.rb:231:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/railties-3.2.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered categories/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (/Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/views/categories/show.html.erb:14: syntax error, unexpected ')', expecting tASSOC
+... remote: true, method = "GET" );@output_buffer.safe_concat('
+...                               ^
+/Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/views/categories/show.html.erb:22: syntax error, unexpected keyword_end, expecting ')'
+/Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/views/categories/show.html.erb:24: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/views/categories/show.html.erb:26: syntax error, unexpected keyword_end, expecting ')'):
+    11: 			</div>
+    12: 			<div class="job-footer">
+    13: 				<div class="more-btn">
+    14: 					<%= button_to "Read more...", job, remote: true, method = "GET" %>
+    15: 				</div>
+    16: 				<div class="request-btn">
+    17: 					Request Information
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.14) lib/action_view/template.rb:244:in `block in compile!'
+  <internal:prelude>:10:in `synchronize'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.14) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.14) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:19:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__101531000911930393__process_action__3237598698619603103__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1624367633205256466__call__3990320199624227551__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:22:47 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:22:47 -0700
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:22:47 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:22:47 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:22:47 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:22:47 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:22:47 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:22:47 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started POST "/jobs/8" for 127.0.0.1 at 2014-05-02 17:22:49 -0700
+
+ActionController::RoutingError (No route matches [POST] "/jobs/8"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started POST "/jobs/8" for 127.0.0.1 at 2014-05-02 17:23:00 -0700
+
+ActionController::RoutingError (No route matches [POST] "/jobs/8"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:24:54 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:24:54 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:24:54 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:24:54 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:24:54 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:24:54 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:24:54 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:24:54 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:24:58 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:24:59 -0700
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:24:59 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:24:59 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:24:59 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:24:59 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:24:59 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:24:59 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:25:00 -0700
+
+LoadError (Expected /Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/controllers/jobs_controller.rb to define JobsController):
+  activesupport (3.2.14) lib/active_support/dependencies.rb:503:in `load_missing_constant'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1624367633205256466__call__3990320199624227551__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:25:12 -0700
+
+ActionController::RoutingError (uninitialized constant JobsController):
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:229:in `constantize'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1624367633205256466__call__3990320199624227551__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:26:11 -0700
+
+LoadError (Expected /Users/jonathanwrobel/DevBoot/Phase_3/yobs/app/controllers/jobs_controller.rb to define JobsController):
+  activesupport (3.2.14) lib/active_support/dependencies.rb:503:in `load_missing_constant'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1624367633205256466__call__3990320199624227551__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/jonathanwrobel/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (21.1ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.3ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:26:35 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 5ms
+
+ActiveRecord::RecordNotFound (Couldn't find Job without an ID):
+  app/controllers/jobs_controller.rb:4:in `show'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 17:26:40 -0700
+Processing by CategoriesController#index as HTML
+  Rendered categories/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 2ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: 
+    2: <div id="container">
+    3: 	<%@categories.each do |category|%>
+    4: 		<div class="cat_square <%=category.name%>"><a href="/categories/<%=category.id%>"><%=category.name%></a></div>
+    5: 	<%end%>
+    6: </div>
+  app/views/categories/index.html.erb:3:in `_app_views_categories_index_html_erb__871953626270832426_70109152303820'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 17:26:45 -0700
+Processing by CategoriesController#index as HTML
+  Rendered categories/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 1ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: 
+    2: <div id="container">
+    3: 	<%@categories.each do |category|%>
+    4: 		<div class="cat_square <%=category.name%>"><a href="/categories/<%=category.id%>"><%=category.name%></a></div>
+    5: 	<%end%>
+    6: </div>
+  app/views/categories/index.html.erb:3:in `_app_views_categories_index_html_erb__871953626270832426_70109152303820'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 17:27:22 -0700
+Processing by CategoriesController#index as HTML
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" 
+  Rendered categories/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 3.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:27:22 -0700
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:27:22 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:27:22 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:27:22 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:27:22 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:27:22 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:27:22 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:27:26 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1
+  Rendered categories/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 37ms (Views: 12.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:27:27 -0700
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:27:27 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:27:27 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:27:27 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:27:27 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:27:27 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:27:27 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:27:28 -0700
+Processing by JobsController#show as JS
+  Parameters: {"id"=>"8"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find Job without an ID):
+  app/controllers/jobs_controller.rb:4:in `show'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.7ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:27:55 -0700
+Processing by JobsController#show as JS
+  Parameters: {"id"=>"8"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find Job without an ID):
+  app/controllers/jobs_controller.rb:4:in `show'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.7ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:29:26 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE (category_id = 1)[0m
+  Rendered categories/show.html.erb within layouts/application (37.4ms)
+Completed 500 Internal Server Error in 48ms
+
+ActionView::Template::Error (undefined method `jobs_path' for #<#<Class:0x007f871b99ee28>:0x007f871b9a3bf8>):
+    11: 			</div>
+    12: 			<div class="job-footer">
+    13: 				<div class="more-btn">
+    14: 					<%= link_to "Read more...", jobs_path(job), remote: true %>
+    15: 				</div>
+    16: 				<div class="request-btn">
+    17: 					Request Information
+  app/views/categories/show.html.erb:14:in `block in _app_views_categories_show_html_erb__3598306022643354617_70109130200240'
+  app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__3598306022643354617_70109130200240'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.6ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:30:28 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:30:28 -0700
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:28 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:30:28 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:28 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:28 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:30:28 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:28 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:30:31 -0700
+Processing by JobsController#show as JS
+  Parameters: {"id"=>"8"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find Job without an ID):
+  app/controllers/jobs_controller.rb:5:in `show'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.7ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:30:35 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:30:35 -0700
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:30:35 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:35 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:30:35 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:35 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:35 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:35 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:30:44 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:30:45 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:30:45 -0700
+Served asset /agencies.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:45 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:30:45 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:45 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:45 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:30:45 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:30:50 -0700
+Processing by JobsController#show as JS
+  Parameters: {"id"=>"8"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find Job without an ID):
+  app/controllers/jobs_controller.rb:5:in `show'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.6ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:39:22 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 21ms (Views: 11.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:39:22 -0700
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:39:22 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:39:22 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:39:22 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:39:22 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:39:22 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:39:22 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:39:24 -0700
+Processing by JobsController#show as JS
+  Parameters: {"id"=>"8"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find Job without an ID):
+  app/controllers/jobs_controller.rb:5:in `show'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.6ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:40:38 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 24ms (Views: 12.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:40:38 -0700
+Served asset /agencies.css - 200 OK (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:40:38 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:40:38 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:40:38 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:40:38 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:40:38 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:40:38 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:40:40 -0700
+Processing by JobsController#show as JS
+  Parameters: {"id"=>"8"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find Job without an ID):
+  app/controllers/jobs_controller.rb:5:in `show'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.5ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:47:06 -0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"8"}
+Completed 404 Not Found in 0ms
+
+ActiveRecord::RecordNotFound (Couldn't find Job without an ID):
+  app/controllers/jobs_controller.rb:5:in `show'
+
+
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/jonathanwrobel/.rvm/gems/ruby-1.9.3-p545/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.1ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:48:15 -0700
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", "8"]]
+  Rendered jobs/_extended_display.html.erb (0.2ms)
+Completed 200 OK in 12ms (Views: 3.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:48:20 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1
+  Rendered categories/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:48:20 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:48:20 -0700
+Served asset /agencies.css - 200 OK (1ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:48:20 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:20 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:20 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:20 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:20 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-02 17:48:20 -0700
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered categories/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:48:21 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:48:21 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:21 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:48:21 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:21 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:21 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:21 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 17:48:22 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1[0m
+  Rendered categories/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 17:48:22 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:22 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 17:48:22 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 17:48:22 -0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:22 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:22 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 17:48:22 -0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/jobs/8" for 127.0.0.1 at 2014-05-02 17:48:24 -0700
+Processing by JobsController#show as JS
+  Parameters: {"id"=>"8"}
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."id" = $1 LIMIT 1  [["id", "8"]]
+  Rendered jobs/_extended_display.html.erb (0.3ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2014-05-02 18:57:00 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs" WHERE "jobs"."category_id" = 1
+  Rendered categories/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-02 18:57:00 -0700
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/agencies.css?body=1" for 127.0.0.1 at 2014-05-02 18:57:00 -0700
+Served asset /agencies.css - 200 OK (0ms)
+
+
+Started GET "/assets/categories.js?body=1" for 127.0.0.1 at 2014-05-02 18:57:00 -0700
+Served asset /categories.js - 200 OK (0ms)
+
+
+Started GET "/assets/categories.css?body=1" for 127.0.0.1 at 2014-05-02 18:57:00 -0700
+Served asset /categories.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-02 18:57:00 -0700
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-02 18:57:00 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-02 18:57:00 -0700
+Served asset /application.js - 200 OK (0ms)
