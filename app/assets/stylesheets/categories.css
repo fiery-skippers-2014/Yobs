@@ -1,5 +1,41 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.cat_square a {
+	text-decoration: none;
+}
+
+.cat_square {
+	height: 200px;
+	width: 200px;
+	border: 1px solid red;
+	display: inline-block;
+	margin: 5px 5px 5px 5px;
+}
+
+#new-user-form {
+  display: none;
+  position: absolute;
+  background-color: white;
+}
+
+#login-form {
+  display: none;
+  position: absolute;
+  background-color: white;
+}
+
+#new-job-form {
+	display: none;
+	position: absolute;
+	background-color: white;
+}
+
 .job-box {
 	border: 2px solid black;
+	width: 700px;
 }
 
 .job-desc {
@@ -13,21 +49,4 @@
 
 .request-btn {
 	display: inline;
-}
-
-
-.cat_square {
-	height: 200px;
-	width: 200px;
-	border: 1px solid red;
-	display: inline-block;
-	margin: 5px 5px 5px 5px;
-}
-
-.cat_square a {
-	text-decoration: none;
-}
-
-.job-box {
-	border: 2px solid black;
 }
