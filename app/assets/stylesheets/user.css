@@ -1,21 +1,12 @@
 
-<<<<<<< HEAD
-.new-user {
-=======
 .new-user-form {
->>>>>>> 570bdfff03cae4d4b9214d03d2ca4f154bf673b4
+
   display: none;
   position: absolute;
 }
 
-<<<<<<< HEAD
-.login-user {
-  display: none;
-  position: absolute;
-}
-=======
 .login-form {
   display: none;
   position: absolute;
 }
->>>>>>> 570bdfff03cae4d4b9214d03d2ca4f154bf673b4
+

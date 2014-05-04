@@ -2,9 +2,9 @@ YOBS::Application.routes.draw do
 
   resources :categories, :only => [:index, :show]
   
-  resources :agencies #do
+  resources :agencies do
     resources :jobs
-  # end
+  end
 
 
   resources :users

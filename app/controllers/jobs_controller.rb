@@ -13,6 +13,10 @@ class JobsController < ApplicationController
 		@categories = Category.new
 	end
 
+	def show
+		
+	end
+
 	def create
 		job = Job.new(params[:job])
 		job.category_id = params[:category]

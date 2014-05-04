@@ -10,6 +10,16 @@ categs = %w(Parks_&_Rec Hospitality Aerospace Health Office Misc)
 
 categs.each {|categ| Category.create(:name => categ)}
 
+User.create(
+  first_name: 'test',
+  last_name: 'test',
+  user_name: 'test',
+  email: 'test@test.com',
+  password: "test",
+  phone: 'test',
+  role: 'youth'
+  )
+
 7.times do
   Agency.create(
     name: Faker::Company.name,
@@ -26,16 +36,12 @@ def rand_in_range(from, to)
   rand * (to - from) + from
 end
 
-50.times do 
+100.times do 
 	Job.create(
 	agency_id: rand(1..7),
 	category_id: rand(1..6),
 	heading: Faker::Company.catch_phrase,
-<<<<<<< HEAD
-  description: Faker::Lorem.paragraph(6),
-=======
   description: Faker::Lorem.sentences(10),
->>>>>>> 570bdfff03cae4d4b9214d03d2ca4f154bf673b4
   location: Faker::Address.street_address,
   date: rand_time(rand_time(2.days.ago))#Faker::Lorem.word
   )
@@ -53,9 +59,9 @@ end
   )
 end
 
-30.times do
-  UsersJob.create(
-    user_id: rand(50),
-    job_id: rand(50)
+150.times do
+  Interest.create(
+    user_id: rand(1..51),
+    job_id: rand(1..100)
     )  
 end

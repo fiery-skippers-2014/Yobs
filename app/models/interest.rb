@@ -1,4 +1,4 @@
-class UsersJob < ActiveRecord::Base
+class Interest < ActiveRecord::Base
 
 	attr_accessible :user_id, :job_id
 

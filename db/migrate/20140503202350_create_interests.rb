@@ -1,9 +1,10 @@
-class CreateUsersJobs < ActiveRecord::Migration
+class CreateInterests < ActiveRecord::Migration
  def change
-     create_table :users_jobs do |t|
+     create_table :interests do |t|
      	t.integer :user_id
      	t.integer :job_id
        	t.timestamps
      end
    end	
 end
+
