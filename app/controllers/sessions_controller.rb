@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       if agency?(user)
-        redirect_to agency_path
+        agency = user.agencies.first
+        redirect_to agency_path(agency)
       else
         redirect_to root_path
       end
