@@ -1,5 +1,5 @@
-<div id="new-job-form">
-  <%= form_for ([@agency, @job]), :html => { :id => 'new-job-form' } do |f| %>
+<div id="new-job-form"> <!-- form currently goes to sessions path --> 
+  <%= form_for [@agency, @job], :html => { :id => 'new-job-form' } do |f| %>
   	<%#= select_tag 'category', (:category)%>
   	<%#= options_for_select([['Healthcare', 1], ['Misc', 2]]) %>
     <select name="category" id="category" >
@@ -18,4 +18,5 @@
 </div>
 
   <!--   pick better datepicker depending on final look of the page
-    http://www.hongkiat.com/blog/useful-calendar-date-picker-scripts-for-web-developers/ -->
+    http://www.hongkiat.com/blog/useful-calendar-date-picker-scripts-for-web-developers/ -->*
+    *************************---

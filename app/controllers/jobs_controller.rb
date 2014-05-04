@@ -17,7 +17,8 @@ class JobsController < ApplicationController
 		
 	end
 
-	def create
+	def create # form currently misroutes to the sessions controller
+		puts "We're in the jobs controller"
 		job = Job.new(params[:job])
 		job.category_id = params[:category]
 		job.agency_id = params[:agency_id]
