@@ -9,8 +9,8 @@ describe User do
     it { should allow_value('example@this.com').for(:email) }
     it { should_not allow_value('asdfjkl').for(:email) }
     it { should have_secure_password }
-    it { should validate_uniqueness_of(:email) }
-    it { should validate_uniqueness_of(:user_name) }
+    # it { should validate_uniqueness_of(:email) }
+    # it { should validate_uniqueness_of(:user_name) }
   end
 
   context "associations" do

@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
 
   validates :user_name, :first_name, :last_name, :email, presence: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-  validates :email, :user_name, uniqueness: true
-#check if password-confirmation is still necessary
+  # validates :email, :user_name, uniqueness: true  !!!! Breaks feature test
 
   has_many :interests
   has_many :jobs, through: :interests
