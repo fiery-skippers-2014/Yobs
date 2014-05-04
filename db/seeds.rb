@@ -62,3 +62,9 @@ User.create(
   role: "agency"
   )
 
+
+Account.create(
+  user_id: 101,
+  agency_id: 1
+)
+
