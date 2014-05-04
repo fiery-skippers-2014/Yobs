@@ -8,5 +8,4 @@ class Job < ActiveRecord::Base
    validates :heading, :location, :date, length: { maximum: 65 }
    validates :description, length: { maximum: 600 }
 
-
  end

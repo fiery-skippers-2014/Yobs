@@ -1,6 +1,8 @@
 YOBS::Application.routes.draw do
 
   resources :categories, :only => [:index, :show]
+  resources :jobs, :only => [:index, :show]
+
   resources :users
   delete 'session' => 'sessions#destroy'
   resources :sessions, :only => [:new, :create, :destroy]
