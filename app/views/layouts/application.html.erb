@@ -18,6 +18,7 @@
               <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">Y.OBS</a>
+          <%= render partial: 'layouts/header' %>
           <div class="nav-collapse">
             <ul class="nav">
               <li>Link1</li>
@@ -26,7 +27,7 @@
               <li>Link4</li>
             </ul>
           </div>
-          <%#= render partial: 'layouts/header' %>
+
           <nav>
             <p><%= session[:session_user] %></p>
           </nav>
