@@ -3,6 +3,7 @@ var UserStuff = {
     $('#new-user-link').on('click', RegisterFormDropDown);
     $('#login-link').on('click', SignInFormDropDown);
 	$('#create-job-link').on('click', NewJobFormDropDown);
+	$('.request-btn a').on('click', RequestContact);
   }
 }
 
@@ -21,6 +22,15 @@ var SignInFormDropDown = function () {
 		$('#new-user-form').slideToggle();
 	}
   $('#login-form').slideToggle();
+};
+
+var RequestContact = function () {
+	console.log($(this).closest('.job-box').attr('id'))
+// 	if ($('#new-user-form').css('display') == 'block')
+// 	{
+// 		$('#new-user-form').slideToggle();
+// 	}
+//   $('#login-form').slideToggle();
 };
 
 var NewJobFormDropDown = function () {

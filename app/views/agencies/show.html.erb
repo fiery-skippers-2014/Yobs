@@ -26,8 +26,7 @@
 	<%@agency_jobs.each do |job|%>
 		<div class="job-box" id="job-#{job.id}">
 			<div class="job-heading">
-				<a href="<%=job.agency_id%>/jobs/<%=job.id %>"><%=job.heading%></a>
-				
+				<%= link_to job.heading, url_for([@agency, job])%>
 			</div>
 			<div class="job-desc">
 				<%= job.description %>
