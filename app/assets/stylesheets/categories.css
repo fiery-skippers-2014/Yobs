@@ -10,7 +10,7 @@
 .cat_square {
 	height: 200px;
 	width: 200px;
-	border: 1px solid red;
+	border: 1px solid grey;
 	display: inline-block;
 	margin: 5px 5px 5px 5px;
 }
