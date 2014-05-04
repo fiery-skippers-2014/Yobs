@@ -1,5 +1,5 @@
 <div id="new-job-form">
-  <%= form_for Job.new, :html => { :id => 'new-job' } do |f| %>
+  <%= form_for ([Job.new, @agency]), :html => { :id => 'new-job' } do |f| %>
   	<%#= select_tag 'category', (:category)%>
   	<%#= options_for_select([['Healthcare', 1], ['Misc', 2]]) %>
     <select name="category" id="category" >

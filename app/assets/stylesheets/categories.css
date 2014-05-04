@@ -30,6 +30,7 @@
 #new-job-form {
 	display: none;
 	position: absolute;
+	background-color: white;
 }
 
 .job-box {
