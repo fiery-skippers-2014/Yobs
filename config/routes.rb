@@ -10,6 +10,7 @@ YOBS::Application.routes.draw do
   resources :users
   delete 'session' => 'sessions#destroy'
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :interests, :only => [:create]
   root :to => 'categories#index'
 
   # get "log_out" => "sessions#destroy", :as => "log_out"
