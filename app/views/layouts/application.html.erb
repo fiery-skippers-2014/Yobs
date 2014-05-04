@@ -7,10 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render partial: 'layouts/header' %>
-<nav>
-  <p><%= session[:session_user] %></p>
-</nav>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse"
+          data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Y.OBS</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li>Link1</li>
+              <li>Link2</li>
+              <li>Link3</li>
+              <li>Link4</li>
+            </ul>
+          </div>
+          <%#= render partial: 'layouts/header' %>
+          <nav>
+            <p><%= session[:session_user] %></p>
+          </nav>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <%= yield %>
 </div>
