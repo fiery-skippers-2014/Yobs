@@ -14,11 +14,13 @@ class JobsController < ApplicationController
 	end
 
 	def show
-		
+    	@job_title = "SOMETHING"
+	    @users = Job.find(params[:id]).users
+	    p @users
 	end
 
 	def create # form currently misroutes to the sessions controller
-		puts "We're in the jobs controller"
+		puts "We're in the jobs create action"
 		job = Job.new(params[:job])
 		job.category_id = params[:category]
 		job.agency_id = params[:agency_id]
