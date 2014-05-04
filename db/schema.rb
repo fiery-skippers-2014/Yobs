@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20140502225442) do
     t.datetime "updated_at",  :null => false
   end
 
-
   create_table "users", :force => true do |t|
     t.string   "user_name"
     t.string   "first_name"
