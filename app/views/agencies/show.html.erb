@@ -1,0 +1,23 @@
+
+<a href="#" id="create-job-link">Post New Job</a>
+
+<%= render 'jobs/form'%>
+
+<div id="container">
+	<%@agency_jobs.each do |job|%>
+		<div class="job-box" id="job-#{job.id}">
+			<div class="job-heading"><%=job.heading%></div>
+			<div class="job-desc">
+				<%= job.description %>
+			</div>
+			<div class="job-footer">
+				<div class="more-btn">
+					<%if job.users.length > 0%>
+						<p class="red"><%=job.users.length %> contacts</p>
+					<%end%>
+				</div>
+			</div>
+		</div>
+		<br><br>
+	<%end%>
+</div>

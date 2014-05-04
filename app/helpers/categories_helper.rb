@@ -5,7 +5,11 @@ module CategoriesHelper
 	end
 
 	def get_long_desc(job)
-		@long = ' ' + job.description.split[26..(job.description.length-1)].join(' ')
-		@long
+		if job.description.length > @short.length
+			' ' + job.description.split[26..(job.description.length-1)].join(' ')
+		end
+		# @long = ' ' + job.description.split[26..(job.description.length-1)].join(' ')
+		# @long
+
 	end
 end

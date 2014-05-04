@@ -1,12 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
-categs = %w(parks_rec hospitality aerospace health office misc)
+categs = %w(Parks_&_Rec Hospitality Aerospace Health Office Misc)
 
 categs.each {|categ| Category.create(:name => categ)}
 
@@ -18,7 +11,8 @@ categs.each {|categ| Category.create(:name => categ)}
     )
 end
 
-50.times do 
+100.times do
+
 	Job.create(
 	agency_id: rand(1..7),
 	category_id: rand(1..6),
@@ -28,3 +22,38 @@ end
   date: Faker::Lorem.word
   )
 end
+
+
+100.times do
+  User.create(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  user_name: Faker::Lorem.word,
+  email: Faker::Internet.email,
+  password: "password1",
+  phone: Faker::PhoneNumber.phone_number,
+  role: 'youth'
+  )
+end
+
+150.times do
+  Interest.create(
+    user_id: rand(1..51),
+    job_id: rand(1..100)
+    )
+end
+
+User.create(
+  first_name: "laura",
+  last_name: "cossette",
+  user_name: "laura",
+  email: "me@me.com",
+  password: "password",
+  role: "agency"
+  )
+
+Account.create(
+  user_id: 101,
+  agency_id: 1
+)
+
