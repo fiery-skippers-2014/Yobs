@@ -3,16 +3,6 @@ categs = %w(Parks_&_Rec Hospitality Aerospace Health Office Misc)
 
 categs.each {|categ| Category.create(:name => categ)}
 
-User.create(
-  first_name: 'test',
-  last_name: 'test',
-  user_name: 'test',
-  email: 'test@test.com',
-  password: "test",
-  phone: 'test',
-  role: 'youth'
-  )
-
 7.times do
   Agency.create(
     name: Faker::Company.name,
@@ -61,7 +51,6 @@ User.create(
   password: "password",
   role: "agency"
   )
-
 
 Account.create(
   user_id: 101,
