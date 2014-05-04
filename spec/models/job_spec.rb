@@ -17,6 +17,8 @@ require 'spec_helper'
   context "associations" do
     it { should belong_to(:agency) }
     it { should belong_to(:category) }
+    it { should have_many(:interests) }
+    it { should have_many(:users) }
   end
 
  end
