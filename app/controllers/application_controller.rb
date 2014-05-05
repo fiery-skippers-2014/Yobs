@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   # include Authentication
   protect_from_forgery
+  before_filter :current_user
   helper_method :current_user
 
   def redirect_if_youth
