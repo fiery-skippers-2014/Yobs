@@ -1,9 +1,11 @@
-
-<div id="container">
+<div class="row">
 	<%@categories.each do |category|%>
-		<div class="cat_square <%=category.name%>"><a href="/categories/<%=category.id%>">
-			<%= image_tag(category.id.to_s + ".png", :alt => category.name ) %>
-			<%=category.name%></a></div>
-	<%end%>
+		<div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+			<a href="/categories/<%=category.id%>">
+				<%= image_tag(category.id.to_s + ".png", :alt => category.name ) %>
+				<%=category.name%>
+			</a>
+		</div>
+<%end%> 
 </div>
 
