@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+	before_filter :redirect_if_youth
 
 	def index
 	  @jobs = Job.order(:created_at)
