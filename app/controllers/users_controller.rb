@@ -11,15 +11,15 @@ class UsersController < ApplicationController
 # New Method handled by Javascript
 
   def create
-      user = User.new params[:user]
-      user.password = params[:password]
-      if user.save
-        session[:user_id] = user.id
-        redirect_to root_path
+    user = User.new params[:user]
+    user.password = params[:password]
+    if user.save
+      session[:user_id] = user.id
+      redirect_to root_path
     else
       flash.alert = user.errors.full_messages.join(' : ')
-        redirect_to root_path
+      puts user.errors.full_messages.join(' : ')
+      redirect_to root_path
     end
   end
-
 end
