@@ -1,7 +1,7 @@
 <div id="container">
   <%@category.jobs.each do |job|%>
-      <div class="job-box" id="job-<%=job.id%>">
-      <div class="job-heading"><%=job.heading%></div>
+      <div class="col-md-12 job-box" id="job-<%=job.id%>">
+      <div class="job-heading panel-heading"><h5><%=job.heading%></h5></div>
       <div class="job-desc">
         <%= get_short_desc(job) %>
         <span class="long-desc">
@@ -11,13 +11,14 @@
 
       <div class="job-footer">
         <div class="more-btn">
-          <%= link_to "Read more...", "#" %>
+    <button class ="more-btn btn btn-default">See More...</button>
         </div>
+        <div class="getapp">
           <button class ="guest_interest-btn job-<%=job.id%> ">Get Application</button>
+        </div>
       </div>
 
     </div>
-    <br><br>
   <%end%>
 
 </div>

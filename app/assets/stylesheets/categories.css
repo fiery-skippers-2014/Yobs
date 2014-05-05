@@ -7,6 +7,8 @@
 	text-decoration: none;
 }
 
+
+
 .cat_square {
 	height: 200px;
 	width: 200px;
@@ -17,14 +19,16 @@
 
 #new-user-form {
   display: none;
-  position: absolute;
   background-color: white;
 }
 
 #login-form {
   display: none;
-  position: absolute;
-  background-color: white;
+   background-color: white;
+}
+
+#login-form form p input {
+  height: 33px;
 }
 
 #new-job-form {
@@ -33,10 +37,16 @@
 	background-color: white;
 }
 
+#new-user-form form p input {
+  height: 33px;
+}
+
 .job-box {
 	border: 2px solid black;
-	width: 700px;
-}
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #98e698;
+	}
 
 .job-desc {
 	border-bottom: 1px solid blue;
@@ -52,12 +62,31 @@
 }
 
 .interested {
-  background-color: #ddd;
+    background-color: #ddd;
 }
 
 .hidden {
   display: none;
 }
 
+.getapp {
+  float: right;
+  margin-right: 3px;
+  margin-top: 2px;
+  display: inline-block;
+}
 
+.job-heading {
+  text-align: center;
+  padding: 0;
+}
 
+.logo {
+  display: inline-block;
+  float: right;
+  margin-right: 20%;
+}
+
+.logo a {
+  text-decoration: none;
+}
