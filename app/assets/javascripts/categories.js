@@ -3,6 +3,7 @@ var Job = {
 		$('.more-btn').on('click', this.expandDescription);
 		$('.job-box').on('click', '.interest-btn', this.saveInterest);
 		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
+
 		// var footer_tag = 'Read more...';
 	},
 
