@@ -17,16 +17,17 @@ class JobsController < ApplicationController
 
 
 	def create # form currently misroutes to the sessions controller
+		@agency = params[:agency_id]
 		puts "We're in the jobs create action"
 		job = Job.new(params[:job])
 		job.category_id = params[:category]
 		job.agency_id = params[:agency_id]
 		job.date = params[:date]
 		if job.save
-			redirect_to :back
+			redirect_to agency_path(@agency)
 		else
 			flash.alert = job.errors.full_messages.join(' : ')
-			redirect_to :back
+			redirect_to agency_path(@agency)
 		end
 	end
 
