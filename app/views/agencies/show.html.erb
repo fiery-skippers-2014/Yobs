@@ -1,12 +1,34 @@
 
 <a href="#" id="create-job-link">Post New Job</a>
 
-<%= render 'jobs/form'%>
+<%#= render 'jobs/form'%>
+
+<div id="new-job-form"> <!-- form currently goes to sessions path -->
+
+    <%= form_for [@agency, @job], :url => agency_jobs_path(@agency, @job) do |f| %>
+    	<%#= select_tag 'category', (:category)%>
+    	<%#= options_for_select([['Healthcare', 1], ['Misc', 2]]) %>
+      <select name="category" id="category" >
+      	<%Category.all.each do |category|%>
+      	  <option value="<%=category.id%>"><%=category.name%></option>
+      	<%end%>
+      </select>
+      
+    	<input type="hidden" name="agency_id" value="<%=params[:id]%>"> <!-- which is agency_id -->
+      <p><%= f.text_field :heading, :placeholder => "Heading" %></p>
+      <p><%= f.text_field :description, :placeholder => "Description"  %></p>
+      <p><%= f.text_field :location, :placeholder => "Location"  %></p>
+      <p><input type="text" id="datepicker" placeholder="date" name="date"></p>
+      <p><%= f.submit %></p>
+    <%end%>
+</div>
 
 <div id="container">
 	<%@agency_jobs.each do |job|%>
 		<div class="job-box" id="job-#{job.id}">
-			<div class="job-heading"><%=job.heading%></div>
+			<div class="job-heading">
+				<%= link_to job.heading, url_for([@agency, job])%>
+			</div>
 			<div class="job-desc">
 				<%= job.description %>
 			</div>

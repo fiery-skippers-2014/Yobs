@@ -13,34 +13,15 @@ class JobsController < ApplicationController
 		@categories = Category.new
 	end
 
- def show
-    @job_title = "SOMETHING"
-    @users = [
-      {
-        user_name: "headfdsafd1",
-        first_name: "d1fda",
-        last_name: "l1fdaf",
-        email: "12/12/fdas12",
-        password_digest: "what is that"
-      },
-      {
-        user_name: "hefdsaad2",
-        first_name: "dfdas2",
-        last_name: "lfdas2",
-        email: "12/12/12",
-        password_digest: "what is that"
-      },
-      {
-        user_name: "heaaaaaad3",
-        first_name: "dfdas3",
-        last_name: "lfdsa3",
-        email: "12/12ff/12",
-        password_digest: "what is that"
-      },
-    ]
-  end
+	def show
+    	@job_title = "SOMETHING"
+	    @users = Job.find(params[:id]).users
+	    p @users
+	end
 
-	def create
+
+	def create # form currently misroutes to the sessions controller
+		puts "We're in the jobs create action"
 		job = Job.new(params[:job])
 		job.category_id = params[:category]
 		job.agency_id = params[:agency_id]
