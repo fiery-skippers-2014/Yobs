@@ -35,6 +35,7 @@ var Job = {
 			console.log(data)
 				$(data).css('background-color','#DDD')
 				$(data).find('.interest-btn').hide()
+				$(data).find('.notinterest-btn').removeClass('hidden')
 				$(data).find('.notinterest-btn').show()
 		}
 		).error(function (){console.log("ERROR")})
