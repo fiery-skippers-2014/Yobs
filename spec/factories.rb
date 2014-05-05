@@ -24,7 +24,7 @@ FactoryGirl.define do
     name {Faker::Name.first_name}
   end
 
-<<<<<<< HEAD
+
   factory :agency do
     name {Faker::Company.name}
     address {Faker::Address.street_address}
@@ -32,12 +32,8 @@ FactoryGirl.define do
   end
 
 
+ 
   factory :job do
-    # agency_id {8}
-    # category_id {3} 
-=======
-  factory :job do
->>>>>>> 570bdfff03cae4d4b9214d03d2ca4f154bf673b4
     heading {Faker::Company.catch_phrase}
     description {Faker::Lorem.paragraph}
     location {Faker::Address.street_address}
