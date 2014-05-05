@@ -2,7 +2,7 @@ var UserStuff = {
   init: function () {
     $('#new-user-link').on('click', RegisterFormDropDown);
     $('#login-link').on('click', SignInFormDropDown);
-	$('#create-job-link').on('click', NewJobFormDropDown);
+	  $('#create-job-link').on('click', NewJobFormDropDown);
 // 	$('.request-btn a').on('click', RequestContact);
   }
 }
@@ -26,8 +26,8 @@ var SignInFormDropDown = function () {
 
 // var RequestContact = function () {
 // 	console.log($(this).closest('.job-box').attr('id'))
-// 
-// 
+//
+//
 // };
 
 var NewJobFormDropDown = function () {
@@ -47,26 +47,4 @@ $(document).ready(function(){
 	});
 
 })
-
-
-// <<div class="header">
-
-//    TEST THIS
-//   <% if !current_user %>
-//     <a href="#" id="login-link">Login</a>
-//     <a href="#" id="new-user-link">Register</a>
-//   <%else%>
-//     <%= current_user.user_name %>
-//     <%= link_to "Log Out", session_path, method: :delete %>
-//   <% end %>
-
-
-//   <div class="login-form">
-//     <%= form_tag '/sessions' %>
-//       <p> <%= email_field_tag :email, nil, :placeholder => "Email" %> </p>
-//       <p> <%= password_field_tag :password, nil, :placeholder => "Password" %> </p>
-//       <p> <%= submit_tag "Log in", id: 'login-submit-btn' %> </p>
-//   </div>
-
-// </div>
 

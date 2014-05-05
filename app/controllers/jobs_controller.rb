@@ -3,7 +3,6 @@ class JobsController < ApplicationController
 
 	def index
 	  @jobs = Job.order(:created_at)
-
 	  respond_to do |format|
 	    # format.html
 	    format.csv { send_data @jobs.as_csv }
@@ -15,9 +14,8 @@ class JobsController < ApplicationController
 	end
 
 	def show
-    	@job_title = "SOMETHING"
-	    @users = Job.find(params[:id]).users
-	    p @users
+		@job = Job.find(params[:id])
+	  @users = @job.users
 	end
 
 
@@ -33,6 +31,16 @@ class JobsController < ApplicationController
 			flash.alert = job.errors.full_messages.join(' : ')
 			redirect_to :back
 		end
+	end
+
+	def edit
+		puts "hitting route"
+	end
+
+	def update
+	end
+
+	def destroy
 	end
 
 
