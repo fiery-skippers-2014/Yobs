@@ -10,10 +10,6 @@ class JobsController < ApplicationController
 	#   end
 	# end
 
-	def new
-		@categories = Category.new
-	end
-
 	def show
 		@job = Job.find(params[:id])
 	  @users = @job.users

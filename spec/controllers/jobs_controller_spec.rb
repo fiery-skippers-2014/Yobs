@@ -20,17 +20,6 @@ describe JobsController do
 		end
 	end
 
-	# context "new" do
-	# 	it "is successful" do
-	# 		get :new
-	# 		expect(response).to be_success
-	# 	end
-
-	# 	it "assigns @job to the newly created job" do
-	# 		get :new
-	# 		expect(assigns(:job)).to be_a_new Job
-	# 	end
-	# end
 
 	# context "create" do
 	# 	it "creates valid attributes" do
