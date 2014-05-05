@@ -52,6 +52,7 @@ var Job = {
 		}).success(function(data){
 				console.log(data)
 				$(data).css('background-color','#FFF')
+				$(data).find('.interest-btn').removeClass('hidden')
 				$(data).find('.interest-btn').show()
 				$(data).find('.notinterest-btn').hide()
 			}
