@@ -1,8 +1,8 @@
 class JobsController < ApplicationController
+	before_filter :redirect_if_youth
 
 	def index
 	  @jobs = Job.order(:created_at)
-
 	  respond_to do |format|
 	    # format.html
 	    format.csv { send_data @jobs.as_csv }
@@ -14,9 +14,8 @@ class JobsController < ApplicationController
 	end
 
 	def show
-    	@job_title = "SOMETHING"
-	    @users = Job.find(params[:id]).users
-	    p @users
+		@job = Job.find(params[:id])
+	  @users = @job.users
 	end
 
 
@@ -32,6 +31,34 @@ class JobsController < ApplicationController
 			flash.alert = job.errors.full_messages.join(' : ')
 			redirect_to :back
 		end
+	end
+
+	def edit
+		puts "hitting route"
+		@agency = Agency.find(params[:agency_id])
+		@job = Job.find(params[:id])
+		render :edit
+	end
+
+	def update
+		p params
+		p "update params printing"
+		@agency = Agency.find(params[:agency_id])
+		@job = Job.find(params[:id])
+		if @job.update_attributes(params[:job])
+			p "IT'S TRUE!!!!!!!!!!!!"
+			redirect_to agency_path(@agency)
+
+		else
+			render :edit
+			p "it's false"
+		end
+	end
+
+	def destroy
+		job = Job.find(params[:id])
+		job.destroy
+		redirect_to :back
 	end
 
 
