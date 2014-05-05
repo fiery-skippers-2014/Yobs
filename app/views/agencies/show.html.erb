@@ -37,7 +37,7 @@
 					<p><%=job.users.length %> interested youth</p>
 				<%end%>
         <%= link_to "EDIT", edit_agency_job_path(job) %>
-        <%= link_to "DELETE", edit_agency_job_path(job) %>
+        <%= link_to "DELETE", [@agency, job], method: :delete %>
 			</div>
 		</div>
 		<br><br>
