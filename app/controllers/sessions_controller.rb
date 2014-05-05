@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       end
     else
       # flash.alert = "Invalid email or password"
+        redirect_to root_path
     end
   end
 
