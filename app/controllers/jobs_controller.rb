@@ -1,13 +1,14 @@
 class JobsController < ApplicationController
 	before_filter :redirect_if_youth
 
-	def index
-	  @jobs = Job.order(:created_at)
-	  respond_to do |format|
-	    # format.html
-	    format.csv { send_data @jobs.as_csv }
-	  end
-	end
+	# PLEASE MOVE IF NEEDED ELSEWHERE-- SHOULD NOT BE HERE
+	# def index
+	#   @jobs = Job.order(:created_at)
+	#   respond_to do |format|
+	#     # format.html
+	#     format.csv { send_data @jobs.as_csv }
+	#   end
+	# end
 
 	def new
 		@categories = Category.new
