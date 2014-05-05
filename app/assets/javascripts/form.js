@@ -3,6 +3,7 @@ var UserStuff = {
     $('#new-user-link').on('click', RegisterFormDropDown);
     $('#login-link').on('click', SignInFormDropDown);
 	  $('#create-job-link').on('click', NewJobFormDropDown);
+    $('.job-box').on('click', RegisterFormDropDown);
 // 	$('.request-btn a').on('click', RequestContact);
   }
 }

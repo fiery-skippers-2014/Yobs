@@ -1,0 +1,39 @@
+
+<div id="container">
+  <%@category.jobs.each do |job|%>
+      <%= job.interests.find_by_user_id(current_user.id) %>
+      <%= hack = 'interest' %>
+    <% if job.interests.find_by_user_id(current_user.id) %>
+      <div class="job-box interested" id="job-<%=job.id%>">
+    <% else %>
+      <div class="job-box" id="job-<%=job.id%>">
+      <%= hack = 'noninterest' %>
+    <% end  %>
+
+      <div class="job-heading"><%=job.heading%></div>
+      <div class="job-desc">
+        <%= get_short_desc(job) %>
+        <span class="long-desc">
+          <%= get_long_desc(job) %>
+        </span>
+      </div>
+
+      <div class="job-footer">
+        <div class="more-btn">
+          <%= link_to "Read more...", "#" %>
+        </div>
+
+        <% if hack == 'interest' %>
+          <button class ="interest-btn hidden job-<%=job.id%> ">Get Application</button>
+          <button class ="notinterest-btn job-<%=job.id%> ">Change Your Mind</button>
+        <% else %>
+          <button class ="interest-btn job-<%=job.id%> ">Get Application</button>
+          <button class ="notinterest-btn hidden job-<%=job.id%> ">Change Your Mind</button>
+        <% end %>
+      </div>
+
+    </div>
+    <br><br>
+  <%end%>
+
+</div>

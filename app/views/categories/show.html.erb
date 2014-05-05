@@ -1,32 +1,11 @@
 <h1><%= @category.name %></h1>
 
+  <% if current_user %>
+    <%= render partial: 'categories/signedin' %>
+  <% else %>
+    <%= render partial: 'categories/guest' %>
+  <% end  %>
 
-<div id="container">
-	<%@category.jobs.each do |job|%>
-		<div class="job-box" id="job-<%=job.id%>">
-			<div class="job-heading"><%=job.heading%></div>
-			<div class="job-desc">
-				<%= get_short_desc(job) %>
-				<span class="long-desc">
-					<%= get_long_desc(job) %>
-				</span>
-			</div>
-
-			<div class="job-footer">
-				<div class="more-btn">
-					<%= link_to "Read more...", "#" %>
-				</div>
-
-				<button class ="interest-btn job-<%=job.id%> ">Get Application</button>
-				<button class ="notinterest-btn job-<%=job.id%> ">Change Your Mind</button>
-
-			</div>
-
-		</div>
-		<br><br>
-	<%end%>
-
-</div>
 <script>
 	Job.init();
 </script>

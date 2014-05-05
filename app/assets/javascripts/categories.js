@@ -3,6 +3,7 @@ var Job = {
 		$('.more-btn').on('click', this.expandDescription);
 		$('.job-box').on('click', '.interest-btn', this.saveInterest);
 		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
+
 		// var footer_tag = 'Read more...';
 	},
 
@@ -35,6 +36,7 @@ var Job = {
 			console.log(data)
 				$(data).css('background-color','#DDD')
 				$(data).find('.interest-btn').hide()
+				$(data).find('.notinterest-btn').removeClass('hidden')
 				$(data).find('.notinterest-btn').show()
 		}
 		).error(function (){console.log("ERROR")})
@@ -51,6 +53,7 @@ var Job = {
 		}).success(function(data){
 				console.log(data)
 				$(data).css('background-color','#FFF')
+				$(data).find('.interest-btn').removeClass('hidden')
 				$(data).find('.interest-btn').show()
 				$(data).find('.notinterest-btn').hide()
 			}
