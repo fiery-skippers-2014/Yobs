@@ -50,3 +50,7 @@
 .request-btn {
 	display: inline;
 }
+
+.notinterest-btn{
+  display: none;
+}
