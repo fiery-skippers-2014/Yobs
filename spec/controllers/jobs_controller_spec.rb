@@ -32,27 +32,30 @@ describe JobsController do
 		end
 	end
 
-	# context "edit" do
-	# 	let(:job) {FactoryGirl.create :job}
-	# 	it "is successful" do
-	# 		get :edit, :id => job.id
-	# 		expect(response).to be_success
-	# 	end
+	context "edit" do
+		let!(:agency) {FactoryGirl.create :agency}
+		let!(:job) {FactoryGirl.create :job}
+		it "is successful" do
+			get :edit, :agency_id => agency.id, :id => job.id
+			expect(response).to be_success
+		end
 
-	# 	it "assigns @job to the Job found by id" do
-	# 		get :edit, :id => job.id
-	# 		expect(assigns(:job)).to eq job
-	# 	end
-	# end
+		it "assigns @job to the Job found by id" do
+			get :edit, :agency_id => agency.id, :id => job.id
+			expect(assigns(:agency)).to eq agency
+			expect(assigns(:job)).to eq job
+		end
+	end
 
-	# context "update" do
-	# 	let(:job) {FactoryGirl.create :job}
-	# 	it "updates attributes" do
-	# 		expect{
-	# 			put :update, :id => job.id, :job => {:name => "Namrata"}
-	# 		}
-	# 	end
-	# end
+	context "update" do
+		let!(:agency) {FactoryGirl.create :agency}
+		let(:job) {FactoryGirl.create :job}
+		it "updates attributes" do
+			put :update, :agency_id => agency.id, :id => job.id, :job => {:heading => "Namrata"}
+			job.reload
+			expect(job.heading).to eq("Namrata")
+		end
+	end
 
 # 	context "destroy" do
 # 		let!(:job) {FactoryGirl.create :job}
