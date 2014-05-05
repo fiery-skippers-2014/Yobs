@@ -57,12 +57,14 @@ describe JobsController do
 		end
 	end
 
-# 	context "destroy" do
-# 		let!(:job) {FactoryGirl.create :job}
-# 		it "deletes a record form database" do
-# 			expect{
-# 				delete :destroy, :id => job.id
-# 			}.to change {Job.count}.by (-1)
-# 		end
-# 	end
+	context "destroy" do
+		let!(:agency) {FactoryGirl.create :agency}
+		let!(:job) {FactoryGirl.create :job}
+		it "deletes a record form database" do
+			expect{
+				delete :destroy, :agency_id => agency.id, :id => job.id
+			}.to change {Job.count}.by (-1)
+		end
+	end
+
 end

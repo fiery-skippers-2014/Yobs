@@ -49,9 +49,10 @@ class JobsController < ApplicationController
 	end
 
 	def destroy
+		@agency = params[:agency_id]
 		job = Job.find(params[:id])
 		job.destroy
-		redirect_to :back
+		redirect_to agency_path(@agency)
 	end
 
 
