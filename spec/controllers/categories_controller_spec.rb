@@ -27,7 +27,8 @@ describe CategoriesController do
       expect(assigns(:category)).to eq category
     end
 
-    let(:job) { FactoryGirl.create(:job, {category: category})}
+
+    let!(:job) { FactoryGirl.create(:job, {category: category})}
     it "should assign job(s) that belong to the category to @jobs" do
       expect(assigns(:jobs)).to include(job)
     end
