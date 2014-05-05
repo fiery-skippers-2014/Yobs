@@ -32,7 +32,6 @@ FactoryGirl.define do
   end
 
 
- 
   factory :job do
     heading {Faker::Company.catch_phrase}
     description {Faker::Lorem.paragraph}

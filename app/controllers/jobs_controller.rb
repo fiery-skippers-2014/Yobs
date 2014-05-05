@@ -2,7 +2,7 @@ class JobsController < ApplicationController
 
 	def index
 	  @jobs = Job.order(:created_at)
-	  
+
 	  respond_to do |format|
 	    # format.html
 	    format.csv { send_data @jobs.as_csv }
@@ -19,6 +19,7 @@ class JobsController < ApplicationController
 	    p @users
 	end
 
+
 	def create # form currently misroutes to the sessions controller
 		puts "We're in the jobs create action"
 		job = Job.new(params[:job])
@@ -32,5 +33,6 @@ class JobsController < ApplicationController
 			redirect_to :back
 		end
 	end
+
 
 end

@@ -1,9 +1,10 @@
 class Job < ActiveRecord::Base
 
-   	belongs_to :agency
-   	belongs_to :category
-   	has_many :interests
- 	has_many :users, :through => :interests
+   belongs_to :agency
+   belongs_to :category
+   has_many :interests
+   has_many :users, through: :interests
+
 
    attr_accessible :agency_id, :category_id, :heading, :description, :location, :date
 
@@ -20,5 +21,5 @@ class Job < ActiveRecord::Base
 	    end
 	  end
 	end
-   
+
  end
