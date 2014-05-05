@@ -56,6 +56,7 @@ var Job = {
 				$(data).find('.interest-btn').removeClass('hidden')
 				$(data).find('.interest-btn').show()
 				$(data).find('.notinterest-btn').hide()
+				$(data).closest('.job-box').hide()
 			}
 		).error(function (){console.log("ERROR")})
 
