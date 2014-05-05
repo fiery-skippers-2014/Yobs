@@ -1,0 +1,27 @@
+<!-- views/users/show.html.erb -->
+<h2>Your Job Requests</h2>
+<div id="container">
+  <%@jobs.each do |job|%>
+      <div class="job-box" id="job-<%=job.id%>">
+      <div class="job-heading"><%=job.heading%></div>
+      <div class="job-desc">
+		<p><%=job.description%></p>
+      </div>
+
+      <div class="job-footer">
+          <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button>
+          <p></p>
+      </div>
+
+    </div>
+    <br><br>
+  <%end%>
+
+</div>
+
+<!-- 
+Interest.where('user_id = ? and job_id = ?', 55,29)
+ -->
+<script>
+  Job.init();
+</script>
