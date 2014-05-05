@@ -53,7 +53,7 @@ User.create(
   )
 
 Account.create(
-  user_id: 101,
+  user_id: User.find_by_email('me@me.com').id,
   agency_id: 1
 )
 
