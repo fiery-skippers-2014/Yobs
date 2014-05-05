@@ -15,7 +15,7 @@ describe JobsController do
 	end
 
 		it "assigns @job to the Job found by id" do
-			get :show, :agency_id => agency.id, :id => job.id, :role => 'agency'
+			get :show, :agency_id => agency.id, :id => job.id
 			expect(assigns(:job)).to eq job
 		end
 	end
