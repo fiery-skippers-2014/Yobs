@@ -24,11 +24,13 @@ FactoryGirl.define do
     name {Faker::Name.first_name}
   end
 
+
   factory :agency do
     name {Faker::Company.name}
     address {Faker::Address.street_address}
     phone_number {Faker::PhoneNumber.phone_number }
   end
+
 
   factory :job do
     heading {Faker::Company.catch_phrase}

@@ -29,7 +29,7 @@
 
 #new-job-form {
 	display: none;
-	position: absolute;
+	/*position: absolute;*/
 	background-color: white;
 }
 
@@ -50,3 +50,14 @@
 .request-btn {
 	display: inline;
 }
+
+.interested {
+  background-color: #ddd;
+}
+
+.hidden {
+  display: none;
+}
+
+
+

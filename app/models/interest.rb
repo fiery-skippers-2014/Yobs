@@ -4,4 +4,7 @@ class Interest < ActiveRecord::Base
 
 	belongs_to :user
 	belongs_to :job
+
+  validates :user_id, :job_id, presence: true
+  validates_uniqueness_of :job_id, :scope => :user_id
 end

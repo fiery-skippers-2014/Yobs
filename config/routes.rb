@@ -8,6 +8,11 @@ YOBS::Application.routes.draw do
 
   delete 'session' => 'sessions#destroy'
   resources :sessions, :only => [:new, :create, :destroy]
+
+  delete 'interests' => 'interests#destroy'
+  resources :interests, :only => [:create, :destroy]
+  root :to => 'categories#index'
+
   resources :agencies, :only => [:show] do
     resources :jobs
   end

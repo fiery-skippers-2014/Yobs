@@ -1,19 +1,22 @@
-wuzzup
 
-<h1><%= @job_title %></h1>
+<h1><%= @job.heading %></h1>
 
 <div id="container">
-  <%@users.each do |user|%>
-    <div class="user-box" id="">
-      <div class="user-heading">
-        <%=user[:user_name]%>
-      </div>
-      <div class="user-information">
-        <%= user[:first_name]%>
-        <%= user[:last_name]%>
-        <%= user[:email]%>
-      </div>
+  Youth that requested more information:
+
+    <div class="interests-table">
+      <table>
+        <tr>
+          <th>Name of Youth</th>
+          <th>Email</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+        </tr>
+        <% end %>
+      </table>
     </div>
     <br><br>
-  <%end%>
 </div>
