@@ -35,9 +35,24 @@ class JobsController < ApplicationController
 
 	def edit
 		puts "hitting route"
+		@agency = Agency.find(params[:agency_id])
+		@job = Job.find(params[:id])
+		render :edit
 	end
 
 	def update
+		p params
+		p "update params printing"
+		@agency = Agency.find(params[:agency_id])
+		@job = Job.find(params[:id])
+		if @job.update_attributes(params[:job])
+			p "IT'S TRUE!!!!!!!!!!!!"
+			redirect_to agency_path(@agency)
+
+		else
+			render :edit
+			p "it's false"
+		end
 	end
 
 	def destroy
