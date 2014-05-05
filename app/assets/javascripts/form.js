@@ -26,8 +26,8 @@ var SignInFormDropDown = function () {
 
 // var RequestContact = function () {
 // 	console.log($(this).closest('.job-box').attr('id'))
-// 
-// 
+//
+//
 // };
 
 var NewJobFormDropDown = function () {

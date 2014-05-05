@@ -1,7 +1,9 @@
 var Job = {
-	init: function() {
+    init: function() {
 		$('.more-btn').on('click', this.expandDescription);
-		var footer_tag = 'Read more...';
+		$('.job-box').on('click', '.interest-btn', this.saveInterest);
+		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
+		// var footer_tag = 'Read more...';
 	},
 
 	expandDescription: function() {
