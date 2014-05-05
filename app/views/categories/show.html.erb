@@ -16,11 +16,7 @@
 					<%= link_to "Read more...", "#" %>
 				</div>
 				<div class="request-btn">
-					<%= form_tag interests_path do%>
-						<input type="hidden" name="job_id" value="<%=job.id%>">
-						<input type="hidden" name="user_id" value="<%=current_user.id%>">
-				      <p> <%= submit_tag "Request Info" %> </p>
-				    <%end%>
+
 				</div>
 			</div>
 		</div>
