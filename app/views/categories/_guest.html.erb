@@ -1,11 +1,13 @@
 <div id="container">
   <%@category.jobs.each do |job|%>
       <div class="col-md-12 job-box" id="job-<%=job.id%>">
-      <div class="job-heading panel-heading"><h5><%=job.heading%></h5></div>
+      <div class="job-heading panel-heading"><h5><%=job.heading + " @ " + job.agency.name %></h5></div>
       <div class="job-desc">
         <%= get_short_desc(job) %>
         <span class="long-desc">
-          <%= get_long_desc(job) %>
+          <%= get_long_desc(job) %><br>
+          Location: <%= job.location %><br>
+          Start Date: <%= job.date %>
         </span>
       </div>
 
