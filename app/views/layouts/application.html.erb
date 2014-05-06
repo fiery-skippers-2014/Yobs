@@ -10,8 +10,9 @@
 </head>
 <body>
 
-<%= render partial: 'layouts/header' %>
-<nav>
+<nav class = "jumbotron">
+	
+	<%= render partial: 'layouts/header' %>
   <p><%= session[:session_user] %></p>
 </nav>
 <div class="container">
