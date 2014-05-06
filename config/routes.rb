@@ -10,7 +10,7 @@ YOBS::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy]
 
   delete 'interests' => 'interests#destroy'
-  resources :interests, :only => [:create, :destroy]
+  resources :interests, :only => [:create, :destroy, :update]
   root :to => 'categories#index'
 
   resources :agencies, :only => [:show] do

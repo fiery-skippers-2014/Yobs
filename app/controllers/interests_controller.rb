@@ -11,6 +11,9 @@ skip_before_filter  :verify_authenticity_token
   	end
   end
 
+  def update
+  end
+
   def destroy
     interest = current_user.interests.find_by_job_id(params["job_id"])
     job_id = interest.job_id
