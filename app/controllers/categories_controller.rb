@@ -8,4 +8,3 @@ class CategoriesController < ApplicationController
   	@jobs = @category.jobs
   end
 end
-

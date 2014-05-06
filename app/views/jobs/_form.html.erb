@@ -3,12 +3,9 @@
     <%= form_for [@agency, @job] do |f| %>
     	<%#= select_tag 'category', (:category)%>
     	<%#= options_for_select([['Healthcare', 1], ['Misc', 2]]) %>
-      <select name="category" id="category" >
-      	<%Category.all.each do |category|%>
-      	  <option value="<%=category.id%>"><%=category.name%></option>
-      	<%end%>
-      </select>
-      
+<!--       user rails helper methods for select -->
+      <%= f.select :category, @categories %>
+      <!--       user rails helper methods for input -->
     	<input type="hidden" name="agency_id" value="<%=params[:id]%>"> <!-- which is agency_id -->
       <p><%= f.text_field :heading, :placeholder => "Heading" %></p>
       <p><%= f.text_field :description, :placeholder => "Description"  %></p>
@@ -21,4 +18,3 @@
 
   <!--   pick better datepicker depending on final look of the page
     http://www.hongkiat.com/blog/useful-calendar-date-picker-scripts-for-web-developers/ -->
-    

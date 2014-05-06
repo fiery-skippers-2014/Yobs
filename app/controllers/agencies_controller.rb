@@ -1,6 +1,9 @@
 class AgenciesController < ApplicationController
-
   before_filter :redirect_if_youth
+
+  def index
+    @agencies = current_user.agencies
+  end
 
 	def show
 		@agency = Agency.find(params[:id])

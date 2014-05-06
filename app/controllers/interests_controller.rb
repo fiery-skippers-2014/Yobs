@@ -3,19 +3,20 @@ class InterestsController < ApplicationController
 skip_before_filter  :verify_authenticity_token
 
   def create
-    interest = Interest.new(:job_id => params["job_id"], :user_id => current_user.id)
+    job = Job.find(params[:job_id])
+    interest = current_user.interests.build :job => job
   	if interest.save
-      render json: "#job-#{interest.job_id}".to_json
+      # only return the job id
+      render text: job.id
   	else
-  		render json: interest.errors.full_messages.join(' : ')
+  		render text: interest.errors.full_messages.join(' : ')
   	end
   end
 
   def destroy
-    interest = current_user.interests.find_by_job_id(params["job_id"])
-    job_id = interest.job_id
-    interest.destroy
-    render json: "#job-#{job_id}".to_json
+    job = Job.find(params[:id])
+    interest = current_user.interests.delete(job)
+    render text: job.id
   end
 
 end

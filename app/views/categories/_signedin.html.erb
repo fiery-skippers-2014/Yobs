@@ -2,7 +2,7 @@
 <div id="container">
   <%@category.jobs.each do |job|%>
     <% hack = 'interest' %>
-    <% if job.interests.find_by_user_id(current_user.id) %>
+    <% if current_user.interested?(job) %>
       <div class="job-box interested" id="job-<%=job.id%>">
     <% else %>
       <div class="job-box" id="job-<%=job.id%>">

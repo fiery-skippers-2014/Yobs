@@ -1,4 +1,3 @@
-
 class User < ActiveRecord::Base
 
   attr_accessible :user_name, :first_name, :last_name, :email, :password_confirmation, :role, :phone, :password
@@ -16,6 +15,14 @@ class User < ActiveRecord::Base
 
   def name
     self.first_name + " " + self.last_name
+  end
+
+  def agency_staff?
+    self.role == "agency"
+  end
+
+  def interested? job
+    self.jobs.include? job
   end
 
 end

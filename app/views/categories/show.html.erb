@@ -1,13 +1,12 @@
 <h1><%= @category.name %></h1>
 
-  <% if current_user %>
-    <%= render partial: 'categories/signedin' %>
-  <% else %>
-    <%= render partial: 'categories/guest' %>
-  <% end  %>
+<% if current_user %>
+  <%= render partial: 'categories/signedin' %>
+<% else %>
+  <%= render partial: 'categories/guest' %>
+<% end  %>
 
 <script>
+  // this is not good. Initialize this in javascript
 	Job.init();
 </script>
-
-

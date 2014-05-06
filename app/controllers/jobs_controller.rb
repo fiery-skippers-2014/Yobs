@@ -17,11 +17,11 @@ class JobsController < ApplicationController
 
 
 	def create # form currently misroutes to the sessions controller
-		@agency = params[:agency_id]
-		job = Job.new(params[:job])
-		job.category_id = params[:category]
-		job.agency_id = params[:agency_id]
-		job.date = params[:date]
+		@agency = Agency.find params[:agency_id]
+		@job = @agency.jobs.build params[:job]
+		@job.categroy = Category.find(params[:category])
+
+		job.date = params[:date] # why is this not part of job params?
 		if job.save
 			redirect_to agency_path(@agency)
 		else
@@ -33,7 +33,6 @@ class JobsController < ApplicationController
 	def edit
 		@agency = Agency.find(params[:agency_id])
 		@job = Job.find(params[:id])
-		render :edit
 	end
 
 	def update
@@ -47,8 +46,9 @@ class JobsController < ApplicationController
 	end
 
 	def destroy
-		@agency = params[:agency_id]
+		@agency = Agency.find params[:agency_id]
 		job = Job.find(params[:id])
+		@agency.jobs.delete(job)
 		job.destroy
 		redirect_to agency_path(@agency)
 	end

@@ -7,22 +7,23 @@ var Job = {
 	// var footer_tag = 'Read more...';
 	},
 
-  // this method needs refactoring. you need to have a conversation around this.
 	expandDescription: function() {
-		if ($(this).closest('.job-box').find('.long-desc').css('display', 'inline')) {
+		if ($(this).closest('.job-box').find('.long-desc').css('display') == 'inline')
+		{
 			footer_tag = 'less'
 			console.log('less')
-		} else {
+		}
+		else
+		{
 			footer_tag = 'Read more...'
 			console.log('more')
 		}
-		// add in logic to check if long-desc is showing. if it is, change 'Read more' to 'less'
-		$($(this).closest('.job-box').find('.long-desc')).toggle();
-		return false; // prevent default click action from happening!
-     	e.preventDefault(); // same thing as above
+			// add in logic to check if long-desc is showing. if it is, change 'Read more' to 'less'
+			$($(this).closest('.job-box').find('.long-desc')).toggle();
+			return false; // prevent default click action from happening!
+	     	e.preventDefault(); // same thing as above
 	},
 
-  // let's work together on remote => true
 	saveInterest: function(event) {
 		event.preventDefault()
 		job_id = event.target.classList[1].substring(4)

@@ -3,10 +3,9 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      if agency?(user)
-        agency = user.agencies.first
-        redirect_to agency_path(agency)
+      login user
+      if user.agency_staff?
+        redirect_to agencies_path
       else
         redirect_to root_path
       end
@@ -22,4 +21,3 @@ class SessionsController < ApplicationController
   end
 
 end
-
