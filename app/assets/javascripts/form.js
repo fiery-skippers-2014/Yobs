@@ -1,8 +1,8 @@
 var UserStuff = {
   init: function () {
-    $('#new-user-link').on('click', RegisterFormDropDown);
-    $('#login-link').on('click', SignInFormDropDown);
-	  $('#create-job-link').on('click', NewJobFormDropDown);
+   //  $('#new-user-link').on('click', RegisterFormDropDown);
+   //  $('#login-link').on('click', SignInFormDropDown);
+	  // $('#create-job-link').on('click', NewJobFormDropDown);
     $('.guest_interest-btn ').on('click', RegisterFormDropDown);
 // 	$('.request-btn a').on('click', RequestContact);
   }
