@@ -26,19 +26,31 @@ require 'spec_helper'
     end
   end
 
+  context 'can login with account' do
+    let!(:user) {FactoryGirl.create :user}
+    it  'should log user in' do
+      visit root_path
+      click_on "Login"
+      fill_in 'email', :with => user.email
+      fill_in 'password', :with => user.password
+      click_on "Log in"
+      expect(page).to have_content("Log out")
+    end
+  end
 
-  # context 'can log out', :js => true do
-  #   let(:user) {FactoryGirl.create :user}
-  #   before(:each) do
-  #     ApplicationController.any_instance.stub(:current_user).and_return(user)
-  #   end
-  #   it "can log out" do
-  #     visit root_path
-  #     click_link "logout"
-  #     sleep(5) # NEEDS TO BE REFACTORED
-  #     expect(page).to have_content("Register")
-  #   end
-  # end
+
+  context 'can log out', :js => true do
+    let!(:user) {FactoryGirl.create :user}
+    it  'should log out user' do
+      visit root_path
+      click_on "Login"
+      fill_in 'email', :with => user.email
+      fill_in 'password', :with => user.password
+      click_on "Log in"
+      click_on "Log out"
+      expect(page).to have_content("Register")
+    end
+  end
 
 end
 
