@@ -8,7 +8,8 @@ gem 'rails', '3.2.14'
 gem 'pg'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
-
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
 gem 'debugger'
 
 gem 'faker'

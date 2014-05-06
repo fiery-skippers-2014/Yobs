@@ -14,7 +14,7 @@
       <p><%= f.text_field :first_name, :placeholder => "First Name"  %></p>
       <p><%= f.text_field :last_name, :placeholder => "Last Name"  %></p>
       <p><%= f.text_field :email, :placeholder => "Email"  %></p>
-      <p><%= f.text_field :password, :placeholder => "Password"  %></p>
+      <p><%= f.text_field :password, :placeholder => "Password" if f.respond_to?(:password)  %></p>
       <p><%= f.submit %></p>
     <% end %>
   </div>
