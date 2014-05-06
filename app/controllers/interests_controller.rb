@@ -12,6 +12,16 @@ skip_before_filter  :verify_authenticity_token
   end
 
   def update
+    puts " YOYOYOYOYOYO"
+    p params
+    @interest = Interest.find(params[:id])
+    @interest.response = true
+    if @interest.save
+      puts "success - if save"
+      render json: "#{@interest.user}".to_json
+    else
+
+    end
   end
 
   def destroy

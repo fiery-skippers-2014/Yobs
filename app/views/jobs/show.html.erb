@@ -16,7 +16,8 @@
           <td><%= user.name %></td>
           <td><%= user.email %></td>
           <div class="agency-response">
-            <td><%= link_to "yes", "#", :class => 'send-response', remote: true %></td>
+            <% @interest = get_interest(user.id, @job.id) %>
+            <td><%= link_to "yes", interest_path(@interest), :class => 'send-response', method: :put, remote: true %></td>
           </div>
         </tr>
         <% end %>

@@ -4,12 +4,17 @@ $(document).ready(function(){
 
 var AgencyResponse = {
   init: function() {
-    // $('#container').on('click', '.send-response', this.updateResponse)
-    $('.send-response').on("ajax:success", this.updateResponse)
-    $('.send-response').on("ajax:error", this.appendError)
+    var self = this;
+    $('.send-response').on("ajax:success", function(response) {
+        event.preventDefault();
+        self.updateResponse();
+      })
+    $('.send-response').on("ajax:error", self.appendError)
   },
 
-  updateResponse: function(event) {
+  updateResponse: function(event, data) {
+    // event.preventDefault();
+    console.log("made it here")
     console.log(event.currentTarget.className)
   },
 
