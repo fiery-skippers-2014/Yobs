@@ -1,37 +1,10 @@
-<div>
-
-  <% if !current_user %>
-    <a href="#" id="login-link">Login</a>
-    <a href="#" id="new-user-link">Register</a>
-  <%else%>
-    <%= current_user.user_name %>
-    <%= link_to "Log out", session_path, method: :delete %>
-  <% end %>
-
-  <div id="new-user-form">
-    <%= form_for User.new do |f| %>
-      <p><%= f.text_field :user_name, :placeholder => "Username" %></p>
-      <p><%= f.text_field :first_name, :placeholder => "First Name"  %></p>
-      <p><%= f.text_field :last_name, :placeholder => "Last Name"  %></p>
-      <p><%= f.text_field :email, :placeholder => "Email"  %></p>
-      <p><%= f.text_field :password, :placeholder => "Password"  %></p>
-      <p><%= f.submit %></p>
-    <% end %>
-  </div>
-
-  <div id="login-form">
-    <%= form_tag '/sessions' do %>
-      <p> <%= email_field_tag :email, nil, :placeholder => "Email" %> </p>
-      <p> <%= password_field_tag :password, nil, :placeholder => "Password" %> </p>
-      <p> <%= submit_tag "Log in", id: 'login-submit-btn' %> </p>
-   <%end %>
-
-  </div>
-
-  <div class="logo">
-    <h3><%= link_to "Yobs", root_path %></h3>
-  </div>
-
+<div class="pull-left menu">
+  <button type="button" class="btn pull-left btn-facebook1 navbar-btn">Menu</button>
 </div>
 
-
+ <div class="navbar-brand">
+    <%= link_to "Yobs", root_path %>
+  </div> 
+<div class = "pull-right sign_in">
+<a class="btn-signin pull-right btn-facebook btn navbar-btn">Sign in</a>
+</div>

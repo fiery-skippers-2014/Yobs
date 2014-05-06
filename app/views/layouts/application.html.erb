@@ -9,13 +9,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<nav class = "jumbotron">
-	
+<div>
+<nav class = "navbar .navbar-fixed-top " role="navigation" >
 	<%= render partial: 'layouts/header' %>
-  <p><%= session[:session_user] %></p>
+  <%= session[:session_user] %>
 </nav>
-<div class="container">
+</div>
+<div class="container-fluid">
   <%= yield %>
 </div>
 </body>
