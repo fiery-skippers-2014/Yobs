@@ -18,7 +18,6 @@ class JobsController < ApplicationController
 
 	def create # form currently misroutes to the sessions controller
 		@agency = params[:agency_id]
-		puts "We're in the jobs create action"
 		job = Job.new(params[:job])
 		job.category_id = params[:category]
 		job.agency_id = params[:agency_id]
@@ -32,7 +31,6 @@ class JobsController < ApplicationController
 	end
 
 	def edit
-		puts "hitting route"
 		@agency = Agency.find(params[:agency_id])
 		@job = Job.find(params[:id])
 		render :edit

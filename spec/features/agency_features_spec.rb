@@ -30,19 +30,4 @@ describe "Agencies" do
     end
   end
 
-  # context "Guest user can't create questions or answers"  do
-  #   let(:question) {FactoryGirl.create :question}
-  #   let(:answer) {FactoryGirl.create :answer }
-
-  #   it "can view questions but not create a new question" do
-  #     visit root_path
-  #     expect(page).to_not have_content "Create a Question"
-  #   end
-
-  #   it "can view questions but not create a new answer" do
-  #     visit question_path(:id => question.id)
-  #     expect(page).to_not have_content "Create an Answer"
-  #   end
-
-  # end
 end
