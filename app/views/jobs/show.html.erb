@@ -9,11 +9,15 @@
         <tr>
           <th>Name of Youth</th>
           <th>Email</th>
+          <th>Response Sent</th>
         </tr>
         <% @users.each do |user| %>
         <tr>
           <td><%= user.name %></td>
           <td><%= user.email %></td>
+          <div class="agency-response">
+            <td><%= link_to "yes", "#", :class => 'send-response', remote: true %></td>
+          </div>
         </tr>
         <% end %>
       </table>
