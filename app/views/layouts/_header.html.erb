@@ -6,5 +6,12 @@
     <%= link_to "Yobs", root_path %>
   </div> 
 <div class = "pull-right sign_in">
-<a class="btn-signin pull-right btn-facebook btn navbar-btn">Sign in</a>
+  <% if current_user %>
+		 <%= button_to "Log out", session_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", method: :delete %>
+  <% else %>
+			<%= button_to "Sign Up", sign_up_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", :method => :get %>
+
+  <% end %>
+
 </div>
+ 
