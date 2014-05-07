@@ -13,6 +13,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redirect_if_agency_user
+    if current_user
+      if agency? (current_user)
+        redirect_to agency_path(current_user.accounts.first.agency)
+      end
+    end
+  end
+
   def not_users_profile?
     current_user.id != params[:id].to_i
   end
