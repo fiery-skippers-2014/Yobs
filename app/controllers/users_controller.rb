@@ -8,6 +8,12 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+    # # @user = current_user
+    @jobs = @user.jobs
+  end
+
 # New Method handled by Javascript
 
   def create
