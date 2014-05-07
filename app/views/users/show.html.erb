@@ -6,9 +6,7 @@
 <p><%= @user.phone%></p>
 <p><%= @user.email%></p>
 
-<% if agency?(@user) %>
-  Agency user
-<%else%>
+<% if youth?(@user) %>
 
   <%if @jobs.length == 0%>
     <h3>No Job Requests</h3>
@@ -37,7 +35,7 @@
       <br><br>
     <%end%>
 
-    <% end %>
+<% end %>
 
 </div>
 

@@ -1,7 +1,7 @@
 module UsersHelper
 
-  def agency?(user)
-    user.role == 'agency'
+  def youth?(user)
+    user.role != 'agency'
   end
 
 end
