@@ -2,34 +2,25 @@ var UserStuff = {
   init: function () {
     $('#new-user-link').on('click', RegisterFormDropDown);
     $('#login-link').on('click', SignInFormDropDown);
-	  $('#create-job-link').on('click', NewJobFormDropDown);
+	$('#create-job-link').on('click', NewJobFormDropDown);
     $('.guest_interest-btn ').on('click', RegisterFormDropDown);
 // 	$('.request-btn a').on('click', RequestContact);
   }
 }
 
 var RegisterFormDropDown = function () {
-	if ($('#login-form').css('display') == 'block')
-	{
+	if ($('#login-form').css('display') == 'block')	{
 		$('#login-form').slideToggle();
 	}
-  $('#new-user-form').slideToggle();
-
+  	$('#new-user-form').slideToggle();
 };
 
 var SignInFormDropDown = function () {
-	if ($('#new-user-form').css('display') == 'block')
-	{
+	if ($('#new-user-form').css('display') == 'block'){
 		$('#new-user-form').slideToggle();
 	}
-  $('#login-form').slideToggle();
+  	$('#login-form').slideToggle();
 };
-
-// var RequestContact = function () {
-// 	console.log($(this).closest('.job-box').attr('id'))
-//
-//
-// };
 
 var NewJobFormDropDown = function () {
   $('#new-job-form').slideToggle();
@@ -44,6 +35,8 @@ $(document).ready(function(){
 	$(function() {
 		$( "#datepicker" ).datepicker();
 	});
+
+
 
 })
 

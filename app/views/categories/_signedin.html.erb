@@ -6,7 +6,7 @@
       <div class="job-box interested" id="job-<%=job.id%>">
     <% else %>
       <div class="job-box" id="job-<%=job.id%>">
-      <%= hack = 'noninterest' %>
+      <% hack = 'noninterest' %>
     <% end  %>
 
       <div class="job-heading panel-heading"><%=job.heading + " @ " + job.agency.name %></div>
@@ -23,7 +23,7 @@
 
           <div class="more-btn">
         <!--   <%= link_to "Read more...", "#" %> -->
-          <button class ="more-btn btn btn-default">See More...</button>
+            <button class ="more-btn btn btn-default">See More...</button>
           </div>
           <div class="getapp">
           <% if hack == 'interest' %>
