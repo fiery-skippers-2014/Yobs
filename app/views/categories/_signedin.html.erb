@@ -6,37 +6,34 @@
       <div class="job-box interested" id="job-<%=job.id%>">
     <% else %>
       <div class="job-box" id="job-<%=job.id%>">
-      <%= hack = 'noninterest' %>
+        <% hack = 'noninterest' %>
     <% end  %>
+        <div class="job-heading panel-heading">
+          <%=job.heading%>
+        </div>
+        <div class="job-desc">
+          <%= get_short_desc(job) %>
+          <span class="long-desc">
+            <%= get_long_desc(job) %><br>
+            Location: <%= job.location %><br>
+            Start Date: <%= job.date %>
+          </span>
+        </div>
 
-      <div class="job-heading panel-heading"><%=job.heading + " @ " + job.agency.name %></div>
-      <div class="job-desc">
-        <%= get_short_desc(job) %>
-        <span class="long-desc">
-          <%= get_long_desc(job) %><br>
-          Location: <%= job.location %><br>
-          Start Date: <%= job.date %>
-        </span>
-      </div>
+        <div class="job-footer btn-group btn-group-justified">
+          <div class="btn-group more-btn">
+            <button class ="more-btn btn btn-default">See More...</button>
 
-      <div class="job-footer">
-
-          <div class="more-btn">
-        <!--   <%= link_to "Read more...", "#" %> -->
-          <button class ="more-btn btn btn-default">See More...</button>
           </div>
-          <div class="getapp">
-          <% if hack == 'interest' %>
-            <button class =" btninterest-btn hidden job-<%=job.id%> ">Get Application</button>
-            <button class ="notinterest-btn job-<%=job.id%> ">Change Your Mind</button>
-          <% else %>
-            <button class ="interest-btn job-<%=job.id%> ">Get Application</button>
-            <button class ="notinterest-btn hidden job-<%=job.id%> ">Change Your Mind</button>
-          <% end %>
+
+          <div class="getapp btn-group">
+            <% if hack == 'interest' %>
+              <%= render partial: 'job_btn_footer_interested', :locals => {:job => job} %>
+            <% else %>
+              <%= render partial: 'job_btn_footer_no_interest', :locals => {:job => job} %>
+            <% end %>
           </div>
-      </div>
-
-    </div>
-   <%end%>
-
+        </div>
+       </div>
+     <%end%>
 </div>

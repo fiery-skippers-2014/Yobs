@@ -3,7 +3,8 @@ require 'spec_helper'
 describe AgenciesController, js: true do
   context "#show" do
     let!(:agency) { FactoryGirl.create :agency}
-    let(:user) { FactoryGirl.create :user, :role => 'agency' }
+    let!(:user) { FactoryGirl.create :user, :role => 'agency' }
+    let!(:account) {FactoryGirl.create :account, :agency => agency, :user => user}
     before(:each) do
       ApplicationController.any_instance.stub(:current_user).and_return(user)
     end

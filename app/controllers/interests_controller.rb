@@ -1,5 +1,6 @@
 class InterestsController < ApplicationController
 
+#before_filter :reroute_user
 skip_before_filter  :verify_authenticity_token
 
   def create
@@ -11,10 +12,36 @@ skip_before_filter  :verify_authenticity_token
   	end
   end
 
+  def test
+    render :json => {}
+  end
+
+  def update
+    @interest = Interest.find(params[:id])
+    if @interest.response
+      @interest.response = false
+    else
+      @interest.response = true
+    end
+    if @interest.save
+      render text: "Murphy"
+    else
+      render text: "Error"
+    end
+  end
+
   def destroy
-    interest = current_user.interests.find_by_job_id(params["job_id"])
-    job_id = interest.job_id
-    interest.destroy
+    puts "We're getting to destroy"
+    puts params
+    puts current_user
+    user_interests = current_user.interests
+    puts "ALL USER INTERESTS"
+    p user_interests
+    user_interest = user_interests.find_by_job_id(params["job_id"])
+    job_id = user_interest.job_id
+    puts "USER INTEREST"
+    puts user_interest
+    user_interest.destroy
     render json: "#job-#{job_id}".to_json
   end
 

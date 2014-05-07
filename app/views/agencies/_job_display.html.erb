@@ -5,7 +5,9 @@
         <%= link_to job.heading, url_for([@agency, job])%>
       </div>
       <div class="agency-job-desc">
-        <%= job.description %>
+        Program Start Date: <%= job.date %><br>
+        Program Location: <%= job.location %><br>
+        Program Description: <%= job.description %>
       </div>
       <div class="agency-job-footer">
         <%if job.users.length > 0%>

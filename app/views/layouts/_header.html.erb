@@ -1,4 +1,5 @@
 <div class="pull-left menu">
+<<<<<<< HEAD
   <%= link_to class="btn pull-left btn-facebook1 navbar-btn">Menu</button>
 </div>
 
@@ -10,7 +11,29 @@
      <%= button_to "Log out", session_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", method: :delete %>
   <% else %>
       <%= button_to "Sign Up", sign_up_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", :method => :get %>
+=======
+   <% if current_user %>
+	  <%= link_to image_tag("darkprofile.png", class: "pull-left img-responsiveness", alt: "p"), user_path(current_user) %>
+  <% else %>
+    <%= link_to image_tag("redprofile.png", class: "pull-left img-responsiveness", alt: "p"), sign_up_path %>
+>>>>>>> bc5930b938c9b73461ff7eaadeb663cb6002ae9c
+  <% end %>
+</div>
+
+<<<<<<< HEAD
+</div>
+ 
+=======
+ <div class="navbar-brand">
+    <%= link_to "Yobs", root_path %>
+  </div>
+<div class = "pull-right sign_in">
+  <% if current_user %>
+		 <%= link_to "Log Out", session_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", method: :delete %>
+  <% else %>
+			<%= link_to "Log In", sign_up_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", :method => :get %>
   <% end %>
 
 </div>
- 
+
+>>>>>>> bc5930b938c9b73461ff7eaadeb663cb6002ae9c

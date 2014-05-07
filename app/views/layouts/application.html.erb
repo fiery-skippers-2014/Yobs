@@ -4,17 +4,17 @@
   <title>YOBS</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= render partial: 'layouts/header' %>
-<nav>
-  <p><%= session[:session_user] %></p>
+<div>
+<nav class = "navbar .navbar-fixed-top " role="navigation" >
+	<%= render partial: 'layouts/header' %>
+  <%= session[:session_user] %>
 </nav>
-<div class="container">
+</div>
+<div class="container-fluid">
   <%= yield %>
 </div>
 </body>

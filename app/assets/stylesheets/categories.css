@@ -8,7 +8,6 @@
 }
 
 
-
 .cat_square {
 	height: 200px;
 	width: 200px;
@@ -18,14 +17,11 @@
 }
 
 #new-user-form {
-  display: none;
-  background-color: white;
+
 }
 
-#login-form {
-  display: none;
-   background-color: white;
-}
+
+
 
 #login-form form p input {
   height: 33px;
@@ -42,15 +38,27 @@
 }
 
 .job-box {
-	border: 2px solid black;
   margin: 10px 0;
   border-radius: 5px;
-  background-color: #98e698;
+  padding: 0;
+  border: 2px solid #16a085;;
 	}
 
+ /* .notapplied {
+    border: 2px solid #16a085;
+  }*/
+
+ .interested {
+  border: 2px solid #16a085;
+  background: #1abc9c;
+  color: #FAF1E3;
+}
+
+
 .job-desc {
-	border-bottom: 1px solid blue;
-	border-top: 1px solid blue;
+	border-bottom: 1px solid #16a085;
+	border-top: 1px solid #16a085;
+  padding: 5px 20px;
 }
 
 .more-btn {
@@ -61,9 +69,17 @@
 	display: inline;
 }
 
-.interested {
-    background-color: #ddd;
+.btn-lg, .btn-group-lg>.btn {
+  
+  padding: 10px 42px;
+  color: #16a085;
+
 }
+
+.guest_interest-btn .btn .btn-default .apply-btn {
+  margin-right: -1px;
+}
+
 
 .hidden {
   display: none;
@@ -81,12 +97,91 @@
   padding: 0;
 }
 
-.logo {
+.navbar-brand {
+  text-align: center;
+  margin-left:  auto;
+  margin-right: auto;
   display: inline-block;
-  float: right;
-  margin-right: 20%;
+  width: 33%;
+ 
 }
 
-.logo a {
+.navbar-brand a {
+   color: #fff;
+}
+
+.menu {
+  width: 33%;
+  display: inline-block;
+}
+
+.menu a:active, a:hover {
+  color: #1abc9c; 
   text-decoration: none;
+}
+/*.navbar_brand a {
+  text-decoration: none;
+  color: #FDF4E9;
+
+}*/
+
+.sign_in {
+  display: inline-block;
+  width: 33%;
+  padding: none;
+  margin: 0;
+
+}
+
+/*  #FDF4E9; #1abc9c; */
+
+.navbar, .navbar-default, .navbar-fixed-top {
+  background: #16a085;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    top: 0;
+}
+
+a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  color: #16a085;
+  text-decoration: none;
+}
+
+
+.btn-facebook {
+  line-height: 44px;
+  padding: 2px 15px;
+  border: none;
+  margin: 0;
+  margin-top: 0;
+}
+
+.btn-facebook1 {
+  line-height: 44px;
+  padding: 2px 15px;
+  border: none;
+  margin: 0;
+  margin-top: 0;
+}
+
+.navbar .btn {
+   margin-top: 0;
+}
+
+body {
+  background-color: #FAF1E3;
+  color: #1abc9c;
+ padding-top: 70px; 
+}
+
+nav .img-responsiveness {
+  margin-left: 10px;
+  max-width: 60%;
 }

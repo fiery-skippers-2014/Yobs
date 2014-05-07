@@ -41,4 +41,9 @@ FactoryGirl.define do
     category
   end
 
+  factory :account do
+    agency
+    user
+  end
+
  end

@@ -1,3 +1,5 @@
+
+
 <h1><%= @category.name %></h1>
 
   <% if current_user %>
@@ -5,9 +7,5 @@
   <% else %>
     <%= render partial: 'categories/guest' %>
   <% end  %>
-
-<script>
-	Job.init();
-</script>
 
 

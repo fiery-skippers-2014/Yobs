@@ -1,13 +1,15 @@
 require 'spec_helper'
 
 describe "Agencies" do
+  let!(:agency) {FactoryGirl.create :agency}
   let(:user) { FactoryGirl.create :user, :role => 'agency' }
+  let!(:account) { FactoryGirl.create :account, :agency => agency, :user => user }
     before(:each) do
       ApplicationController.any_instance.stub(:current_user).and_return(user)
     end
 
-  context "can create an job on the site", js:true do
-    let!(:agency) {FactoryGirl.create :agency}
+  context "can create an job on the site" do
+
     it "can click a link that leads to a Create Job form" do
       visit agency_path(agency)
       click_on "Post New Job"
@@ -16,7 +18,7 @@ describe "Agencies" do
 
     let!(:category) { FactoryGirl.create :category}
     let(:job) { FactoryGirl.create :job}
-    it "can fill out job form and create a new job" do
+    it "can fill out job form and create a new job", js: true do
       visit agency_path(agency)
       click_on "Post New Job"
       select category.name, :from => 'category'

@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+
+	before_filter :reroute_user
 	before_filter :redirect_if_youth
 
 	# PLEASE MOVE IF NEEDED ELSEWHERE-- SHOULD NOT BE HERE
@@ -11,12 +13,16 @@ class JobsController < ApplicationController
 	# end
 
 	def show
-		@job = Job.find(params[:id])
-	  @users = @job.users
+		if not_agencys_job?
+      redirect_to agency_path(current_user.accounts.first.agency)
+    else
+			@job = Job.find(params[:id])
+		  @users = @job.users
+		end
 	end
 
 
-	def create # form currently misroutes to the sessions controller
+	def create
 		@agency = params[:agency_id]
 		job = Job.new(params[:job])
 		job.category_id = params[:category]
