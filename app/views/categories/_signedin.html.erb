@@ -9,11 +9,13 @@
       <%= hack = 'noninterest' %>
     <% end  %>
 
-      <div class="job-heading panel-heading"><%=job.heading%></div>
+      <div class="job-heading panel-heading"><%=job.heading + " @ " + job.agency.name %></div>
       <div class="job-desc">
         <%= get_short_desc(job) %>
         <span class="long-desc">
-          <%= get_long_desc(job) %>
+          <%= get_long_desc(job) %><br>
+          Location: <%= job.location %><br>
+          Start Date: <%= job.date %>
         </span>
       </div>
 
