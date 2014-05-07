@@ -9,11 +9,16 @@
         <tr>
           <th>Name of Youth</th>
           <th>Email</th>
+          <th>Response Sent</th>
         </tr>
         <% @users.each do |user| %>
         <tr>
           <td><%= user.name %></td>
           <td><%= user.email %></td>
+          <% @interest = get_interest(user.id, @job.id) %>
+          <td>
+            <button class="response-btn interest-<%=@interest.id%>">Yes</button>
+          </td>
         </tr>
         <% end %>
       </table>

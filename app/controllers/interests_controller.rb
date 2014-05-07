@@ -11,6 +11,24 @@ skip_before_filter  :verify_authenticity_token
   	end
   end
 
+  def test
+    render :json => {}
+  end
+
+  def update
+    @interest = Interest.find(params[:id])
+    if @interest.response
+      @interest.response = false
+    else
+      @interest.response = true
+    end
+    if @interest.save
+      render text: "Murphy"
+    else
+      render text: "Error"
+    end
+  end
+
   def destroy
     interest = current_user.interests.find_by_job_id(params["job_id"])
     job_id = interest.job_id
