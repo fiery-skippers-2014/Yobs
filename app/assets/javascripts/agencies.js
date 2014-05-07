@@ -4,23 +4,27 @@ $(document).ready(function(){
 
 var AgencyResponse = {
   init: function() {
-    var self = this;
-    $('.send-response').on("ajax:success", function(response) {
-        event.preventDefault();
-        self.updateResponse();
-      })
-    $('.send-response').on("ajax:error", self.appendError)
+    $('.interests-table').on('click', '.response-btn', this.updateResponse);
   },
 
-  updateResponse: function(event, data) {
-    // event.preventDefault();
-    console.log("made it here")
-    console.log(event.currentTarget.className)
-  },
-
-  appendError: function() {
-    console.log('in error method')
+  updateResponse: function(event) {
+    event.preventDefault();
+    self = event.currentTarget
+    interest_id = event.currentTarget.classList[1].split('-')[1]
+    interest_data = {id: interest_id}
+    $.ajax({
+      url: '/interest',
+      type: "PUT",
+      data: interest_data
+    })
+    .success(function(data){
+      if ($(self).html() === 'Yes') {
+        $(self).html('Undo')}
+      else {
+        $(self).html('Yes')
+      }
+    })
+    .error(function(data){ debugger
+    })
   }
-
-
 }
