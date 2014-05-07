@@ -30,7 +30,7 @@ require 'spec_helper'
     let!(:user) {FactoryGirl.create :user}
     it  'should log user in' do
       visit root_path
-      click_on "Login"
+      click_on "Sign Up"
       fill_in 'email', :with => user.email
       fill_in 'password', :with => user.password
       click_on "Log in"
@@ -43,10 +43,10 @@ require 'spec_helper'
     let!(:user) {FactoryGirl.create :user}
     it  'should log out user' do
       visit root_path
-      click_on "Login"
+      click_on "Sign Up"
       fill_in 'email', :with => user.email
       fill_in 'password', :with => user.password
-      click_on "Log in"
+      click_on "Sign Up"
       click_on "Log out"
       expect(page).to have_content("Register")
     end
