@@ -4,23 +4,18 @@ var Job = {
 		$('.job-box').on('click', '.interest-btn', this.saveInterest);
 		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
 		$('.job-box').on('click', '.guest_cancel-btn', this.noInterest);
-
-		// var footer_tag = 'Read more...';
 	},
 
 	expandDescription: function() {
-		if ($(this).closest('.job-box').find('.long-desc').css('display') == 'inline')
-		{
-			footer_tag = 'less'
+		if ($(this).closest('.job-box').find('.long-desc').is(":visible")){
+			$(this).html('Read more...')
 		}
-		else
-		{
-			footer_tag = 'Read more...'
+		else {
+			$(this).html('Read less')
 		}
-			// add in logic to check if long-desc is showing. if it is, change 'Read more' to 'less'
-			$($(this).closest('.job-box').find('.long-desc')).toggle();
-			return false; // prevent default click action from happening!
-	     	e.preventDefault(); // same thing as above
+		$($(this).closest('.job-box').find('.long-desc')).fadeToggle();
+		return false; // prevent default click action from happening!
+     	e.preventDefault(); // same thing as above
 	},
 
 	saveInterest: function(event) {
@@ -56,7 +51,7 @@ var Job = {
 				$(data).find('.interest-btn').removeClass('hidden')
 				$(data).find('.interest-btn').show()
 				$(data).find('.notinterest-btn').hide()
-				$(data).closest('.job-box').hide()
+				$(data).closest('.job-box').css('background-color','#98e698') // should not hide, but turn box green instead
 			}
 		).error(function (){console.log("ERROR")})
 
