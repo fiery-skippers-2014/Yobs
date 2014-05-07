@@ -8,7 +8,7 @@ describe "Agencies" do
       ApplicationController.any_instance.stub(:current_user).and_return(user)
     end
 
-  context "can create an job on the site", js:true do
+  context "can create an job on the site" do
 
     it "can click a link that leads to a Create Job form" do
       visit agency_path(agency)
@@ -18,7 +18,7 @@ describe "Agencies" do
 
     let!(:category) { FactoryGirl.create :category}
     let(:job) { FactoryGirl.create :job}
-    it "can fill out job form and create a new job" do
+    it "can fill out job form and create a new job", js: true do
       visit agency_path(agency)
       click_on "Post New Job"
       select category.name, :from => 'category'
