@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     current_user.id != params[:id].to_i
   end
 
-  def not_users_agency_profile?
+  def not_agencies_profile?
     current_user.accounts.first.agency_id != params[:id].to_i
   end
 

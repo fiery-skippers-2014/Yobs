@@ -23,15 +23,20 @@ class JobsController < ApplicationController
 
 
 	def create
-		@agency = params[:agency_id]
-		job = Job.new(params[:job])
-		job.category_id = params[:category]
-		job.agency_id = params[:agency_id]
-		job.date = params[:date]
-		if job.save
+		# @agency = params[:agency_id]
+		# job = Job.new(params[:job])
+		# job.category_id = params[:category]
+		# job.agency_id = params[:agency_id]
+		######### shadi recommended refactor
+		@agency = Agency.find params[:agency_id]
+		@job = @agency.jobs.build(params[:job])
+		@job.category = Category.find(params[:category])
+		#########
+		@job.date = params[:date]
+		if @job.save
 			redirect_to agency_path(@agency)
 		else
-			flash.alert = job.errors.full_messages.join(' : ')
+			flash.alert = @job.errors.full_messages.join(' : ')
 			redirect_to agency_path(@agency)
 		end
 	end

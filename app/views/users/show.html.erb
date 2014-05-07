@@ -23,9 +23,9 @@
       <div class="job-footer">
           <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button>
 
-	<%created = Interest.where('user_id = ? and job_id = ?', @user.id,job.id).first.created_at%>
+<!-- 	<%#created = Interest.where('user_id = ? and job_id = ?', @user.id,job.id).first.created_at%> -->
 
-          <p>Applied <%=((Time.now - created)/86400).round%> days ago</p>
+          <p>Applied <%=((Time.now - @created)/86400).round%> days ago</p>
       </div>
 
     </div>

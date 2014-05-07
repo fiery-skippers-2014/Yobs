@@ -10,7 +10,10 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
       @jobs = @user.jobs
+      @jobs.each do |job|
+        @created = Interest.where('user_id = ? and job_id = ?', @user.id, job.id).first.created_at
     end
+  end
   end
 
   def create
