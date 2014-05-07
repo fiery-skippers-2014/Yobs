@@ -1,5 +1,6 @@
 class InterestsController < ApplicationController
 
+#before_filter :reroute_user
 skip_before_filter  :verify_authenticity_token
 
   def create
