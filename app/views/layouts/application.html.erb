@@ -8,12 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= render partial: 'layouts/header' %>
-<nav>
-  <p><%= session[:session_user] %></p>
+<div>
+<nav class = "navbar .navbar-fixed-top " role="navigation" >
+	<%= render partial: 'layouts/header' %>
+  <%= session[:session_user] %>
 </nav>
-<div class="container">
+</div>
+<div class="container-fluid">
   <%= yield %>
 </div>
 </body>

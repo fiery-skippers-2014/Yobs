@@ -1,7 +1,10 @@
 <div id="container">
   <%@category.jobs.each do |job|%>
-      <div class="col-md-12 job-box" id="job-<%=job.id%>">
-      <div class="job-heading panel-heading"><h5><%=job.heading + " @ " + job.agency.name %></h5></div>
+
+    <div class="col-md-12 job-box" id="job-<%=job.id%>">
+      <div class="job-heading panel-heading">
+        <h5><%=job.heading + " @ " + job.agency.name %></h5>
+      </div>
       <div class="job-desc">
         <%= get_short_desc(job) %>
         <span class="long-desc">
@@ -11,18 +14,20 @@
         </span>
       </div>
 
-      <div class="job-footer">
-        <div class="more-btn">
-    <button class ="more-btn btn btn-default">See More...</button>
+      <div class="job-footer btn-group btn-group-justified">
+        <div class="btn-group">
+          <button class ="more-btn btn-default btn">See More...</button>
         </div>
-        <div class="getapp">
-          <button class ="guest_interest-btn job-<%=job.id%> ">Get Application</button>
+        <div class="btn-group">
+          <button class ="guest_interest-btn btn btn-default apply-btn job-<%=job.id%>">Get Application</button>
         </div>
       </div>
-
     </div>
   <%end%>
 
 </div>
+
+
+
 
 

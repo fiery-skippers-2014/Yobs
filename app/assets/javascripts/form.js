@@ -1,7 +1,7 @@
 var UserStuff = {
   init: function () {
-    $('#new-user-link').on('click', RegisterFormDropDown);
-    $('#login-link').on('click', SignInFormDropDown);
+   //  $('#new-user-link').on('click', RegisterFormDropDown);
+   //  $('#login-link').on('click', SignInFormDropDown);
 	  $('#create-job-link').on('click', NewJobFormDropDown);
     $('.guest_interest-btn ').on('click', RegisterFormDropDown);
 // 	$('.request-btn a').on('click', RequestContact);
@@ -40,6 +40,7 @@ var NewJobFormDropDown = function () {
 
 $(document).ready(function(){
 	UserStuff.init();
+  Job.init();
 	$('.long-desc').hide();
 	$(function() {
 		$( "#datepicker" ).datepicker();
