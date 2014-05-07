@@ -1,9 +1,9 @@
 <!-- views/users/show.html.erb -->
-<p><%= current_user.first_name%></p>
-<p><%= current_user.last_name%></p>
-<p><%= current_user.user_name%></p>
-<p><%= current_user.phone%></p>
-<p><%= current_user.email%></p>
+<p><%= @user.first_name%></p>
+<p><%= @user.last_name%></p>
+<p><%= @user.user_name%></p>
+<p><%= @user.phone%></p>
+<p><%= @user.email%></p>
 
 <%if @jobs.length == 0%>
   <h3>No Job Requests</h3>
@@ -23,7 +23,7 @@
       <div class="job-footer">
           <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button>
 
-	<%created = Interest.where('user_id = ? and job_id = ?', current_user.id,job.id).first.created_at%>
+	<%created = Interest.where('user_id = ? and job_id = ?', @user.id,job.id).first.created_at%>
 
           <p>Applied <%=((Time.now - created)/86400).round%> days ago</p>
       </div>
@@ -34,9 +34,6 @@
 
 </div>
 
-<!-- 
+<!--
 created = Interest.where('user_id = ? and job_id = ?', current_user.id,job.id).first.created_at
  -->
-<script>
-  Job.init();
-</script>
