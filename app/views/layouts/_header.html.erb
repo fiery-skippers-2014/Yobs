@@ -1,5 +1,8 @@
 <div class="pull-left menu">
-  <button type="button" class="btn pull-left btn-facebook1 navbar-btn">Menu</button>
+   <% if current_user %>
+	  <a type="button" src =" "class="pull-left navbar-btn">	<%= image_tag("darkprofile.png", class: "img-responsiveness", alt: "p") %></a>
+  <% else %>
+	  <a type="button" src =" "class="pull-left navbar-btn">	<%= image_tag("redprofile.png", class: "img-responsiveness", alt: "p") %></a>  <% end %>
 </div>
 
  <div class="navbar-brand">
