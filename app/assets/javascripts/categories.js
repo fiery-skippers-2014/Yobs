@@ -1,7 +1,7 @@
 var Job = {
     init: function() {
 		$('.more-btn').on('click', this.expandDescription);
-		$('.job-box').on('click', '.interest-btn', this.saveInterest);
+		$('.job-box').on('click', '.apply-btn', this.saveInterest).bind(this);
 		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
 
 		// var footer_tag = 'Read more...';
@@ -25,8 +25,9 @@ var Job = {
 	},
 
 	saveInterest: function(event) {
+	
 		event.preventDefault()
-		job_id = event.target.classList[1].substring(4)
+		job_id = event.delegateTarget.id.split('job-')[1]
 		interest_data = {job_id: job_id}
 		$.ajax({
 			url: '/interests',
@@ -34,17 +35,16 @@ var Job = {
 			data: interest_data
 		}).success(function(data){
 			console.log(data)
-				$(data).css('background-color','#DDD')
+			$(data).toggleClass('interested')
 				$(data).find('.interest-btn').hide()
 				$(data).find('.notinterest-btn').removeClass('hidden')
 				$(data).find('.notinterest-btn').show()
-		}
-		).error(function (){console.log("ERROR")})
+		}).error(function (){console.log("ERROR WHAT")})
 	},
 
 	noInterest: function(event) {
 		event.preventDefault()
-		job_id = event.target.classList[1].substring(4)
+		job_id = event.delegateTarget.id.split('job-')[1]
 		interest_data = {job_id: job_id}
 		$.ajax({
 			url: '/interests',
@@ -52,7 +52,7 @@ var Job = {
 			data: interest_data
 		}).success(function(data){
 				console.log(data)
-				$(data).css('background-color','#FFF')
+				$(data).toggleClass('interested')
 				$(data).find('.interest-btn').removeClass('hidden')
 				$(data).find('.interest-btn').show()
 				$(data).find('.notinterest-btn').hide()
