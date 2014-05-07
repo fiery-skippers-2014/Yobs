@@ -1,20 +1,17 @@
 class UsersController < ApplicationController
 
-  def index
-
-  end
-
   def new
     @user = User.new
   end
 
   def show
-    @user = User.find(params[:id])
-    # # @user = current_user
-    @jobs = @user.jobs
+    if not_users_profile?
+      redirect_to root_path
+    else
+      @user = User.find(params[:id])
+      @jobs = @user.jobs
+    end
   end
-
-# New Method handled by Javascript
 
   def create
     user = User.new params[:user]

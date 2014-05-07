@@ -8,7 +8,8 @@ describe JobsController do
 
 	context "show" do
 		let!(:agency) {FactoryGirl.create :agency}
-		let!(:job) {FactoryGirl.create :job}
+		let!(:account) {FactoryGirl.create :account, :user => user, :agency => agency}
+		let!(:job) {FactoryGirl.create :job, :agency => agency}
 		it "is successful" do
 			get :show, :agency_id => agency.id, :id => job.id
 			expect(response).to be_success
