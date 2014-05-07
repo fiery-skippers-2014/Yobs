@@ -1,5 +1,6 @@
 class InterestsController < ApplicationController
 
+#before_filter :reroute_user
 skip_before_filter  :verify_authenticity_token
 
   def create
@@ -9,6 +10,24 @@ skip_before_filter  :verify_authenticity_token
   	else
   		render json: interest.errors.full_messages.join(' : ')
   	end
+  end
+
+  def test
+    render :json => {}
+  end
+
+  def update
+    @interest = Interest.find(params[:id])
+    if @interest.response
+      @interest.response = false
+    else
+      @interest.response = true
+    end
+    if @interest.save
+      render text: "Murphy"
+    else
+      render text: "Error"
+    end
   end
 
   def destroy

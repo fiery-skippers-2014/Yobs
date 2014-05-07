@@ -3,6 +3,7 @@ var Job = {
 		$('.more-btn').on('click', this.expandDescription);
 		$('.job-box').on('click', '.apply-btn', this.saveInterest).bind(this);
 		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
+		$('.job-box').on('click', '.guest_cancel-btn', this.noInterest);
 
 		// var footer_tag = 'Read more...';
 	},
@@ -11,12 +12,10 @@ var Job = {
 		if ($(this).closest('.job-box').find('.long-desc').css('display') == 'inline')
 		{
 			footer_tag = 'less'
-			console.log('less')
 		}
 		else
 		{
 			footer_tag = 'Read more...'
-			console.log('more')
 		}
 			// add in logic to check if long-desc is showing. if it is, change 'Read more' to 'less'
 			$($(this).closest('.job-box').find('.long-desc')).toggle();
@@ -43,6 +42,7 @@ var Job = {
 	},
 
 	noInterest: function(event) {
+		console.log("clicked cancel")
 		event.preventDefault()
 		job_id = event.delegateTarget.id.split('job-')[1]
 		interest_data = {job_id: job_id}
@@ -56,6 +56,7 @@ var Job = {
 				$(data).find('.interest-btn').removeClass('hidden')
 				$(data).find('.interest-btn').show()
 				$(data).find('.notinterest-btn').hide()
+				$(data).closest('.job-box').hide()
 			}
 		).error(function (){console.log("ERROR")})
 

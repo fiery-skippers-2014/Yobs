@@ -17,10 +17,11 @@
             <%= get_long_desc(job) %>
           </span>
         </div>
-        
+
         <div class="job-footer btn-group btn-group-justified">
           <div class="btn-group more-btn">
             <button class ="more-btn btn btn-default">See More...</button>
+
           </div>
 
           <div class="getapp btn-group">
@@ -29,8 +30,8 @@
             <% else %>
               <%= render partial: 'job_btn_footer_no_interest', :locals => {:job => job} %>
             <% end %>
-          </div>  
-        </div>     
+          </div>
+        </div>
        </div>
-     <%end%>  
+     <%end%>
 </div>
