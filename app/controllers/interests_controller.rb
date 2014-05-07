@@ -31,7 +31,9 @@ skip_before_filter  :verify_authenticity_token
   end
 
   def destroy
-    puts "We're getting to destroy"
+    puts "************"
+    p params
+    puts "************"
     user_interests = current_user.interests
     user_interest = user_interests.find_by_job_id(params["job_id"])
     job_id = user_interest.job_id

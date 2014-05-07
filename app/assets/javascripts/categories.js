@@ -37,9 +37,11 @@ var Job = {
 	},
 
 	noInterest: function(event) {
-
+		console.log("this's class is" )
+		//console.log(this.class())
 		event.preventDefault()
 		job_id = event.delegateTarget.id.split('job-')[1]
+		// job_id = event.delegateTarget.id.split('job-')[1]
 		interest_data = {job_id: job_id}
 
 		$.ajax({
