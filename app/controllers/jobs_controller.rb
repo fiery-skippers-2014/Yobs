@@ -4,21 +4,25 @@ class JobsController < ApplicationController
 	before_filter :redirect_if_youth
 
 	# PLEASE MOVE IF NEEDED ELSEWHERE-- SHOULD NOT BE HERE
-	def index
-	  @jobs = Job.order(:created_at)
-	  respond_to do |format|
-	    # format.html
-	    format.csv { send_data @jobs.as_csv }
-	  end
-	end
+	# def index
+	#   @jobs = Job.order(:created_at)
+	#   respond_to do |format|
+	#     # format.html
+	#     format.csv { send_data @jobs.as_csv }
+	#   end
+	# end
 
 	def show
-		@job = Job.find(params[:id])
-	  @users = @job.users
+		if not_agency_profile? || not_agency_job
+      redirect_to agency_path(current_user.accounts.first.agency)
+    else
+			@job = Job.find(params[:id])
+		  @users = @job.users
+		end
 	end
 
 
-	def create # form currently misroutes to the sessions controller
+	def create
 		@agency = params[:agency_id]
 		job = Job.new(params[:job])
 		job.category_id = params[:category]
