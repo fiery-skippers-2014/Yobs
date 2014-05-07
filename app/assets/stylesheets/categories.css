@@ -37,11 +37,22 @@
 }
 
 .job-box {
-	border: 2px solid #16a085;
   margin: 10px 0;
   border-radius: 5px;
   padding: 0;
+  border: 2px solid #16a085;;
 	}
+
+ /* .notapplied {
+    border: 2px solid #16a085;
+  }*/
+
+ .interested {
+  border: 2px solid #16a085;
+  background: #1abc9c;
+  color: #FAF1E3;
+}
+
 
 .job-desc {
 	border-bottom: 1px solid #16a085;
@@ -68,9 +79,6 @@
   margin-right: -1px;
 }
 
-.interested {
-    background-color: #ddd;
-}
 
 .hidden {
   display: none;
