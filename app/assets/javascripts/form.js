@@ -40,6 +40,7 @@ var NewJobFormDropDown = function () {
 
 $(document).ready(function(){
 	UserStuff.init();
+  Job.init();
 	$('.long-desc').hide();
 	$(function() {
 		$( "#datepicker" ).datepicker();
