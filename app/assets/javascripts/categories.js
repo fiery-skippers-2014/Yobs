@@ -1,7 +1,7 @@
 var Job = {
     init: function() {
 		$('.more-btn').on('click', this.expandDescription);
-		$('.job-box').on('click', '.apply-btn', this.saveInterest).bind(this);
+		$('.job-box').on('click', '.apply-btn', this.saveInterest);
 		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
 		$('.job-box').on('click', '.guest_cancel-btn', this.noInterest);
 
@@ -24,7 +24,7 @@ var Job = {
 	},
 
 	saveInterest: function(event) {
-	
+
 		event.preventDefault()
 		job_id = event.delegateTarget.id.split('job-')[1]
 		interest_data = {job_id: job_id}
@@ -33,11 +33,11 @@ var Job = {
 			type: 'POST',
 			data: interest_data
 		}).success(function(data){
-			console.log(data)
+			var button = $(data).find('.apply-btn')
 			$(data).toggleClass('interested')
-				$(data).find('.interest-btn').hide()
-				$(data).find('.notinterest-btn').removeClass('hidden')
-				$(data).find('.notinterest-btn').show()
+			button.html('Change Your Mind')
+			button.addClass('notinterest-btn')
+			button.removeClass('apply-btn')
 		}).error(function (){console.log("ERROR WHAT")})
 	},
 
@@ -51,12 +51,11 @@ var Job = {
 			type: 'DELETE',
 			data: interest_data
 		}).success(function(data){
-				console.log(data)
-				$(data).toggleClass('interested')
-				$(data).find('.interest-btn').removeClass('hidden')
-				$(data).find('.interest-btn').show()
-				$(data).find('.notinterest-btn').hide()
-				$(data).closest('.job-box').hide()
+			var button = $(data).find('.notinterest-btn')
+			$(data).toggleClass('interested')
+			button.html('Send Me Info')
+			button.addClass('apply-btn')
+			button.removeClass('notinterest-btn')
 			}
 		).error(function (){console.log("ERROR")})
 
