@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user.id != params[:id]
+    if not_users_profile?
       redirect_to root_path
     else
       @user = User.find(params[:id])

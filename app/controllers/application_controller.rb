@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def not_users_profile?
+    current_user.id != params[:id].to_i
+  end
+
   def agency?(user)
     return true if user.role == "agency"
   end
