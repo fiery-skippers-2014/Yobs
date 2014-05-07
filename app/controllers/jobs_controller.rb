@@ -13,7 +13,7 @@ class JobsController < ApplicationController
 	# end
 
 	def show
-		if not_agency_profile? || not_agency_job
+		if not_agencys_job?
       redirect_to agency_path(current_user.accounts.first.agency)
     else
 			@job = Job.find(params[:id])

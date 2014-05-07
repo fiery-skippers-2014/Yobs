@@ -21,12 +21,8 @@ class ApplicationController < ActionController::Base
     current_user.accounts.first.agency_id != params[:id].to_i
   end
 
-  def not_agency_profile?
-    current_user.accounts.first.agency_id != params[:agency_id].to_i
-  end
-
-  def not_agency_job
-    params[:agency_id].to_i != Job.find(params[:id]).agency_id
+  def not_agencys_job?
+    current_user.accounts.first.agency_id != params[:agency_id].to_i || params[:agency_id].to_i != Job.find(params[:id]).agency_id
   end
 
   def agency?(user)
