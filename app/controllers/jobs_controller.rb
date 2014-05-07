@@ -1,14 +1,16 @@
 class JobsController < ApplicationController
+
+	before_filter :reroute_user
 	before_filter :redirect_if_youth
 
 	# PLEASE MOVE IF NEEDED ELSEWHERE-- SHOULD NOT BE HERE
-	# def index
-	#   @jobs = Job.order(:created_at)
-	#   respond_to do |format|
-	#     # format.html
-	#     format.csv { send_data @jobs.as_csv }
-	#   end
-	# end
+	def index
+	  @jobs = Job.order(:created_at)
+	  respond_to do |format|
+	    # format.html
+	    format.csv { send_data @jobs.as_csv }
+	  end
+	end
 
 	def show
 		@job = Job.find(params[:id])
