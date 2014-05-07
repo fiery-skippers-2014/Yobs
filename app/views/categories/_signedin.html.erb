@@ -6,36 +6,31 @@
       <div class="job-box interested" id="job-<%=job.id%>">
     <% else %>
       <div class="job-box" id="job-<%=job.id%>">
-      <%= hack = 'noninterest' %>
+        <% hack = 'noninterest' %>
     <% end  %>
-
-      <div class="job-heading panel-heading"><%=job.heading%></div>
-      <div class="job-desc">
-        <%= get_short_desc(job) %>
-        <span class="long-desc">
-          <%= get_long_desc(job) %>
-        </span>
-      </div>
-
-      <div class="job-footer">
-      
-      <div class="job-footer btn-group btn-group-justified">
+        <div class="job-heading panel-heading">
+          <%=job.heading%>
+        </div>
+        <div class="job-desc">
+          <%= get_short_desc(job) %>
+          <span class="long-desc">
+            <%= get_long_desc(job) %>
+          </span>
+        </div>
+        
+        <div class="job-footer btn-group btn-group-justified">
           <div class="btn-group more-btn">
-        <!--   <%= link_to "Read more...", "#" %> -->
-          <button class ="more-btn btn btn-default">See More...</button>
+            <button class ="more-btn btn btn-default">See More...</button>
           </div>
 
           <div class="getapp btn-group">
-          <% if hack == 'interest' %>
-            <%= render partial: 'job_btn_footer_interested', :locals => {:job => job} %>
-          <% else %>
-            <%= render partial: 'job_btn_footer_no_interest', :locals => {:job => job} %>
-          <% end %>
-          </div>
-        </div>  
-      </div>
-
-    </div>
-   <%end%>
-
+            <% if hack == 'interest' %>
+              <%= render partial: 'job_btn_footer_interested', :locals => {:job => job} %>
+            <% else %>
+              <%= render partial: 'job_btn_footer_no_interest', :locals => {:job => job} %>
+            <% end %>
+          </div>  
+        </div>     
+       </div>
+     <%end%>  
 </div>
