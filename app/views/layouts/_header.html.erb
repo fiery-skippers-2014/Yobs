@@ -11,9 +11,9 @@
   </div>
 <div class = "pull-right sign_in">
   <% if current_user %>
-		 <%= button_to "Log out", session_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", method: :delete %>
+		 <%= link_to "Log Out", session_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", method: :delete %>
   <% else %>
-			<%= button_to "Sign Up", sign_up_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", :method => :get %>
+			<%= link_to "Log In", sign_up_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", :method => :get %>
   <% end %>
 
 </div>
