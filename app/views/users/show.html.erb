@@ -6,32 +6,38 @@
 <p><%= @user.phone%></p>
 <p><%= @user.email%></p>
 
-<%if @jobs.length == 0%>
-  <h3>No Job Requests</h3>
-<%elsif @jobs.length == 1%>
-  <h3>Your <%=@jobs.length%> Job Request</h3>
+<% if agency?(@user) %>
+  Agency user
 <%else%>
-  <h3>Your <%=@jobs.length%> Job Requests</h3>
-<%end%>
-<div id="container">
-  <%@jobs.each do |job|%>
-      <div class="job-box" id="job-<%=job.id%>">
-      <div class="job-heading"><%=job.heading%></div>
-      <div class="job-desc">
-		<p><%=job.description%></p>
-      </div>
 
-      <div class="job-footer">
-          <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button>
-
-	<%created = Interest.where('user_id = ? and job_id = ?', @user.id,job.id).first.created_at%>
-
-          <p>Applied <%=((Time.now - created)/86400).round%> days ago</p>
-      </div>
-
-    </div>
-    <br><br>
+  <%if @jobs.length == 0%>
+    <h3>No Job Requests</h3>
+  <%elsif @jobs.length == 1%>
+    <h3>Your <%=@jobs.length%> Job Request</h3>
+  <%else%>
+    <h3>Your <%=@jobs.length%> Job Requests</h3>
   <%end%>
+  <div id="container">
+    <%@jobs.each do |job|%>
+        <div class="job-box" id="job-<%=job.id%>">
+        <div class="job-heading"><%=job.heading%></div>
+        <div class="job-desc">
+  		<p><%=job.description%></p>
+        </div>
+
+        <div class="job-footer">
+            <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button>
+
+  	<%created = Interest.where('user_id = ? and job_id = ?', @user.id,job.id).first.created_at%>
+
+            <p>Applied <%=((Time.now - created)/86400).round%> days ago</p>
+        </div>
+
+      </div>
+      <br><br>
+    <%end%>
+
+    <% end %>
 
 </div>
 
