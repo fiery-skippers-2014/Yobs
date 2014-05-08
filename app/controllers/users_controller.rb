@@ -2,6 +2,12 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    puts "-------PARAMS"
+    puts params
+    if params["job_id"]
+      flash.now[:notice] = "You need to log in to Apply to Job"
+    puts "IN THE IF" 
+    end  
   end
 
   def show
@@ -21,7 +27,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash.alert = user.errors.full_messages.join(' : ')
-      puts user.errors.full_messages.join(' : ')
+      user.errors.full_messages.join(' : ')
       redirect_to root_path
     end
   end
