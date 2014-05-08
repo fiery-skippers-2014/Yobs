@@ -1,6 +1,6 @@
 class Interest < ActiveRecord::Base
 
-	attr_accessible :id, :user_id, :job_id, :response
+	attr_accessible :id, :user, :job, :response
 
 	belongs_to :user
 	belongs_to :job

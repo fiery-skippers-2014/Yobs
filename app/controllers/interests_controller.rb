@@ -4,13 +4,15 @@ before_filter :authenticate, only: [:create]
 skip_before_filter  :verify_authenticity_token
 
   def create
-    interest = Interest.new(:job_id => params["job_id"], :user_id => current_user.id)
+    job = Job.find(params[:job_id])
+    interest = current_user.interests.build :job => job
   	if interest.save
-      render json: "#job-#{interest.job_id}".to_json
+      render text: job.id
   	else
-  		render json: interest.errors.full_messages.join(' : ')
+  		render text: interest.errors.full_messages.join(' : ')
   	end
   end
+
 
   def update
     @interest = Interest.find(params[:id])
