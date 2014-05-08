@@ -1,10 +1,27 @@
 <!-- views/users/show.html.erb -->
 <div class="container">
-<p><%= @user.first_name%></p>
-<p><%= @user.last_name%></p>
-<p><%= @user.user_name%></p>
-<p><%= @user.phone%></p>
-<p><%= @user.email%></p>
+<table>
+  <tr>
+    <td>First Name</td>
+    <td><%= @user.first_name%></td>
+  </tr>
+  <tr>
+    <td>Last Name</td>
+    <td><%= @user.last_name%></td>
+  </tr>
+  <tr>
+    <td>Username</td>
+    <td><%= @user.user_name%></td>
+  </tr>
+  <tr>
+    <td>Phone Number</td>
+    <td><%= @user.phone%></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= @user.email%></td>
+  </tr>
+</table>
 
 <% if youth?(@user) %>
 
@@ -23,17 +40,14 @@
   		<p><%=job.description%></p>
         </div>
 
-        <div class="job-footer">
-            <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button>
-
-  	<%created = Interest.where('user_id = ? and job_id = ?', @user.id,job.id).first.created_at%>
-
-            <p>Requested more infomation <%=((Time.now - created)/86400).round%> days ago</p>
-        </div>
-
+      <div class="job-footer">
+        <%created = Interest.find_by_user_id_and_job_id(@user.id, job.id).created_at%>
+        <p>Applied <%=((Time.now - created)/86400).round%> days ago |
+          <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button></p>
       </div>
-      <br><br>
-    <%end%>
+    </div>
+    <br><br>
+  <%end%>
 
 <% end %>
 
@@ -46,4 +60,4 @@ created = Interest.where('user_id = ? and job_id = ?', current_user.id,job.id).f
 <!--
    <script>
    Job.init();
- </script> -->
+ </script>

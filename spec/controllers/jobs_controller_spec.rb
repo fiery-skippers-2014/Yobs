@@ -21,6 +21,7 @@ describe JobsController do
 		end
 	end
 
+
 	context "create" do
 		let!(:agency) {FactoryGirl.create :agency}
 		let(:category) {FactoryGirl.create :category}

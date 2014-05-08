@@ -21,7 +21,8 @@ describe "Agencies" do
     it "can fill out job form and create a new job", js: true do
       visit agency_path(agency)
       click_on "Post New Job"
-      select category.name, :from => 'category'
+      # select category.name, :from => 'category'
+      select category.name, :from => 'job_category_id'
       fill_in 'job[heading]', :with => job.heading
       fill_in 'job[description]', :with => job.description
       fill_in 'job[location]', :with => job.location

@@ -4,15 +4,12 @@
 <%#= render 'jobs/form'%>
 
 <div id="new-job-form"> <!-- form currently goes to sessions path -->
-
     <%= form_for [@agency, @job], :url => agency_jobs_path(@agency, @job) do |f| %>
-      <select name="category" id="category" >
-      	<%Category.all.each do |category|%>
-      	  <option value="<%=category.id%>"><%=category.name%></option>
-      	<%end%>
-      </select>
 
-    	<input type="hidden" name="agency_id" value="<%=params[:id]%>"> <!-- which is agency_id -->
+        <!-- collection_select(method,         collection,       value_method, text_method, options = {}, html_options = {}) -->
+       <%= f.collection_select(:category_id,    Category.all,        :id,         :name)%>
+      <!-- http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html -->
+    	<input type="hidden" name="job[agency_id]" value="<%=params[:id]%>"> <!-- which is agency_id -->
       <p><%= f.text_field :heading, :placeholder => "Heading" %></p>
       <p><%= f.text_field :description, :placeholder => "Description"  %></p>
       <p><%= f.text_field :location, :placeholder => "Location"  %></p>
@@ -22,3 +19,4 @@
 </div>
 
 <%= render 'job_display' %>
+
