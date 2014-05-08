@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def new
-    @user = User.new
+    @user = User.new 
   end
 
   def show
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash.alert = user.errors.full_messages.join(' : ')
-      puts user.errors.full_messages.join(' : ')
+      user.errors.full_messages.join(' : ')
       redirect_to root_path
     end
   end

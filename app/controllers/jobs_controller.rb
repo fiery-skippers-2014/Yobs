@@ -3,15 +3,6 @@ class JobsController < ApplicationController
 	before_filter :reroute_user
 	before_filter :redirect_if_youth
 
-	# PLEASE MOVE IF NEEDED ELSEWHERE-- SHOULD NOT BE HERE
-	# def index
-	#   @jobs = Job.order(:created_at)
-	#   respond_to do |format|
-	#     # format.html
-	#     format.csv { send_data @jobs.as_csv }
-	#   end
-	# end
-
 	def show
 		if not_agencys_job?
       redirect_to agency_path(current_user.accounts.first.agency)
@@ -23,8 +14,6 @@ class JobsController < ApplicationController
 
 
 	def create
-		puts "**************** params from new select method #{params}"
-
 
 		@agency = params[:agency_id]
 		job = Job.new(params[:job])
