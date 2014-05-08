@@ -9,7 +9,7 @@ FactoryGirl.define do
   end
 
   factory :session do
-    id { }
+    id {"1h27febhjwef63g213"}
   end
 
   factory :user do
