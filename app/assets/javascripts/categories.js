@@ -12,7 +12,7 @@ var Job = {
 			$(this).html('Read more...')
 		} else {
 			$(this).html('Read less...')}
-    $(long_job_description).fadeToggle();
+    $(long_job_description).toggle();
 			return false;
 	    e.preventDefault();
 	    },
