@@ -3,6 +3,7 @@ var Job = {
 		$('.more-btn').on('click', this.expandDescription);
 		$('.job-box').on('click', '.apply-btn', this.saveInterest);
 		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
+		$('.job-box').on('click', '.guest_interest-btn', this.promptLogin)
 		$('.job-box').on('click', '.guest_cancel-btn', this.deleteInterest);
 		// var footer_tag = 'Read more...';
 	},
@@ -20,7 +21,6 @@ var Job = {
 	    },
 
 	saveInterest: function(event) {
-
 		event.preventDefault()
 		job_id = event.delegateTarget.id.split('job-')[1]
 		interest_data = {job_id: job_id}
@@ -34,7 +34,11 @@ var Job = {
 			button.html('Change Your Mind')
 			button.addClass('notinterest-btn')
 			button.removeClass('apply-btn')
-		}).error(function (){console.log("ERROR WHAT")})
+		}).error(function (xhr){
+			if (xhr.status === 403) {
+				window.location = "/sign_up"
+			}
+			})
 	},
 
 	noInterest: function(event) {
@@ -55,7 +59,9 @@ var Job = {
 			button.addClass('apply-btn')
 			button.removeClass('notinterest-btn')
 			}
-		).error(function (){console.log("ERROR")})
+		).error(function (){
+
+		})
 
 	},
 		deleteInterest: function(event) {
@@ -70,8 +76,6 @@ var Job = {
 			$(data).remove()
 			}
 		).error(function (){console.log("ERROR")})
-
-	}
-
+	},
 
 }
