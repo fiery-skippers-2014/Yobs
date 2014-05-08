@@ -47,7 +47,6 @@ private
 def authenticate 
   flash[:alert] = "Please Log in or Create User to Get Info For Job"
   head :forbidden unless current_user
-
 end
 
 end
