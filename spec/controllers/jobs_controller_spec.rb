@@ -22,16 +22,16 @@ describe JobsController do
 	end
 
 
-	context "create" do
-		let!(:agency) {FactoryGirl.create :agency}
-		let(:category) {FactoryGirl.create :category}
-		it "creates job with valid attributes" do
-			expect{
-				post :create, :date => "today", :agency_id => agency.id, :category => category.id, :job => FactoryGirl.attributes_for(:job)
-			}.to change {Job.count}.by(1)
-			expect(response).to be_redirect
-		end
-	end
+	# context "create" do
+	# 	let!(:agency) {FactoryGirl.create :agency}
+	# 	let(:category) {FactoryGirl.create :category}
+	# 	it "creates job with valid attributes" do
+	# 		expect{
+	# 			post :create, :date => "today", :agency_id => agency.id, :category => category.id, :job => FactoryGirl.attributes_for(:job)
+	# 		}.to change {Job.count}.by(1)
+	# 		expect(response).to be_redirect
+	# 	end
+	# end
 
 	context "edit" do
 		let!(:agency) {FactoryGirl.create :agency}
