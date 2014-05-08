@@ -4,7 +4,7 @@
 <div id="new-job-form">
     <%= form_for [@agency, @job], :url => agency_jobs_path(@agency, @job) do |f| %>
        <%= f.collection_select(:category_id,    Category.all,        :id,         :name)%>
-    	<input type="hidden" name="job[agency_id]" value="<%=params[:id]%>">
+      <input type="hidden" name="job[agency_id]" value="<%=params[:id]%>">
       <p><%= f.text_field :heading, :placeholder => "Heading" %></p>
       <p><%= f.text_field :description, :placeholder => "Description"  %></p>
       <p><%= f.text_field :location, :placeholder => "Location"  %></p>
