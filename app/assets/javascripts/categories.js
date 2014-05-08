@@ -3,7 +3,7 @@ var Job = {
 		$('.more-btn').on('click', this.expandDescription);
 		$('.job-box').on('click', '.apply-btn', this.saveInterest);
 		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
-		$('.job-box').on('click', '.guest_cancel-btn', this.deleteInterest);
+		$('.job-box-response').on('click', '.guest_cancel-btn', this.deleteInterest);
 	},
 
 	expandDescription: function() {
@@ -69,7 +69,7 @@ var Job = {
 			type: 'DELETE',
 			data: interest_data
 		}).success(function(data){
-			$(data).remove()
+			$('#job-'+data).remove()
 			}
 		).error(function (){console.log("ERROR")})
 	},

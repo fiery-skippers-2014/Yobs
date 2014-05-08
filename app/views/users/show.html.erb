@@ -34,7 +34,7 @@
         <%created = Interest.find_by_user_id_and_job_id(@user.id, job.id).created_at%>
 
         <p>Requested Info <%=((Time.now - created)/86400).round%> days ago |
-          <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button></p>
+          <button class ="guest_cancel-btn btn-facebook1 job-<%=job.id%> ">Cancel</button></p>
       </div>
     </div>
 

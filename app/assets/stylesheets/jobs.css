@@ -97,3 +97,8 @@ margin-right: auto;
 #new-job-form {
   margin-top: 15px;
 }
+
+.guest_cancel-btn {
+  margin-top: 8px;
+  margin-left: 10px;
+}
