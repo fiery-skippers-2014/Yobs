@@ -13,7 +13,9 @@ class JobsController < ApplicationController
 	end
 
 	def create
-
+		puts "*"*30
+			puts "params from capybara are #{params}"
+		puts "*"*30
 		@agency = params[:agency_id]
 		job = Job.new(params[:job])
 		job.date = params[:date]
