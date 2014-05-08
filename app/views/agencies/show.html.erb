@@ -1,6 +1,7 @@
 
 <div><a href="#" id="create-job-link" class ="btn">Post New Job</a></div>
 
+
 <div id="new-job-form">
     <%= form_for [@agency, @job], :url => agency_jobs_path(@agency, @job) do |f| %>
        <%= f.collection_select(:category_id,    Category.all,        :id,         :name)%>
