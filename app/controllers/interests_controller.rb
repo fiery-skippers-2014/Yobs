@@ -12,10 +12,6 @@ skip_before_filter  :verify_authenticity_token
   	end
   end
 
-  def test
-    render :json => {}
-  end
-
   def update
     @interest = Interest.find(params[:id])
     if @interest.response

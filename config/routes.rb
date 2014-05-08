@@ -1,7 +1,5 @@
 YOBS::Application.routes.draw do
 
-  root :to => 'categories#index'
-
   resources :categories, :only => [:index, :show]
 
   resources :users, :only => [:create, :new, :show]
@@ -21,4 +19,5 @@ YOBS::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "users#new", :as => "sign_up"
 
+  root :to => 'categories#index'
 end
