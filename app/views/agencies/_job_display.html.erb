@@ -1,22 +1,22 @@
 
   <%@agency_jobs.each do |job|%>
-    <div class="col-lg-5 col-md-5 col-sm-12 agency-job-box" id="job-#{job.id}">
+    <div class="col-lg-5 col-md-5 col-sm-12 agency-job-box col-sm-height" id="job-#{job.id}">
 
-        <h3><%= link_to job.heading, url_for([@agency, job])%></h3>
+       <div class="agency-job-header"> <h3><%= link_to job.heading, url_for([@agency, job])%></h3></div>
 
 
         <b>Program Start Date:</b> <%= job.date %><br>
-        <b>Program Location:</b> <%= job.location %><br>
+        <b>Program Location:</b> <%= job.location %>
+        <div class="agency-job-description"></div>
         <b>Program Description:</b> <%= job.description %>
 
-
+        <div class= "agency-buttons">
         <%if job.users.length > 0%>
-          <h3><%=job.users.length %> interested youth</h3>
+          <h4><%=job.users.length %> interested youth</h4>
         <%end%>
-        <p>
+        </div>
         <button class="btn btn-facebook1 button_height"><%= link_to "EDIT", edit_agency_job_path(@agency, job) %></button>
         <button class="btn btn-facebook1 button_height"><%= link_to "DELETE", [@agency, job], method: :delete %></button>
-        </p>
 
       </div>
 

@@ -9,8 +9,6 @@ table,th,td {
   border: 1px solid lightgrey;
   padding: 20px;
   width: fluid;
-  min-height: 440px;
-  max-height: 650px;
   border-radius: 10px;
 margin-left: auto;
 margin-right: auto;
@@ -31,7 +29,38 @@ margin-right: auto;
 .button_height {
   height: 45px;
   vertical-align: center;
-
-
 }
 
+@media(min-width:1080px){
+  .agency-job-box {
+    height: 540px;
+  }
+}
+
+@media(min-width:893px) and (max-width: 1079px){
+  .agency-job-box {
+    height: 580px;
+  }
+}
+
+
+.agency-buttons {
+  margin-top: 10px;
+}
+
+.agency-job-header {
+  border-bottom: solid 1px lightgrey;
+  margin-bottom: 8px;
+}
+
+.agency-job-description {
+  border-top: solid 1px lightgrey;
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.youth_number {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
