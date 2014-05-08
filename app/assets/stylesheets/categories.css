@@ -229,7 +229,6 @@ a:active, a:hover {
 }
 
 
-
 body {
   background-color: #FAF1E3;
   color: #1abc9c;
@@ -243,4 +242,10 @@ nav .img-responsiveness {
 
 .categorybox {
   text-align: center;
+}
+
+#yobs {
+  height: 42px;
+  margin-top: -10px;
+  display: inline-block;
 }
