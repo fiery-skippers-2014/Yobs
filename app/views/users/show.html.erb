@@ -1,27 +1,10 @@
 <!-- views/users/show.html.erb -->
 <div class="container">
-<table>
-  <tr>
-    <td>First Name</td>
-    <td><%= @user.first_name%></td>
-  </tr>
-  <tr>
-    <td>Last Name</td>
-    <td><%= @user.last_name%></td>
-  </tr>
-  <tr>
-    <td>Username</td>
-    <td><%= @user.user_name%></td>
-  </tr>
-  <tr>
-    <td>Phone Number</td>
-    <td><%= @user.phone%></td>
-  </tr>
-  <tr>
-    <td>Email</td>
-    <td><%= @user.email%></td>
-  </tr>
-</table>
+
+<p>Username: <%= @user.user_name%></p>
+<p>Name: <%= @user.first_name%> <%= @user.last_name%></p>
+<p>Phone: <%= @user.phone%></p>
+<p>Email: <%= @user.email%></p>
 
 <% if youth?(@user) %>
 
@@ -46,7 +29,6 @@
           <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button></p>
       </div>
     </div>
-    <br><br>
   <%end%>
 
 <% end %>
