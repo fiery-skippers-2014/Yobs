@@ -25,7 +25,7 @@
     <div class="row">
     <%@jobs.each do |job|%>
         <div class="job-box job-box-response col-lg-5 col-md-5 col-sm-10 col-xs-10" id="job-<%=job.id%>">
-        <div class="job-heading"><%=job.heading%></div>
+        <div class="job-heading"><h5><%=job.heading%> @ <%=job.agency.name%></h5></div>
         <div class="job-desc">
   		<p><%=job.description%></p>
         </div>
