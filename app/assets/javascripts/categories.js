@@ -3,9 +3,7 @@ var Job = {
 		$('.more-btn').on('click', this.expandDescription);
 		$('.job-box').on('click', '.apply-btn', this.saveInterest);
 		$('.job-box').on('click', '.notinterest-btn', this.noInterest);
-		$('.job-box').on('click', '.guest_interest-btn', this.promptLogin)
 		$('.job-box').on('click', '.guest_cancel-btn', this.deleteInterest);
-		// var footer_tag = 'Read more...';
 	},
 
 	expandDescription: function() {
@@ -42,27 +40,22 @@ var Job = {
 	},
 
 	noInterest: function(event) {
-		console.log("this's class is" )
-		//console.log(this.class())
 		event.preventDefault()
 		job_id = event.delegateTarget.id.split('job-')[1]
-		// job_id = event.delegateTarget.id.split('job-')[1]
 		interest_data = {job_id: job_id}
-
 		$.ajax({
 			url: '/interests',
 			type: 'DELETE',
 			data: interest_data
 		}).success(function(data){
-
-			var button = $(data).find('.notinterest-btn')
-			$(data).toggleClass('interested')
+			var button = $('.job-' + data)
+			var job_box = $('#job-'+ data)
+			job_box.toggleClass('interested')
 			button.html('Send Me Info')
 			button.addClass('apply-btn')
 			button.removeClass('notinterest-btn')
 			}
 		).error(function (){
-
 		})
 
 	},

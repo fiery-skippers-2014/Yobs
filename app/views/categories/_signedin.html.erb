@@ -19,18 +19,16 @@
             Start Date: <%= job.date %>
           </span>
         </div>
-
         <div class="job-footer btn-group btn-group-justified">
           <div class="btn-group more-btn">
             <button class ="more-btn btn btn-default">See More...</button>
-
           </div>
 
           <div class="getapp btn-group">
             <% if hack == 'interest' %>
-              <%= render partial: 'job_btn_footer_interested', :locals => {:job => job} %>
+              <button class ="btn job-<%=job.id%> btn-default apply-btn ">Send Me Info</button>
             <% else %>
-              <%= render partial: 'job_btn_footer_no_interest', :locals => {:job => job} %>
+              <button class ="btn job-<%=job.id%> btn-default apply-btn ">Send Me Info</button>
             <% end %>
           </div>
         </div>
