@@ -12,7 +12,6 @@ class JobsController < ApplicationController
 		end
 	end
 
-
 	def create
 
 		@agency = params[:agency_id]

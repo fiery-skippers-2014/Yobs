@@ -26,7 +26,7 @@ Phone:<%= @user.phone%> |
 
       <div class="job-footer">
         <%created = Interest.find_by_user_id_and_job_id(@user.id, job.id).created_at%>
-        <p>Applied <%=((Time.now - created)/86400).round%> days ago |
+        <p>Requested Info <%=((Time.now - created)/86400).round%> days ago |
           <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button></p>
       </div>
     </div>
