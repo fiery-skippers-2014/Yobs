@@ -24,7 +24,6 @@ describe JobsController do
 	context "create" do
 		let!(:agency) {FactoryGirl.create :agency}
 		let(:category) {FactoryGirl.create :category}
-		let(:job) {FactoryGirl.create :job}
 		it "creates job with valid attributes" do
 			expect{
 				post :create, :date => "today", :agency_id => agency.id, :category => category.id, :job => FactoryGirl.attributes_for(:job)

@@ -9,7 +9,7 @@ FactoryGirl.define do
   end
 
   factory :session do
-    id { }
+    id {"1h27febhjwef63g213"}
   end
 
   factory :user do
@@ -21,7 +21,7 @@ FactoryGirl.define do
   end
 
   factory :category do
-    name {Faker::Name.first_name}
+    name {Faker::Name.last_name}
   end
 
 
@@ -44,6 +44,10 @@ FactoryGirl.define do
   factory :account do
     agency
     user
+  end
+
+  factory :interest do
+
   end
 
  end

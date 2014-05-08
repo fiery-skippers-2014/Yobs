@@ -1,6 +1,6 @@
 class InterestsController < ApplicationController
+
 before_filter :authenticate, only: [:create]
-#before_filter :reroute_user
 skip_before_filter  :verify_authenticity_token
 
   def create
@@ -27,16 +27,9 @@ skip_before_filter  :verify_authenticity_token
   end
 
   def destroy
-    puts "We're getting to destroy"
-    puts params
-    puts current_user
     user_interests = current_user.interests
-    puts "ALL USER INTERESTS"
-    p user_interests
     user_interest = user_interests.find_by_job_id(params["job_id"])
     job_id = user_interest.job_id
-    puts "USER INTEREST"
-    puts user_interest
     user_interest.destroy
     render json: "#job-#{job_id}".to_json
   end
@@ -44,7 +37,7 @@ skip_before_filter  :verify_authenticity_token
 
 private
 
-def authenticate 
+def authenticate
   flash[:alert] = "Please Log in or Create User to Get Info For Job"
   head :forbidden unless current_user
 end
