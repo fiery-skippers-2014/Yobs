@@ -9,15 +9,14 @@ var Job = {
 	},
 
 	expandDescription: function() {
-		if ($(this).closest('.job-box').find('.long-desc').css('display') == 'inline'){
-			footer_tag = 'less'
-		}
-		else{
-			footer_tag = 'Read more...'
-		}
-			$($(this).closest('.job-box').find('.long-desc')).toggle();
+		var long_job_description = $(this).closest('.job-box').find('.long-desc');
+		if (long_job_description.is(":visible")){
+			$(this).html('Read more...')
+		} else {
+			$(this).html('Read less...')}
+    $(long_job_description).fadeToggle();
 			return false;
-	     	e.preventDefault();
+	    e.preventDefault();
 	    },
 
 	saveInterest: function(event) {
@@ -43,9 +42,11 @@ var Job = {
 	},
 
 	noInterest: function(event) {
-
+		console.log("this's class is" )
+		//console.log(this.class())
 		event.preventDefault()
 		job_id = event.delegateTarget.id.split('job-')[1]
+		// job_id = event.delegateTarget.id.split('job-')[1]
 		interest_data = {job_id: job_id}
 
 		$.ajax({
@@ -65,6 +66,7 @@ var Job = {
 		})
 
 	},
+
 		deleteInterest: function(event) {
 		event.preventDefault()
 		job_id = event.delegateTarget.id.split('job-')[1]
