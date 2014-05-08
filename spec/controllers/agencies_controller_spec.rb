@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AgenciesController, js: true do
+describe AgenciesController do
   context "#show" do
     let!(:agency) { FactoryGirl.create :agency}
     let!(:user) { FactoryGirl.create :user, :role => 'agency' }

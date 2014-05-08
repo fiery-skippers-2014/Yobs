@@ -1,27 +1,16 @@
 <!-- views/users/show.html.erb -->
 <div class="container">
-<table>
-  <tr>
-    <td>First Name</td>
-    <td><%= @user.first_name%></td>
-  </tr>
-  <tr>
-    <td>Last Name</td>
-    <td><%= @user.last_name%></td>
-  </tr>
-  <tr>
-    <td>Username</td>
-    <td><%= @user.user_name%></td>
-  </tr>
-  <tr>
-    <td>Phone Number</td>
-    <td><%= @user.phone%></td>
-  </tr>
-  <tr>
-    <td>Email</td>
-    <td><%= @user.email%></td>
-  </tr>
-</table>
+<div class='user-profile-info'>
+  <div>
+    <div id='welcome'><b>Welcome, </b><%= @user.user_name%></div>
+  </div><p></p>
+  <div>
+    <div>First Name: <%= @user.first_name%></div>
+    <div>Last Name: <%= @user.last_name%></div>
+    <div>Phone Number: <%= @user.phone%></div>
+    <div>Email: <%= @user.email%></div>
+  </div>
+</div>
 
 <% if youth?(@user) %>
 
@@ -33,8 +22,9 @@
     <h3>Your <%=@jobs.length%> Job Requests</h3>
   <%end%>
   <div id="container">
+    <div class="row">
     <%@jobs.each do |job|%>
-        <div class="job-box" id="job-<%=job.id%>">
+        <div class="job-box job-box-response col-lg-5 col-md-5 col-sm-10 col-xs-10" id="job-<%=job.id%>">
         <div class="job-heading"><%=job.heading%></div>
         <div class="job-desc">
   		<p><%=job.description%></p>
@@ -43,16 +33,17 @@
       <div class="job-footer">
         <%created = Interest.find_by_user_id_and_job_id(@user.id, job.id).created_at%>
         <p>Applied <%=((Time.now - created)/86400).round%> days ago |
-          <button class ="guest_cancel-btn job-<%=job.id%> ">Cancel</button></p>
+          <button class ="guest_cancel-btn job-<%=job.id%> btn-facebook">Cancel</button></p>
       </div>
     </div>
-    <br><br>
+    
   <%end%>
 
 <% end %>
 
 </div>
 
+</div>
 </div>
 <!--
 created = Interest.where('user_id = ? and job_id = ?', current_user.id,job.id).first.created_at

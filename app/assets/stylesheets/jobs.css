@@ -6,16 +6,53 @@ table,th,td {
 }
 
 .agency-job-box {
-  border: 2px solid black;
+  border: 2px solid #16a085;
+  border-radius: 5px;
   width: 700px;
+  text-align: center;
+
 }
 
+
 .agency-job-desc {
-  border-bottom: 1px solid blue;
-  border-top: 1px solid blue;
+  border-bottom: 1px solid #16a085;
+  border-top: 1px solid #16a085;
 }
 
 .interests {
   color: #4CBB17;
   display: inline;
+  
 }
+
+.job-footer {
+  padding: 0px 10px;
+}
+
+.edit-button {
+  background-color: black;
+
+}
+
+.delete-button {
+
+
+}
+
+#welcome {
+  font-size: 2.0em;
+}
+
+.user-profile-info {
+  background-color: #E9EDDC;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.guest_cancel-btn {
+
+}
+
+
+
