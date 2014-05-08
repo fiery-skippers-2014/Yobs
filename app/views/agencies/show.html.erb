@@ -3,16 +3,15 @@
 
 <%#= render 'jobs/form'%>
 
-<div id="new-job-form"> <!-- form currently goes to sessions path -->
+<div id="new-job-form" class="form-horizontal"> 
     <%= form_for [@agency, @job], :url => agency_jobs_path(@agency, @job) do |f| %>
-
-        <!-- collection_select(method,         collection,       value_method, text_method, options = {}, html_options = {}) -->
-       <%= f.collection_select(:category_id,    Category.all,        :id,         :name)%>
+        <!-- collection_select(method, collection, value_method, text_method, options = {}, html_options = {}) -->
+       <%= f.collection_select(:category_id, Category.all, :id, :name)%>
       <!-- http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html -->
     	<input type="hidden" name="job[agency_id]" value="<%=params[:id]%>"> <!-- which is agency_id -->
-      <p><%= f.text_field :heading, :placeholder => "Heading" %></p>
-      <p><%= f.text_field :description, :placeholder => "Description"  %></p>
+      <p class="top_form"><%= f.text_field :heading, :placeholder => "Heading" %></p>
       <p><%= f.text_field :location, :placeholder => "Location"  %></p>
+      <p><%= f.text_area :description, cols: 80, rows: 5, :placeholder => "Description"  %></p>
       <p><input type="text" id="datepicker" placeholder="date" name="date"></p>
       <p><%= f.submit %></p>
     <%end%>

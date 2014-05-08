@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 .cat_square a {
 	text-decoration: none;
 }
@@ -20,8 +21,31 @@
 
 }
 
+#ui-datepicker-div {
+  background-color: white;
+}
 
+.ui-datepicker-header {
+  background-color: #1abc9c;
+  color: white;
+}
 
+.ui-datepicker-prev {
+  margin-left: 5px;
+  font-size: .8em;
+  color: white;
+}
+
+.ui-datepicker-next {
+  font-size: .8em;
+  margin-left: 145px;
+  color: white;
+}
+
+.ui-datepicker-title {
+  text-align: center;
+  bottom: 10px;
+}
 
 #login-form form p input {
   height: 33px;
@@ -30,7 +54,7 @@
 #new-job-form {
 	display: none;
 	/*position: absolute;*/
-	background-color: white;
+
 }
 
 #new-user-form form p input {
@@ -114,6 +138,32 @@
 
 .navbar-brand a {
    color: #fff;
+}
+
+.agency-job-heading {
+  background-color: #1abc9c;
+  color: white;
+}
+
+.agency-job-heading a{
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#category {
+  width: 205px;
+  height: 20px;
+  margin-bottom: 20px;
+  background: white;
+}
+
+.top_form {
+  margin-top: 10px
+}
+
+#job-description {
+  width: 400px;
 }
 
 .menu {

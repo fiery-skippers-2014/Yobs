@@ -18,6 +18,17 @@ describe InterestsController do
   end
 
   context "#destroy" do
-
+    let!(:user) {FactoryGirl.create :user}
+    let!(:job) {FactoryGirl.create :job}
+    let!(:interest) {FactoryGirl.create :interest, :user => user, :job => job}
+    before(:each) do
+       ApplicationController.any_instance.stub(:current_user).and_return(user)
+    end
+    it "should delete record from database" do
+      expect {
+        delete :destroy, :job_id => job.id
+      }.to change {Interest.count}.by(-1)
+    end
   end
+
 end
