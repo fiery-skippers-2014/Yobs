@@ -21,7 +21,7 @@ FactoryGirl.define do
   end
 
   factory :category do
-    name {Faker::Name.first_name}
+    name {Faker::Name.last_name}
   end
 
 
