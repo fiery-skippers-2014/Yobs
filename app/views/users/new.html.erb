@@ -1,6 +1,9 @@
 
 
 <div class="container">
+  <% if flash[:alert] %>
+    <p><%= flash[:alert] %></p>
+  <% end %>
 
   <div id="login-form">
     <%= form_tag '/sessions' do %>

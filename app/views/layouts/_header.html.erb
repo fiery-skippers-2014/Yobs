@@ -1,6 +1,6 @@
 <div class="pull-left menu">
    <% if current_user %>
-	  <%= link_to image_tag("darkprofile.png", class: "pull-left img-responsiveness", alt: "p"), user_path(current_user) %>
+    <%= link_to image_tag("darkprofile.png", class: "pull-left img-responsiveness", alt: "p"), user_path(current_user) %>
   <% else %>
     <%= link_to image_tag("redprofile.png", class: "pull-left img-responsiveness", alt: "p"), sign_up_path %>
   <% end %>
@@ -11,10 +11,9 @@
   </div>
 <div class = "pull-right sign_in">
   <% if current_user %>
-		 <%= link_to "Log Out", session_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", method: :delete %>
+     <%= link_to "Log Out", session_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", method: :delete %>
   <% else %>
-			<%= link_to "Log In", sign_up_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", :method => :get %>
+      <%= link_to "Log In", sign_up_path, :class => "btn-signin pull-right btn-facebook btn navbar-btn", :method => :get %>
   <% end %>
 
 </div>
-

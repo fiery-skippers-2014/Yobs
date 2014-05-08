@@ -1,5 +1,6 @@
 class InterestsController < ApplicationController
 
+before_filter :authenticate, only: [:create]
 skip_before_filter  :verify_authenticity_token
 
   def create
@@ -32,5 +33,13 @@ skip_before_filter  :verify_authenticity_token
     user_interest.destroy
     render json: "#job-#{job_id}".to_json
   end
+
+
+private
+
+def authenticate
+  flash[:alert] = "Please Log in or Create User to Get Info For Job"
+  head :forbidden unless current_user
+end
 
 end
