@@ -23,10 +23,11 @@ class JobsController < ApplicationController
 
 
 	def create
+		puts "**************** params from new select method #{params}"
+
+
 		@agency = params[:agency_id]
 		job = Job.new(params[:job])
-		job.category_id = params[:category]
-		job.agency_id = params[:agency_id]
 		job.date = params[:date]
 		if job.save
 			redirect_to agency_path(@agency)
