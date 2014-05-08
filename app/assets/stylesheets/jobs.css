@@ -6,8 +6,15 @@ table,th,td {
 }
 
 .agency-job-box {
-  border: 2px solid black;
-  width: 700px;
+  border: 1px solid #1abc9c;
+  padding: 20px;
+  width: fluid;
+  border-radius: 10px;
+margin-left: auto;
+margin-right: auto;
+  margin: 10px;
+  background-color: #F2EADC;
+
 }
 
 .agency-job-desc {
@@ -18,4 +25,47 @@ table,th,td {
 .interests {
   color: #4CBB17;
   display: inline;
+}
+
+.button_height {
+  height: 45px;
+  vertical-align: center;
+}
+
+@media(min-width:1080px){
+  .agency-job-box {
+    height: 540px;
+  }
+}
+
+@media(min-width:893px) and (max-width: 1079px){
+  .agency-job-box {
+    height: 580px;
+  }
+}
+
+
+.agency-buttons {
+  margin-top: 10px;
+}
+
+.agency-job-header {
+  border-bottom: solid 1px #1abc9c;
+  margin-bottom: 8px;
+}
+
+.agency-job-description {
+  border-top: solid 1px #1abc9c;
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.youth_number {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+#new-job-form {
+  margin-top: 15px;
 }

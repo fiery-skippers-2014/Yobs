@@ -27,7 +27,7 @@ describe JobsController do
 	# 	let(:category) {FactoryGirl.create :category}
 	# 	it "creates job with valid attributes" do
 	# 		expect{
-	# 			post :create, :date => "today", :agency => agency.id, :category => category.id, :job => FactoryGirl.attributes_for(:job)
+	# 			post :create, :date => "today", :agency_id => agency.id, :category => category.id, :job => FactoryGirl.attributes_for(:job)
 	# 		}.to change {Job.count}.by(1)
 	# 		expect(response).to be_redirect
 	# 	end

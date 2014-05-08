@@ -1,15 +1,12 @@
 
-<a href="#" id="create-job-link">Post New Job</a>
+<div><a href="#" id="create-job-link" class ="btn">Post New Job</a></div>
 
-<%#= render 'jobs/form'%>
-
-<div id="new-job-form" class="form-horizontal"> 
+<div id="new-job-form">
     <%= form_for [@agency, @job], :url => agency_jobs_path(@agency, @job) do |f| %>
-        <!-- collection_select(method, collection, value_method, text_method, options = {}, html_options = {}) -->
-       <%= f.collection_select(:category_id, Category.all, :id, :name)%>
-      <!-- http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html -->
-    	<input type="hidden" name="job[agency_id]" value="<%=params[:id]%>"> <!-- which is agency_id -->
-      <p class="top_form"><%= f.text_field :heading, :placeholder => "Heading" %></p>
+       <%= f.collection_select(:category_id,    Category.all,        :id,         :name)%>
+      <input type="hidden" name="job[agency_id]" value="<%=params[:id]%>">
+      <p><%= f.text_field :heading, :placeholder => "Heading" %></p>
+      <p><%= f.text_field :description, :placeholder => "Description"  %></p>
       <p><%= f.text_field :location, :placeholder => "Location"  %></p>
       <p><%= f.text_area :description, cols: 80, rows: 5, :placeholder => "Description"  %></p>
       <p><input type="text" id="datepicker" placeholder="date" name="date"></p>

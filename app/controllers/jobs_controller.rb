@@ -12,7 +12,6 @@ class JobsController < ApplicationController
 		end
 	end
 
-
 	def create
 		puts "*"*30
 			puts "params from capybara are #{params}"
