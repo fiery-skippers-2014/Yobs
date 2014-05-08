@@ -18,5 +18,6 @@ describe InterestsController do
   end
 
   context "#destroy" do
+
   end
 end
