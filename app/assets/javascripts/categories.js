@@ -29,7 +29,7 @@ var Job = {
 			var button = $('.job-' + data)
 			var job_box = $('#job-'+data)
 			job_box.toggleClass('interested')
-			button.html('Change Your Mind')
+			button.html('Cancel Request')
 			button.addClass('notinterest-btn')
 			button.removeClass('apply-btn')
 		}).error(function (xhr){

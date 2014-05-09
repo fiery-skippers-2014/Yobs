@@ -1,12 +1,10 @@
 
 <div id="container">
   <%@category.jobs.each do |job|%>
-    <% hack = 'interest' %>
-    <% if job.interests.find_by_user_id(current_user.id) %>
+    <% if user_interested?(job,current_user) %>
       <div class="job-box interested" id="job-<%=job.id%>">
     <% else %>
       <div class="job-box" id="job-<%=job.id%>">
-        <% hack = 'noninterest' %>
     <% end  %>
         <div class="job-heading panel-heading">
           <h5><%=job.heading%></h5>
@@ -25,8 +23,8 @@
           </div>
 
           <div class="getapp btn-group">
-            <% if hack == 'interest' %>
-              <button class ="btn job-<%=job.id%> btn-default apply-btn ">Send Me Info</button>
+            <% if user_interested?(job,current_user) %>
+              <button class ="btn job-<%=job.id%> btn-default apply-btn notinterest-btn ">Cancel Request</button>
             <% else %>
               <button class ="btn job-<%=job.id%> btn-default apply-btn ">Send Me Info</button>
             <% end %>
@@ -35,3 +33,5 @@
        </div>
      <%end%>
 </div>
+
+
