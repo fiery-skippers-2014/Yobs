@@ -7,7 +7,10 @@ class CategoriesController < ApplicationController
 
   def show
   	@category = Category.find(params[:id])
-  	@jobs = @category.jobs
+  	@jobs = @category.jobs.order("created_at DESC")
+  	puts @jobs.each { |job|
+  		puts job.created_at}
   end
+  @jobs
 end
 

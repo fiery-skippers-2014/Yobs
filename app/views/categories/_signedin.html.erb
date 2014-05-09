@@ -1,6 +1,6 @@
 
 <div id="container">
-  <%@category.jobs.each do |job|%>
+  <%@jobs.each do |job|%>
     <% if user_interested?(job,current_user) %>
       <div class="job-box interested" id="job-<%=job.id%>">
     <% else %>
