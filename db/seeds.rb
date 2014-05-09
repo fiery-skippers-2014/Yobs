@@ -1,12 +1,12 @@
 # Create six categories w/ specific names:
 
-categs = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5", "Category 6"]
+categs = ["Youth Programs", "Government", "Arts & Media", "Retail", "Office", "Science & Tech"]
 
 categs.each {|categ| Category.create(:name => categ)}
 
 # Create 7 agencies w/ specific names
 
-agencies = ["Agency 1", "Agency 2", "Agency 3", "Agency 4", "Agency 5", "Agency 6", "Agency 7"]
+agencies = ["YouthWorks", "Mayor's Youth Employment", "Old Skool Cafe", "Exploratorium", "Juma Ventures", "Office"]
 
 agencies.each do |agency|
   Agency.create(
