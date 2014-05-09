@@ -7,7 +7,6 @@
        <%= f.collection_select(:category_id,    Category.all,        :id,         :name)%>
       <input type="hidden" name="job[agency_id]" value="<%=params[:id]%>">
       <p><%= f.text_field :heading, :placeholder => "Heading" %></p>
-      <p><%= f.text_field :description, :placeholder => "Description"  %></p>
       <p><%= f.text_field :location, :placeholder => "Location"  %></p>
       <p><%= f.text_area :description, cols: 80, rows: 5, :placeholder => "Description"  %></p>
       <p><input type="text" id="datepicker" placeholder="date" name="date"></p>
