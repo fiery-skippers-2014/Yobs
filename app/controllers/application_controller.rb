@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
-  # include Authentication
+ 
   protect_from_forgery
-  before_filter :current_user
   helper_method :current_user
   skip_before_filter :reroute_user, :only => :root #applies to all resources
 
